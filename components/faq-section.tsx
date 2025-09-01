@@ -13,7 +13,7 @@ const faqs = [
   {
     question: "How much can I earn?",
     answer:
-      "Riders typically earn $15-30 per hour, with additional bonuses for peak hours and high-traffic routes. Your earnings depend on ride frequency, route popularity, and campaign participation.",
+      "Riders typically earn €15-30 per hour, with additional bonuses for peak hours and high-traffic routes. Your earnings depend on ride frequency, route popularity, and campaign participation.",
   },
   {
     question: "Do I need my own bike?",
@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "What cities are you launching in?",
     answer:
-      "We're starting with Amsterdam and expanding to major European cities throughout 2024. Join the waitlist to be notified when we launch in your city.",
+      "We're starting with Rotterdam and expanding to other major cities in the Netherlands. Join the waitlist to be notified when we launch in your city.",
   },
   {
     question: "How flexible are the hours?",
@@ -78,7 +78,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
           isOpen ? "max-h-96 pb-8" : "max-h-0"
         )}
       >
-        <p className="text-lg text-gray-300 leading-relaxed max-w-4xl">
+        <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl">
           {answer}
         </p>
       </div>
@@ -121,15 +121,6 @@ export function FAQSection() {
               onToggle={() => toggleItem(index)}
             />
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <p className="text-xl text-gray-300 mb-8">Still have questions?</p>
-          <div className="inline-flex items-center gap-4 text-primary font-bold text-lg hover:text-white transition-colors duration-300 cursor-pointer">
-            <span>Contact our team</span>
-            <div className="w-8 h-0.5 bg-primary"></div>
-          </div>
         </div>
       </div>
     </section>

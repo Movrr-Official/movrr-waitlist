@@ -6,20 +6,24 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
-            <h3 className="text-3xl font-black text-white">MOVRR</h3>
+            <div className="flex items-center gap-3">
+              <img
+                src="/movrr-icon.png"
+                alt="Movrr Icon"
+                className="w-14 h-14"
+              />
+              <h3 className="text-3xl font-black text-white">MOVRR</h3>
+            </div>
             <p className="text-white/70 mt-2">
               Transform your ride. Transform your life.
             </p>
           </div>
           <div className="flex space-x-8 text-sm text-white/70 uppercase tracking-wider">
-            <a href="#" className="hover:text-foreground transition-colors">
+            <a href="/privacy" className="hover:text-white transition-colors">
               Privacy
             </a>
-            <a href="#" className="hover:text-foreground transition-colors">
+            <a href="/terms" className="hover:text-white transition-colors">
               Terms
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Contact
             </a>
           </div>
         </div>
