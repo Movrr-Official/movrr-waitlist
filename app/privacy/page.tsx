@@ -88,10 +88,10 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl font-bold text-primary">4. Contact Us</h2>
               <div className="bg-zinc-900 p-6 rounded-lg border border-zinc-800 space-y-2 text-gray-300">
                 <p>
-                  <strong>Email:</strong> legal@movrr.com
+                  <strong>Email:</strong> legal@movrr.nl
                 </p>
                 <p>
-                  <strong>Support:</strong> support@movrr.com
+                  <strong>Support:</strong> support@movrr.nl
                 </p>
                 <p>
                   <strong>Address:</strong> Movrr Legal Team
