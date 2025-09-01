@@ -12,7 +12,7 @@ export function ValueProposition() {
                 <br />
                 EARN.
                 <br />
-                <span className="text-primary">REPEAT.</span>
+                <span className="text-primary">CONNECT.</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 Every pedal stroke is a step toward financial freedom. Turn your
