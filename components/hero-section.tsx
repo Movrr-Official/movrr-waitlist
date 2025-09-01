@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { track } from "@vercel/analytics";
 
 interface HeroSectionProps {
@@ -8,8 +9,21 @@ interface HeroSectionProps {
 export function HeroSection({ onJoinWaitlist }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 bg-[url('/amsterdam-cityscape-canals-bikes.png')] bg-cover bg-center"></div>
+      <div className="absolute inset-0">
+        <Image
+          src="/amsterdam-cityscape-canals-bikes.png"
+          alt="Amsterdam cityscape with canals and bikes"
+          fill
+          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 100vw"
+          quality={100}
+          priority
+          className="object-cover object-center"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk9SQ2TQ6y+WgZPJ7FeYqSmL//Z"
+        />
+      </div>
+
+      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-secondary/80 via-secondary/60 to-transparent"></div>
 
       {/* Hero content */}
