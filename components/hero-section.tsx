@@ -34,8 +34,8 @@ export function HeroSection({ onJoinWaitlist }: HeroSectionProps) {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 text-xl font-bold rounded-3xl uppercase tracking-wider shadow-2xl transform hover:scale-105 transition-all duration-200"
             onClick={() => {
-              track("Sign Up Now Clicked");
               onJoinWaitlist();
+              track("Sign Up Now Clicked");
             }}
           >
             Sign Up Now

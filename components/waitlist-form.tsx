@@ -52,6 +52,7 @@ export function WaitlistForm() {
       const result = await submitWaitlistForm(data);
 
       if (result.success) {
+        track("Waitlist Form Submitted");
         setSubmitSuccess(true);
         setSubmitMessage(result.message || "Successfully joined the waitlist!");
         reset();
@@ -96,13 +97,7 @@ export function WaitlistForm() {
   }
 
   return (
-    <form
-      onSubmit={() => {
-        track("Waitlist Form Submitted");
-        handleSubmit(onSubmit);
-      }}
-      className="space-y-8"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-3">
           <Label
