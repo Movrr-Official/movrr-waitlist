@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1">
               <img
                 src="/movrr-icon.png"
                 alt="Movrr Icon"
