@@ -1,4 +1,4 @@
-import { Zap, Target, Trophy } from "lucide-react"
+import { Zap, Target, Trophy } from "lucide-react";
 
 export function BenefitsSection() {
   return (
@@ -11,7 +11,8 @@ export function BenefitsSection() {
             <span className="text-primary">POTENTIAL</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-16 max-w-2xl mx-auto">
-            Every ride is an opportunity. Every street is your stage. Every mile brings you closer to financial freedom.
+            Every ride is an opportunity. Every street is your stage. Every mile
+            brings you closer to financial freedom.
           </p>
 
           <div className="grid md:grid-cols-3 gap-12">
@@ -19,26 +20,38 @@ export function BenefitsSection() {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Zap className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-secondary mb-4 uppercase tracking-wide">Flexible</h3>
-              <p className="text-muted-foreground">Ride when you want. Where you want. How you want.</p>
+              <h3 className="text-2xl font-bold text-secondary mb-4 uppercase tracking-wide">
+                Flexible
+              </h3>
+              <p className="text-muted-foreground">
+                Ride when you want. Where you want. How you want.
+              </p>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-secondary mb-4 uppercase tracking-wide">Reliable</h3>
-              <p className="text-muted-foreground">Guaranteed weekly payouts. Performance bonuses. No surprises.</p>
+              <h3 className="text-2xl font-bold text-secondary mb-4 uppercase tracking-wide">
+                Reliable
+              </h3>
+              <p className="text-muted-foreground">
+                Guaranteed Monthly payouts. Performance bonuses. No surprises.
+              </p>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Trophy className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-secondary mb-4 uppercase tracking-wide">Rewarding</h3>
-              <p className="text-muted-foreground">Join a community of riders making cities more vibrant.</p>
+              <h3 className="text-2xl font-bold text-secondary mb-4 uppercase tracking-wide">
+                Rewarding
+              </h3>
+              <p className="text-muted-foreground">
+                Join a community of riders making cities more vibrant.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

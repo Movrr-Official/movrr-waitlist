@@ -43,7 +43,7 @@ const faqs = [
   {
     question: "How do I get paid?",
     answer:
-      "Weekly payouts directly to your bank account or digital wallet. Track your earnings in real-time through our app and get detailed breakdowns of all your rides and bonuses.",
+      "Monthly payouts directly to your bank account or digital wallet. Track your earnings in real-time through our app and get detailed breakdowns of all your rides and bonuses.",
   },
 ];
 
@@ -105,7 +105,7 @@ export function FAQSection() {
             <br />
             <span className="text-primary">WE'VE GOT ANSWERS.</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
             Everything you need to know about joining the movement
           </p>
         </div>

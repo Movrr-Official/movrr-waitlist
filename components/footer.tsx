@@ -10,9 +10,11 @@ export function Footer() {
               <img
                 src="/movrr-icon.png"
                 alt="Movrr Icon"
-                className="w-14 h-14"
+                className="w-12 h-12 md:w-14 md:h-14"
               />
-              <h3 className="text-3xl font-black text-white">MOVRR</h3>
+              <h3 className="text-2xl md:text-3xl font-black text-white">
+                MOVRR
+              </h3>
             </div>
             <p className="text-white/70 mt-2">
               Transform your ride. Transform your life.

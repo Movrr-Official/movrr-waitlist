@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { track } from "@vercel/analytics";
+import Image from "next/image";
 
 interface HeroSectionProps {
   onJoinWaitlist: () => void;
@@ -9,13 +9,12 @@ interface HeroSectionProps {
 export function HeroSection({ onJoinWaitlist }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image with Next.js Image component */}
       <div className="absolute inset-0">
         <Image
           src="/amsterdam-cityscape-canals-bikes.png"
           alt="Amsterdam cityscape with canals and bikes"
           fill
-          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 100vw"
-          quality={100}
           priority
           className="object-cover object-center"
           placeholder="blur"
@@ -25,6 +24,18 @@ export function HeroSection({ onJoinWaitlist }: HeroSectionProps) {
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-secondary/80 via-secondary/60 to-transparent"></div>
+
+      {/* Logo at the top */}
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex items-center gap-1">
+          <img
+            src="/movrr-icon.png"
+            alt="Movrr Icon"
+            className="w-12 h-12 md:w-14 md:h-14"
+          />
+          <h3 className="text-2xl md:text-3xl font-black text-white">MOVRR</h3>
+        </div>
+      </div>
 
       {/* Hero content */}
       <div className="relative z-10 container mx-auto px-4 text-center">

@@ -48,7 +48,7 @@ export function HowItWorksSection() {
               <h3 className="text-xl font-bold mb-4 uppercase tracking-wide">
                 Get Paid
               </h3>
-              <p className="text-white/70">Weekly payouts. Guaranteed.</p>
+              <p className="text-white/70">Monthly payouts. Guaranteed.</p>
             </div>
           </div>
         </div>
