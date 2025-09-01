@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { track } from "@vercel/analytics";
 
 interface HeroSectionProps {
   onJoinWaitlist: () => void;
@@ -32,7 +33,10 @@ export function HeroSection({ onJoinWaitlist }: HeroSectionProps) {
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 text-xl font-bold rounded-3xl uppercase tracking-wider shadow-2xl transform hover:scale-105 transition-all duration-200"
-            onClick={onJoinWaitlist}
+            onClick={() => {
+              track("Sign Up Now Clicked");
+              onJoinWaitlist();
+            }}
           >
             Sign Up Now
           </Button>

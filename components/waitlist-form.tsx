@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { track } from "@vercel/analytics";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -95,7 +96,13 @@ export function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+    <form
+      onSubmit={() => {
+        track("Waitlist Form Submitted");
+        handleSubmit(onSubmit);
+      }}
+      className="space-y-8"
+    >
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-3">
           <Label
