@@ -51,8 +51,9 @@ export function HeroSection({ onJoinWaitlist }: HeroSectionProps) {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto font-medium">
-            Turn every bike ride into income. Transform city streets into your
-            canvas.
+            Whether you’re a student, delivery rider, or just cruising through
+            the city, Movrr pays you for every ride. No shifts, no deliveries,
+            just extra cash on your own terms.
           </p>
 
           <Button

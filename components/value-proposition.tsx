@@ -12,29 +12,30 @@ export function ValueProposition() {
                 <br />
                 EARN.
                 <br />
-                <span className="text-primary">CONNECT.</span>
+                <span className="text-primary">BELONG.</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Every pedal stroke is a step toward financial freedom. Turn your
-                daily commute into your daily income.
+                Turn every ride into extra cash. Whether you’re commuting to
+                class, delivering food, or just biking through the city. Movrr
+                makes your wheels work for you.
               </p>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-lg font-medium">
-                    €15-30 per hour guaranteed
+                    Earn up to €15–30/hour, fair and transparent payouts
                   </span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-lg font-medium">
-                    Flexible schedule, your rules
+                    Ride when you want, no schedules and no bosses
                   </span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-lg font-medium">
-                    Monthly payouts, no delays
+                    Monthly payouts, always on time with no hidden fees
                   </span>
                 </div>
               </div>
