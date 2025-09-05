@@ -5,6 +5,7 @@ import {
   sendUserConfirmationEmail,
   sendAdminNotificationEmail,
 } from "@/lib/email";
+import { createSupabaseServerClient } from "@/supabase/server";
 
 const waitlistSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -22,17 +23,25 @@ export async function submitWaitlistForm(data: WaitlistFormData) {
     // Validate the data
     const validatedData = waitlistSchema.parse(data);
 
-    // Simulate API call - replace with actual database/API integration
-    console.log("Waitlist submission:", validatedData);
+    const supabase = await createSupabaseServerClient();
 
-    const userEmailResult = await sendUserConfirmationEmail(
+    const { error: dbError } = await supabase.from("waitlist").insert({
+      name: validatedData.name,
+      email: validatedData.email,
+      city: validatedData.city,
+      bike_ownership: validatedData.bikeOwnership,
+    });
+
+    if (dbError) throw new Error(`Database Error: ${dbError.message}`);
+
+    await sendUserConfirmationEmail(
       validatedData.email,
       validatedData.name,
       validatedData.city,
       validatedData.bikeOwnership
     );
 
-    const adminEmailResult = await sendAdminNotificationEmail(
+    await sendAdminNotificationEmail(
       validatedData.name,
       validatedData.email,
       validatedData.city,
