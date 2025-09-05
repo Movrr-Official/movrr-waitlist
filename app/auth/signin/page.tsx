@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import {
   Card,
@@ -20,7 +20,9 @@ export default function SignInPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <SignInForm />
+          <Suspense>
+            <SignInForm />
+          </Suspense>
         </CardContent>
       </Card>
     </div>
