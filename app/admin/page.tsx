@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import { redirect } from "next/navigation";
 import { SignOutButton } from "@/components/auth/sign-out-button";
+import { ExportDialog } from "@/components/export/export-dialog";
 
 interface WaitlistEntry {
   id: string;
@@ -264,15 +265,25 @@ export default async function AdminDashboard() {
                 </div>
 
                 <div className="flex gap-3 w-full sm:w-auto">
-                  <Button
-                    size="sm"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 gap-2 flex-1 sm:flex-initial group"
-                  >
-                    <Download className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline font-medium">
-                      Export CSV
-                    </span>
-                  </Button>
+                  <div className="flex gap-2">
+                    <ExportDialog
+                      data={entries}
+                      defaultFilename="waitlist_export"
+                      title="Export Waitlist Data"
+                      description="Export waitlist entries in multiple formats"
+                      trigger={
+                        <Button
+                          size="sm"
+                          className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 gap-2 flex-1 sm:flex-initial group"
+                        >
+                          <Download className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                          <span className="hidden sm:inline font-medium">
+                            Export Data
+                          </span>
+                        </Button>
+                      }
+                    />
+                  </div>
                   <SignOutButton />
                 </div>
               </div>
