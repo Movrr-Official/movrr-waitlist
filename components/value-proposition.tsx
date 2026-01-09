@@ -23,7 +23,7 @@ export function ValueProposition() {
                 <div className="flex items-center gap-4">
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-lg font-medium">
-                    Earn up to €15–30/hour, fair and transparent payouts
+                    Earn rewards from verified rides, fair and transparent
                   </span>
                 </div>
                 <div className="flex items-center gap-4">
@@ -35,7 +35,7 @@ export function ValueProposition() {
                 <div className="flex items-center gap-4">
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-lg font-medium">
-                    Monthly payouts, always on time with no hidden fees
+                    Monthly rewards, always transparent with no hidden fees
                   </span>
                 </div>
               </div>

@@ -35,7 +35,7 @@ export function BenefitsSection() {
                 Reliable
               </h3>
               <p className="text-muted-foreground">
-                Guaranteed Monthly payouts. Performance bonuses. No surprises.
+                Guaranteed Monthly rewards. Performance bonuses. No surprises.
               </p>
             </div>
             <div className="text-center">

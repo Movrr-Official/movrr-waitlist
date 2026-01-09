@@ -13,7 +13,7 @@ const faqs = [
   {
     question: "How much can I earn?",
     answer:
-      "Riders will typically earn €15–30 per hour, with extra bonuses during peak times and high-demand routes. Final rates may vary slightly at launch, but you’ll always earn fair, transparent payouts.",
+      "Riders earn rewards from verified rides, with bonuses during peak times and high-demand routes. Rates may vary at launch, but rewards are always fair and transparent.",
   },
   {
     question: "Do I need my own bike?",
@@ -43,7 +43,7 @@ const faqs = [
   {
     question: "How do I get paid?",
     answer:
-      "Once Movrr launches, payouts will be sent directly to your bank account or digital wallet. You’ll also get transparent earnings breakdowns via the Movrr app so you always know what you’ve earned.",
+      "Once Movrr launches, rewards can be redeemed directly in the app. You’ll see clear earnings breakdowns for every verified ride, so you always know how your rewards are calculated.",
   },
   {
     question: "Can I use Movrr while working for delivery apps?",
