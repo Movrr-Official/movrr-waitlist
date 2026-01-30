@@ -63,7 +63,7 @@ export default function UserConfirmationEmail({
             <Text style={text}>
               • We'll notify you as soon as Movrr launches in {city}
               <br />• You'll get early access to our rider onboarding
-              <br />• Start earning €15-30/hour while exploring your city
+              <br />• Start earning rewards while exploring your city
               <br />• Join a community of riders making cities more vibrant
             </Text>
 
