@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { WeglotLanguageSwitcher } from "@/Scripts/weglot-language-switcher";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,7 +17,12 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
+const metadataBase = process.env.NEXT_PUBLIC_SITE_URL
+  ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+  : undefined;
+
 export const metadata: Metadata = {
+  metadataBase,
   title: "Movrr - Transform Your Ride, Transform Your City",
   description:
     "Join the movement. Earn money while cycling and transform city streets into a canvas for brands. Flexible hours, reliable pay, and make an impact.",
@@ -50,6 +56,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background text-foreground">
         {children}
+        <WeglotLanguageSwitcher />
         <Analytics />
       </body>
     </html>

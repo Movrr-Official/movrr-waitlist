@@ -6,6 +6,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const WELCOME_EMAIL = process.env.WELCOME_EMAIL! || "welcome@movrr.nl";
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL! || "admin@movrr.nl";
 const SYSTEM_EMAIL = process.env.SYSTEM_EMAIL! || "system@movrr.nl";
+const ADMIN_EMAIL_RECIPIENTS = ADMIN_EMAIL.split(/[;,]/)
+  .map((value) => value.trim())
+  .filter(Boolean);
 
 export async function sendUserConfirmationEmail(
   email: string,
@@ -44,7 +47,7 @@ export async function sendAdminNotificationEmail(
   try {
     const { data, error } = await resend.emails.send({
       from: `Movrr System <${SYSTEM_EMAIL}>`,
-      to: [ADMIN_EMAIL],
+      to: ADMIN_EMAIL_RECIPIENTS.length ? ADMIN_EMAIL_RECIPIENTS : ["admin@movrr.nl"],
       subject: `New Waitlist Registration - ${name} from ${city}`,
       react: AdminNotificationEmail({
         name,
