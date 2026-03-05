@@ -1,4 +1,4 @@
-"use server";
+﻿"use server";
 
 import { z } from "zod";
 import {
@@ -6,23 +6,25 @@ import {
   sendAdminNotificationEmail,
 } from "@/lib/email";
 import { createSupabaseServerClient } from "@/supabase/server";
+import { DEFAULT_LOCALE, normalizeLocale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionary";
 
 const waitlistSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  city: z.string().min(2, "City must be at least 2 characters"),
-  bikeOwnership: z.enum(["yes", "no", "planning"], {
-    required_error: "Please select an option",
-  }),
+  name: z.string().min(2),
+  email: z.string().email(),
+  city: z.string().min(2),
+  bikeOwnership: z.enum(["yes", "no", "planning"]),
+  locale: z.string().optional(),
 });
 
 export type WaitlistFormData = z.infer<typeof waitlistSchema>;
 
 export async function submitWaitlistForm(data: WaitlistFormData) {
-  try {
-    // Validate the data
-    const validatedData = waitlistSchema.parse(data);
+  const locale = normalizeLocale(data.locale ?? DEFAULT_LOCALE);
+  const dictionary = await getDictionary(locale);
 
+  try {
+    const validatedData = waitlistSchema.parse(data);
     const supabase = await createSupabaseServerClient();
 
     const { error: dbError } = await supabase.from("waitlist").insert({
@@ -32,7 +34,9 @@ export async function submitWaitlistForm(data: WaitlistFormData) {
       bike_ownership: validatedData.bikeOwnership,
     });
 
-    if (dbError) throw new Error(`Database Error: ${dbError.message}`);
+    if (dbError) {
+      throw new Error(`Database Error: ${dbError.message}`);
+    }
 
     await sendUserConfirmationEmail(
       validatedData.email,
@@ -48,19 +52,23 @@ export async function submitWaitlistForm(data: WaitlistFormData) {
       validatedData.bikeOwnership
     );
 
-    // Simulate processing delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    return { success: true, message: "Successfully joined the waitlist!" };
+    return { success: true, message: dictionary.waitlistForm.messages.success };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return { success: false, errors: error.flatten().fieldErrors };
+      return {
+        success: false,
+        errors: error.flatten().fieldErrors,
+        message: dictionary.waitlistForm.messages.genericError,
+      };
     }
 
     console.error("Waitlist submission error:", error);
     return {
       success: false,
-      message: "Something went wrong. Please try again.",
+      message: dictionary.waitlistForm.messages.genericError,
     };
   }
 }
+

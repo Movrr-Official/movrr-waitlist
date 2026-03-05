@@ -4,12 +4,12 @@ import { getDictionary } from "@/lib/i18n/dictionary";
 import { buildPageMetadata } from "@/lib/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const dictionary = await getDictionary("en");
-  return buildPageMetadata("en", dictionary, "unauthorized", "/unauthorized");
+  const dictionary = await getDictionary("nl");
+  return buildPageMetadata("nl", dictionary, "unauthorized", "/unauthorized");
 }
 
-export default async function Page() {
-  const dictionary = await getDictionary("en");
-  return <UnauthorizedPage locale="en" dictionary={dictionary} />;
+export default async function UnauthorizedPageNl() {
+  const dictionary = await getDictionary("nl");
+  return <UnauthorizedPage locale="nl" dictionary={dictionary} />;
 }
 

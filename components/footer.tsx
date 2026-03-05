@@ -1,4 +1,15 @@
-export function Footer() {
+﻿import Link from "next/link";
+import type { Dictionary } from "@/locales/en";
+import type { Locale } from "@/lib/i18n/config";
+import { withLocalePath } from "@/lib/i18n/routing";
+
+interface FooterProps {
+  locale: Locale;
+  copy: Dictionary["footer"];
+  brandName: string;
+}
+
+export function Footer({ locale, copy, brandName }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -9,30 +20,27 @@ export function Footer() {
             <div className="flex items-center gap-1">
               <img
                 src="/movrr-icon.png"
-                alt="Movrr Icon"
+                alt={copy.logoAlt}
                 className="w-12 h-12 md:w-14 md:h-14"
               />
-              <h3 className="text-2xl md:text-3xl font-black text-white">
-                MOVRR
-              </h3>
+              <h3 className="text-2xl md:text-3xl font-black text-white">{brandName}</h3>
             </div>
-            <p className="text-white/70 mt-2">
-              Transform your ride. Transform your life.
-            </p>
+            <p className="text-white/70 mt-2">{copy.tagline}</p>
           </div>
           <div className="flex space-x-8 text-sm text-white/70 uppercase tracking-wider">
-            <a href="/privacy" className="hover:text-white transition-colors">
-              Privacy
-            </a>
-            <a href="/terms" className="hover:text-white transition-colors">
-              Terms
-            </a>
+            <Link href={withLocalePath(locale, "/privacy")} className="hover:text-white transition-colors">
+              {copy.privacy}
+            </Link>
+            <Link href={withLocalePath(locale, "/terms")} className="hover:text-white transition-colors">
+              {copy.terms}
+            </Link>
           </div>
         </div>
         <div className="text-center mt-24 text-xs text-white/70">
-          © {currentYear} Movrr. All rights reserved.
+          © {currentYear} {copy.copyrightSuffix}
         </div>
       </div>
     </footer>
   );
 }
+

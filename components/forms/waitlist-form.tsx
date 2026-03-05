@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,17 +16,24 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { submitWaitlistForm, type WaitlistFormData } from "@/lib/actions";
+import type { Dictionary } from "@/locales/en";
+import type { Locale } from "@/lib/i18n/config";
 
-const waitlistSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  city: z.string().min(2, "City must be at least 2 characters"),
-  bikeOwnership: z.enum(["yes", "no", "planning"], {
-    required_error: "Please select an option",
-  }),
-});
+interface WaitlistFormProps {
+  copy: Dictionary["waitlistForm"];
+  locale: Locale;
+}
 
-export function WaitlistForm() {
+export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
+  const waitlistSchema = z.object({
+    name: z.string().min(2, copy.validation.nameMin),
+    email: z.string().email(copy.validation.emailInvalid),
+    city: z.string().min(2, copy.validation.cityMin),
+    bikeOwnership: z.enum(["yes", "no", "planning"], {
+      required_error: copy.validation.bikeRequired,
+    }),
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -49,20 +56,18 @@ export function WaitlistForm() {
     setSubmitMessage(null);
 
     try {
-      const result = await submitWaitlistForm(data);
+      const result = await submitWaitlistForm({ ...data, locale });
 
       if (result.success) {
         track("Waitlist Form Submitted");
         setSubmitSuccess(true);
-        setSubmitMessage(result.message || "Successfully joined the waitlist!");
+        setSubmitMessage(result.message || copy.messages.success);
         reset();
       } else {
-        setSubmitMessage(
-          result.message || "Something went wrong. Please try again."
-        );
+        setSubmitMessage(result.message || copy.messages.genericError);
       }
-    } catch (error) {
-      setSubmitMessage("Something went wrong. Please try again.");
+    } catch (_error) {
+      setSubmitMessage(copy.messages.genericError);
     } finally {
       setIsSubmitting(false);
     }
@@ -71,15 +76,12 @@ export function WaitlistForm() {
   if (submitSuccess) {
     return (
       <div className="text-center py-12">
-        <div className="text-6xl mb-6">🚴‍♂️</div>
+        <div className="text-6xl mb-6">{"\uD83D\uDEB4"}</div>
         <div className="mb-12">
           <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-            Welcome to the Movement!
+            {copy.success.title}
           </h3>
-          <p className="text-lg text-muted-foreground mb-6">
-            You're now on the waitlist. We'll notify you when Movrr launches in
-            your city.
-          </p>
+          <p className="text-lg text-muted-foreground mb-6">{copy.success.description}</p>
         </div>
         <Button
           onClick={() => {
@@ -90,7 +92,7 @@ export function WaitlistForm() {
           variant="outline"
           className="h-16 text-xl font-bold rounded-full border-2"
         >
-          Join Another Rider
+          {copy.actions.reset}
         </Button>
       </div>
     );
@@ -104,19 +106,17 @@ export function WaitlistForm() {
             htmlFor="name"
             className="text-sm font-bold text-secondary uppercase tracking-wide"
           >
-            Full Name
+            {copy.labels.name}
           </Label>
           <Input
             id="name"
             {...register("name")}
-            placeholder="Enter your name"
+            placeholder={copy.placeholders.name}
             className="h-14 border-2 border-muted rounded-3xl"
             disabled={isSubmitting}
           />
           {errors.name && (
-            <p className="text-sm text-red-600 font-medium">
-              {errors.name.message}
-            </p>
+            <p className="text-sm text-red-600 font-medium">{errors.name.message}</p>
           )}
         </div>
         <div className="space-y-3">
@@ -124,20 +124,18 @@ export function WaitlistForm() {
             htmlFor="email"
             className="text-sm font-bold text-secondary uppercase tracking-wide"
           >
-            Email
+            {copy.labels.email}
           </Label>
           <Input
             id="email"
             type="email"
             {...register("email")}
-            placeholder="Enter your email"
+            placeholder={copy.placeholders.email}
             className="h-14 border-2 border-muted rounded-3xl"
             disabled={isSubmitting}
           />
           {errors.email && (
-            <p className="text-sm text-red-600 font-medium">
-              {errors.email.message}
-            </p>
+            <p className="text-sm text-red-600 font-medium">{errors.email.message}</p>
           )}
         </div>
       </div>
@@ -147,19 +145,17 @@ export function WaitlistForm() {
             htmlFor="city"
             className="text-sm font-bold text-secondary uppercase tracking-wide"
           >
-            City
+            {copy.labels.city}
           </Label>
           <Input
             id="city"
             {...register("city")}
-            placeholder="Your city"
+            placeholder={copy.placeholders.city}
             className="h-14 border-2 border-muted rounded-3xl"
             disabled={isSubmitting}
           />
           {errors.city && (
-            <p className="text-sm text-red-600 font-medium">
-              {errors.city.message}
-            </p>
+            <p className="text-sm text-red-600 font-medium">{errors.city.message}</p>
           )}
         </div>
         <div className="space-y-3">
@@ -167,7 +163,7 @@ export function WaitlistForm() {
             htmlFor="bike"
             className="text-sm font-bold text-secondary uppercase tracking-wide"
           >
-            Own a Bike?
+            {copy.labels.bikeOwnership}
           </Label>
           <Select
             value={bikeOwnership}
@@ -177,12 +173,12 @@ export function WaitlistForm() {
             disabled={isSubmitting}
           >
             <SelectTrigger className="w-full min-h-14 border-2 border-muted rounded-3xl">
-              <SelectValue placeholder="Select option" />
+              <SelectValue placeholder={copy.placeholders.bikeOwnership} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="yes">Yes, I own a bike</SelectItem>
-              <SelectItem value="no">No, but interested</SelectItem>
-              <SelectItem value="planning">Planning to get one</SelectItem>
+              <SelectItem value="yes">{copy.bikeOptions.yes}</SelectItem>
+              <SelectItem value="no">{copy.bikeOptions.no}</SelectItem>
+              <SelectItem value="planning">{copy.bikeOptions.planning}</SelectItem>
             </SelectContent>
           </Select>
           {errors.bikeOwnership && (
@@ -211,18 +207,17 @@ export function WaitlistForm() {
         disabled={isSubmitting}
         className="w-full bg-secondary hover:bg-secondary/90 text-white h-16 text-xl font-bold rounded-3xl uppercase tracking-wider disabled:opacity-50"
       >
-        {isSubmitting ? "Joining..." : "Join the Waitlist"}
+        {isSubmitting ? copy.actions.submitting : copy.actions.submit}
       </Button>
 
       <div className="text-center pt-4">
         <p className="text-gray-600 font-medium">
-          By joining, you agree to receive updates about Movrr's launch.
+          {copy.consent.line1}
           <br />
-          <span className="font-bold">
-            No spam. Just the good stuff. Unsubscribe anytime.
-          </span>
+          <span className="font-bold">{copy.consent.line2}</span>
         </p>
       </div>
     </form>
   );
 }
+

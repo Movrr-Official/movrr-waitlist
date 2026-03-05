@@ -4,12 +4,12 @@ import { getDictionary } from "@/lib/i18n/dictionary";
 import { buildPageMetadata } from "@/lib/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const dictionary = await getDictionary("en");
-  return buildPageMetadata("en", dictionary, "privacy", "/privacy");
+  const dictionary = await getDictionary("nl");
+  return buildPageMetadata("nl", dictionary, "privacy", "/privacy");
 }
 
-export default async function PrivacyPolicyPage() {
-  const dictionary = await getDictionary("en");
-  return <PrivacyPage locale="en" dictionary={dictionary} />;
+export default async function PrivacyPolicyPageNl() {
+  const dictionary = await getDictionary("nl");
+  return <PrivacyPage locale="nl" dictionary={dictionary} />;
 }
 
