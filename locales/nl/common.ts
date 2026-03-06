@@ -38,137 +38,179 @@ export const nl: Dictionary = {
     dutchName: "Nederlands",
   },
   hero: {
+    eyebrow: "EARLY ACCESS VOOR URBAN RIDERS",
+    status: ["Lanceert binnenkort", "Nederland eerst"],
+    audienceLabel: "Gebouwd voor riders",
+    audience: ["Bezorgers", "Studenten", "Stadsfietsers", "Gig workers"],
+    titleLines: ["WORD BETAALD", "OM OP", "JE FIETS TE RIJDEN"],
+    highlightedLine: "Maak van je dagelijkse ritten extra inkomen.",
+    description:
+      "Verdien beloningen door merkcampagnes te tonen terwijl je door je stad fietst.",
+    primaryCta: "Schrijf je in",
+    secondaryCta: "Bekijk hoe het werkt",
+    visualCardLabel: "Hoe MOVRR werkt",
+    visualCardTitle: "Rijd. Toon ads. Verdien beloningen.",
+    visualCardDescription:
+      "Bevestig de MOVRR-kit, rijd je normale routes en ontvang beloningen voor geverifieerde ritten.",
     backgroundAlt: "Stadsgezicht van Amsterdam met grachten en fietsen",
     logoAlt: "Movrr icoon",
-    titleLines: ["SLUIT JE AAN", "BIJ DE BEWEGING", "TRANSFORMEER", "JE RIT"],
-    description:
-      "Of je nu student bent, bezorger of gewoon graag door de stad fietst: met Movrr verdien je aan elke rit. Geen diensten, geen bezorgingen, gewoon extra geld op jouw voorwaarden.",
-    cta: "Schrijf je nu in",
   },
   valueProposition: {
-    titleLines: ["RIJD.", "VERDIEN.", "HOOR ERBIJ."],
-    imageAlt: "Illustratie van de Movrr-ridermascotte op een fiets",
-    description:
-      "Maak van elke rit een extra inkomstenbron. Of je nu naar college fietst, maaltijden bezorgt of gewoon door de stad rijdt: met Movrr laat je je fiets voor je werken.",
-    bullets: [
-      "Verdien aan geverifieerde ritten, eerlijk en transparant",
-      "Rijd wanneer het jou uitkomt, zonder roosters of bazen",
-      "Maandelijkse uitbetalingen, zonder verborgen kosten",
-    ],
-  },
-  benefits: {
-    titleLines: ["HAAL MEER UIT", "JE RITTEN"],
-    subtitle:
-      "Elke rit is een kans. Elke straat is jouw podium. Elke kilometer brengt je dichter bij meer financiele vrijheid.",
+    heading: {
+      eyebrow: "WAAROM MOVRR",
+      title: "Een eenvoudigere manier om te verdienen met de ritten die je al maakt.",
+      subtitle:
+        "Gebouwd voor fietsers die zich elke dag door de stad verplaatsen.",
+    },
     items: [
       {
-        title: "Flexibel",
-        description: "Rijd wanneer je wilt. Waar je wilt. Hoe je wilt.",
+        title: "Rijd",
+        description:
+          "Maak van je dagelijkse routes een verdienkans zonder je routine te veranderen.",
       },
       {
-        title: "Betrouwbaar",
+        title: "Verdien",
         description:
-          "Duidelijke maandelijkse beloningen. Bonussen voor extra inzet. Geen verrassingen.",
+          "Toon merkcampagnes terwijl je fietst en verdien beloningen op basis van geverifieerde ritten.",
       },
       {
-        title: "Motiverend",
+        title: "Hoor erbij",
         description:
-          "Word onderdeel van een community van riders die steden zichtbaarder en levendiger maakt.",
+          "Word onderdeel van een nieuwe beweging die stedelijke advertising opnieuw vormgeeft.",
       },
     ],
   },
   howItWorks: {
-    titlePrefix: "HOE HET",
-    titleAccent: "WERKT",
-    subtitle:
-      "In vier simpele stappen naar je eerste verdiensten. Schrijf je vandaag nog in voor de pre-launch wachtlijst.",
+    heading: {
+      eyebrow: "HOE HET WERKT",
+      title: "Vier simpele stappen van inschrijving tot je eerste beloning.",
+      subtitle: "MOVRR sluit aan op de manier waarop je nu al rijdt.",
+    },
     steps: [
       {
         title: "Schrijf je in",
         description:
-          "Zet jezelf op de wachtlijst en hoor als eerste van ons.",
+          "Meld je aan voor early access en laat weten in welke stad je rijdt.",
       },
       {
-        title: "Ontvang je gear",
+        title: "Ontvang je kit",
         description:
-          "Wij regelen de uitrusting, jij hoeft alleen nog op te stappen.",
+          "Bevestig het MOVRR-displaypaneel of de backpack-kit aan je fietssetup.",
       },
       {
-        title: "Ga de weg op",
-        description: "Rijd door de stad en maak zichtbaar verschil.",
+        title: "Rijd door de stad",
+        description:
+          "Rijd zoals je normaal doet terwijl je fiets campagnes zichtbaar maakt in de stad.",
       },
       {
         title: "Ontvang je beloning",
         description:
-          "Je inkomsten worden helder bijgehouden en maandelijks uitbetaald.",
+          "Verdien maandelijkse beloningen op basis van geverifieerde ritten en duidelijke tracking.",
       },
     ],
   },
-  faq: {
-    titleLines: ["VRAGEN?", "WIJ HEBBEN DE ANTWOORDEN."],
-    subtitle: "Alles wat je wilt weten voordat je je aanmeldt",
+  riderBenefits: {
+    heading: {
+      eyebrow: "WAAROM RIDERS MOVRR WILLEN",
+      title: "Extra inkomen zonder bezorgingen, roosters of bazen.",
+      subtitle:
+        "Een flexibel model dat aansluit op hoe urban cyclists echt rijden.",
+    },
     items: [
       {
-        question: "Hoe werkt starten met Movrr?",
-        answer:
-          "Schrijf je vandaag in voor de pre-launch wachtlijst. Zodra Movrr live gaat in jouw stad, krijg je van ons een bericht met alles wat je nodig hebt om te starten.",
+        title: "Verdien terwijl je rijdt",
+        description:
+          "Maak van dagelijkse ritten een passieve inkomstenstroom zonder extra diensten.",
       },
       {
-        question: "Hoeveel kan ik verdienen?",
+        title: "Geen bezorgingen nodig",
+        description:
+          "Je hoeft geen bestellingen af te leveren of eten te vervoeren om te verdienen.",
+      },
+      {
+        title: "Flexibel",
+        description:
+          "Rijd wanneer jij wilt en laat MOVRR aansluiten op jouw planning.",
+      },
+      {
+        title: "Transparante beloningen",
+        description:
+          "Duidelijke inkomsten, eerlijke uitbetalingen en inzicht in hoe beloningen worden berekend.",
+      },
+    ],
+  },
+  productConcept: {
+    heading: {
+      eyebrow: "HET PRODUCTCONCEPT",
+      title: "Een lichte rider-kit voor dagelijks stedelijk fietsen.",
+      subtitle:
+        "MOVRR maakt van je fiets een rijdend campagnemiddel zonder hoe je beweegt te veranderen.",
+    },
+    body: "De MOVRR-setup combineert een branded rider-kit met ritverificatie zodat merken zichtbaarheid krijgen en riders beloningen ontvangen. Ontworpen voor commuters, studenten en gig workers die toch al veel op de fiets zitten.",
+    highlights: [
+      "Eenvoudige attach-and-ride setup",
+      "Campagnezichtbaarheid terwijl je je normale route rijdt",
+      "Beloningen gekoppeld aan geverifieerde ritten",
+    ],
+    imageAlt: "Movrr rider-setup met branded fietsadvertentieconcept",
+  },
+  cityLaunch: {
+    heading: {
+      eyebrow: "CITY LAUNCH",
+      title: "Lanceert binnenkort in grote fietssteden.",
+      subtitle:
+        "Hoor bij de eerste riders in jouw stad die met MOVRR starten.",
+    },
+    cities: ["Rotterdam", "Amsterdam", "Utrecht"],
+    footnote:
+      "Meer steden volgen zodra de eerste launch markets live gaan en de vraag groeit.",
+  },
+  faq: {
+    heading: {
+      eyebrow: "FAQ",
+      title: "Alles wat riders voor de launch willen weten.",
+      subtitle:
+        "Korte antwoorden op de belangrijkste vragen voordat early access opent.",
+    },
+    items: [
+      {
+        question: "Hoe start ik met rijden via MOVRR?",
         answer:
-          "Je verdient aan geverifieerde ritten, met extra bonussen tijdens piekmomenten en op drukke routes. De exacte tarieven kunnen bij de start verschillen, maar zijn altijd duidelijk en transparant.",
+          "Schrijf je nu in voor de wachtlijst. Zodra MOVRR opent in jouw stad, ontvang je van ons de volgende stappen voor onboarding en setup.",
+      },
+      {
+        question: "Hoeveel kunnen riders verdienen?",
+        answer:
+          "Beloningen hangen af van campagne-activiteit en geverifieerde ritten. Voor launch delen we duidelijk hoe de payouts werken.",
       },
       {
         question: "Heb ik mijn eigen fiets nodig?",
         answer:
-          "Ja, om te starten heb je een betrouwbare fiets nodig. Wij zorgen voor de advertentie-uitrusting en overige materialen. E-bikes zijn ook welkom en leveren vaak extra voordeel op door hun grotere actieradius.",
+          "Ja. Je hebt je eigen fiets nodig om met MOVRR te rijden. Wij zorgen voor de campaign display-kit.",
       },
       {
-        question: "In welke steden starten jullie?",
+        question: "Wat voor soort ads worden getoond?",
         answer:
-          "We starten in Rotterdam en breiden daarna uit naar andere grote steden in Nederland. Schrijf je in voor de wachtlijst om als eerste te horen wanneer Movrr in jouw regio van start gaat.",
+          "Alleen goedgekeurde merkcampagnes die passen binnen het MOVRR-netwerk. Riders weten welk type campagnes zichtbaar wordt.",
       },
       {
-        question: "Hoe flexibel zijn de uren?",
+        question: "Kan ik rijden wanneer ik wil?",
         answer:
-          "Volledig flexibel. Je rijdt wanneer het jou uitkomt en op de momenten die in jouw agenda passen, bijvoorbeeld voor college, tijdens je lunchpauze of in het weekend.",
+          "Ja. MOVRR is bedoeld om aan te sluiten op je bestaande routine, of je nu dagelijks rijdt, in het weekend, of tussen andere jobs door.",
       },
       {
-        question: "Wat voor soort advertenties toon ik?",
+        question: "Wanneer lanceert MOVRR?",
         answer:
-          "Alleen sterke, vooraf goedgekeurde merken die passen bij onze community. Geen schreeuwerige campagnes of dubieuze sponsors. Je weet altijd welk merk je vertegenwoordigt.",
-      },
-      {
-        question: "Moet ik een minimum aantal uren rijden?",
-        answer:
-          "Nee. Er zijn geen minimumuren of quota. Of je nu af en toe wilt bijverdienen of structureel extra inkomsten zoekt, je bepaalt zelf hoeveel je rijdt.",
-      },
-      {
-        question: "Hoe krijg ik betaald?",
-        answer:
-          "Zodra Movrr live is, worden je beloningen inzichtelijk in de app. Je ziet per geverifieerde rit precies wat je hebt verdiend en hoe dat bedrag is opgebouwd.",
-      },
-      {
-        question: "Kan ik Movrr combineren met bezorgapps?",
-        answer:
-          "Ja. Veel riders willen Movrr combineren met apps zoals Thuisbezorgd, Uber Eats of Flink. Je houdt 100% van je bezorginkomsten en verdient daarnaast extra via Movrr-campagnes.",
-      },
-      {
-        question: "Heb ik ervaring nodig?",
-        answer:
-          "Nee, ervaring is niet nodig. Als je veilig en zelfverzekerd fietst, kun je aan de slag. Wij regelen de rest zodra Movrr van start gaat.",
-      },
-      {
-        question: "Wanneer is de Movrr-app beschikbaar?",
-        answer:
-          "De Movrr-app is op dit moment in ontwikkeling. Als je je inschrijft voor de pre-launch wachtlijst, hoor je meteen wanneer de app in jouw stad beschikbaar is.",
+          "MOVRR zit nog in de pre-launch fase. Meld je aan voor early access en we houden je op de hoogte zodra de timing voor jouw stad vastligt.",
       },
     ],
   },
   waitlistSection: {
-    titleLines: ["KLAAR OM TE", "BEGINNEN MET VERDIENEN?"],
+    eyebrow: "EARLY ACCESS",
+    title: "KLAAR OM TE BEGINNEN MET VERDIENEN?",
     subtitle:
-      "Doe mee aan de pre-launch en hoor bij de eerste riders in jouw stad.",
+      "Join de early access waitlist en hoor bij de eerste riders in jouw stad.",
+    reassurance: "Geen spam. Alleen early access.",
   },
   waitlistForm: {
     labels: {
@@ -216,7 +258,7 @@ export const nl: Dictionary = {
   },
   footer: {
     logoAlt: "Movrr icoon",
-    tagline: "Meer uit elke rit.",
+    tagline: "Transformeer je rit.",
     privacy: "Privacy",
     terms: "Voorwaarden",
     copyrightSuffix: "Movrr. Alle rechten voorbehouden.",

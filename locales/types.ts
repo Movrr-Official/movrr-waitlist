@@ -15,6 +15,12 @@ export interface LegalSection {
   contact?: ContactInfo;
 }
 
+export interface SectionHeading {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+}
+
 export interface Dictionary {
   branding: {
     wordmark: string;
@@ -37,37 +43,53 @@ export interface Dictionary {
     dutchName: string;
   };
   hero: {
+    eyebrow: string;
+    status: string[];
+    audienceLabel: string;
+    audience: string[];
+    titleLines: string[];
+    highlightedLine?: string;
+    description: string;
+    primaryCta: string;
+    secondaryCta: string;
+    visualCardLabel: string;
+    visualCardTitle: string;
+    visualCardDescription: string;
     backgroundAlt: string;
     logoAlt: string;
-    titleLines: string[];
-    description: string;
-    cta: string;
   };
   valueProposition: {
-    titleLines: string[];
-    imageAlt: string;
-    description: string;
-    bullets: string[];
-  };
-  benefits: {
-    titleLines: string[];
-    subtitle: string;
+    heading: SectionHeading;
     items: Array<{ title: string; description: string }>;
   };
   howItWorks: {
-    titlePrefix: string;
-    titleAccent: string;
-    subtitle: string;
+    heading: SectionHeading;
     steps: Array<{ title: string; description: string }>;
   };
+  riderBenefits: {
+    heading: SectionHeading;
+    items: Array<{ title: string; description: string }>;
+  };
+  productConcept: {
+    heading: SectionHeading;
+    body: string;
+    highlights: string[];
+    imageAlt: string;
+  };
+  cityLaunch: {
+    heading: SectionHeading;
+    cities: string[];
+    footnote: string;
+  };
   faq: {
-    titleLines: string[];
-    subtitle: string;
+    heading: SectionHeading;
     items: Array<{ question: string; answer: string }>;
   };
   waitlistSection: {
-    titleLines: string[];
+    eyebrow: string;
+    title: string;
     subtitle: string;
+    reassurance: string;
   };
   waitlistForm: {
     labels: {

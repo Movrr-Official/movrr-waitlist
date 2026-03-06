@@ -1,47 +1,55 @@
-﻿import { Zap, Target, Trophy } from "lucide-react";
+import { Coins, Eye, ShieldCheck, TimerReset } from "lucide-react";
 import type { Dictionary } from "@/locales/en";
 
 interface BenefitsSectionProps {
-  copy: Dictionary["benefits"];
+  copy: Dictionary["riderBenefits"];
 }
 
 export function BenefitsSection({ copy }: BenefitsSectionProps) {
-  const icons = [Zap, Target, Trophy];
+  const icons = [Coins, Eye, TimerReset, ShieldCheck];
 
   return (
-    <section className="py-32 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-secondary mb-8 leading-tight">
-            {copy.titleLines[0]}
-            <br />
-            <span className="text-primary">{copy.titleLines[1]}</span>
+    <section className="bg-white py-24 md:py-28">
+      <div className="container">
+        <div className="max-w-3xl">
+          {copy.heading.eyebrow ? (
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
+              {copy.heading.eyebrow}
+            </p>
+          ) : null}
+          <h2 className="mt-4 text-4xl font-black leading-tight text-secondary md:text-6xl">
+            {copy.heading.title}
           </h2>
-          <p className="text-xl text-muted-foreground mb-16 max-w-2xl mx-auto">
-            {copy.subtitle}
-          </p>
+          {copy.heading.subtitle ? (
+            <p className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl">
+              {copy.heading.subtitle}
+            </p>
+          ) : null}
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            {copy.items.map((item, index) => {
-              const Icon = icons[index];
-              const useDark = index === 1;
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {copy.items.map((item, index) => {
+            const Icon = icons[index];
 
-              return (
-                <div className="text-center" key={item.title}>
-                  <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 ${useDark ? "bg-secondary" : "bg-primary"}`}>
-                    <Icon className="h-10 w-10 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-secondary mb-4 uppercase tracking-wide">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+            return (
+              <article
+                className="rounded-[2rem] border border-border bg-muted/30 p-8"
+                key={item.title}
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
+                  <Icon className="h-6 w-6" />
                 </div>
-              );
-            })}
-          </div>
+                <h3 className="mt-8 text-2xl font-black text-secondary">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-muted-foreground">
+                  {item.description}
+                </p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
-

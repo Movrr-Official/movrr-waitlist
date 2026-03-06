@@ -1,11 +1,14 @@
+import { BenefitsSection } from "@/components/benefits-section";
+import { CityLaunchSection } from "@/components/city-launch-section";
+import { FAQSection } from "@/components/faq-section";
+import { Footer } from "@/components/footer";
 import { HeroSection } from "@/components/hero-section";
 import { HowItWorksSection } from "@/components/how-it-works-section";
-import { WaitlistSection } from "@/components/waitlist-section";
-import { Footer } from "@/components/footer";
+import { ProductConceptSection } from "@/components/product-concept-section";
 import { ValueProposition } from "@/components/value-proposition";
-import { FAQSection } from "@/components/faq-section";
-import type { Dictionary } from "@/locales/en";
+import { WaitlistSection } from "@/components/waitlist-section";
 import type { Locale } from "@/lib/i18n/config";
+import type { Dictionary } from "@/locales/en";
 
 interface LandingPageProps {
   locale: Locale;
@@ -14,11 +17,13 @@ interface LandingPageProps {
 
 export function LandingPage({ locale, dictionary }: LandingPageProps) {
   return (
-    <div className="min-h-screen bg-background overflow-hidden">
+    <div className="min-h-screen overflow-hidden bg-background">
       <HeroSection copy={dictionary.hero} brandName={dictionary.branding.wordmark} />
       <ValueProposition copy={dictionary.valueProposition} />
-      {/* <BenefitsSection copy={dictionary.benefits} /> */}
       <HowItWorksSection copy={dictionary.howItWorks} />
+      <BenefitsSection copy={dictionary.riderBenefits} />
+      <ProductConceptSection copy={dictionary.productConcept} />
+      <CityLaunchSection copy={dictionary.cityLaunch} />
       <FAQSection copy={dictionary.faq} />
       <WaitlistSection
         locale={locale}

@@ -38,120 +38,179 @@ export const en: Dictionary = {
     dutchName: "Dutch",
   },
   hero: {
+    eyebrow: "EARLY ACCESS FOR URBAN RIDERS",
+    status: ["Launching soon", "Netherlands-first"],
+    audienceLabel: "Built for riders",
+    audience: [
+      "Delivery riders",
+      "Students",
+      "Urban cyclists",
+      "Gig workers",
+    ],
+    titleLines: ["GET PAID", "TO RIDE", "YOUR BIKE"],
+    highlightedLine: "Turn everyday rides into extra income.",
+    description:
+      "Earn rewards by displaying brand campaigns while riding through your city.",
+    primaryCta: "Join the Waitlist",
+    secondaryCta: "See how it works",
+    visualCardLabel: "How MOVRR works",
+    visualCardTitle: "Ride. Display ads. Earn rewards.",
+    visualCardDescription:
+      "Attach the MOVRR kit, ride your usual routes, and get rewarded for verified rides.",
     backgroundAlt: "Amsterdam cityscape with canals and bikes",
     logoAlt: "Movrr Icon",
-    titleLines: ["JOIN THE", "MOVEMENT", "TRANSFORM", "YOUR RIDE"],
-    description:
-      "Whether you're a student, delivery rider, or just cruising through the city, Movrr pays you for every ride. No shifts, no deliveries, just extra cash on your own terms.",
-    cta: "Sign Up Now",
   },
   valueProposition: {
-    titleLines: ["RIDE.", "EARN.", "BELONG."],
-    imageAlt: "Illustration of the Movrr rider mascot on a bike",
-    description:
-      "Turn every ride into extra cash. Whether you're commuting to class, delivering food, or just biking through the city. Movrr makes your wheels work for you.",
-    bullets: [
-      "Earn rewards from verified rides, fair and transparent",
-      "Ride when you want, no schedules and no bosses",
-      "Monthly rewards, always transparent with no hidden fees",
-    ],
-  },
-  benefits: {
-    titleLines: ["UNLEASH YOUR", "POTENTIAL"],
-    subtitle:
-      "Every ride is an opportunity. Every street is your stage. Every mile brings you closer to financial freedom.",
+    heading: {
+      eyebrow: "WHY MOVRR",
+      title: "A simpler way to earn from the rides you already make.",
+      subtitle: "Built for cyclists who move through the city every day.",
+    },
     items: [
       {
-        title: "Flexible",
-        description: "Ride when you want. Where you want. How you want.",
-      },
-      {
-        title: "Reliable",
+        title: "Ride",
         description:
-          "Guaranteed monthly rewards. Performance bonuses. No surprises.",
+          "Turn your everyday routes into earning opportunities without changing your routine.",
       },
       {
-        title: "Rewarding",
-        description: "Join a community of riders making cities more vibrant.",
+        title: "Earn",
+        description:
+          "Display brand campaigns while cycling and earn rewards from verified rides.",
+      },
+      {
+        title: "Belong",
+        description:
+          "Join a new movement of riders reshaping urban advertising city by city.",
       },
     ],
   },
   howItWorks: {
-    titlePrefix: "HOW IT",
-    titleAccent: "WORKS",
-    subtitle:
-      "Four simple steps to start earning. Join our pre-launch waitlist today.",
+    heading: {
+      eyebrow: "HOW IT WORKS",
+      title: "Four simple steps from sign-up to first payout.",
+      subtitle: "MOVRR is designed to fit into the way you already ride.",
+    },
     steps: [
-      { title: "Sign Up", description: "Join the waitlist. Be first." },
-      { title: "Get Gear", description: "We equip you. You ride." },
-      { title: "Start Riding", description: "Hit the streets. Make moves." },
-      { title: "Get Paid", description: "Monthly rewards. Guaranteed." },
-    ],
-  },
-  faq: {
-    titleLines: ["QUESTIONS?", "WE'VE GOT ANSWERS."],
-    subtitle: "Everything you need to know about joining the movement",
-    items: [
       {
-        question: "How do I get started with Movrr?",
-        answer:
-          "Join our pre-launch waitlist today. Once Movrr officially launches in your city, we'll notify you with instructions on how to join and start riding.",
+        title: "Sign Up",
+        description:
+          "Join the early access waitlist and tell us which city you ride in.",
       },
       {
-        question: "How much can I earn?",
+        title: "Get Your Kit",
+        description:
+          "Attach the MOVRR display panel or backpack kit to your bike setup.",
+      },
+      {
+        title: "Ride the City",
+        description:
+          "Ride as usual while your bike displays campaigns around your city.",
+      },
+      {
+        title: "Get Paid",
+        description:
+          "Earn monthly rewards based on verified rides and transparent tracking.",
+      },
+    ],
+  },
+  riderBenefits: {
+    heading: {
+      eyebrow: "WHY RIDERS LOVE MOVRR",
+      title: "Extra income without deliveries, schedules, or bosses.",
+      subtitle: "A flexible model built around real urban cycling habits.",
+    },
+    items: [
+      {
+        title: "Earn While Riding",
+        description:
+          "Turn daily rides into passive income with no extra shifts required.",
+      },
+      {
+        title: "No Deliveries Required",
+        description:
+          "You do not need to complete orders or carry food to start earning.",
+      },
+      {
+        title: "Flexible",
+        description:
+          "Ride when you want, where you want, and fit MOVRR around your own schedule.",
+      },
+      {
+        title: "Transparent Rewards",
+        description:
+          "Clear earnings, fair payouts, and visibility into how rewards are calculated.",
+      },
+    ],
+  },
+  productConcept: {
+    heading: {
+      eyebrow: "THE PRODUCT CONCEPT",
+      title: "A lightweight rider kit built for everyday urban cycling.",
+      subtitle:
+        "MOVRR turns your bike into a moving campaign surface without changing how you move through the city.",
+    },
+    body: "The MOVRR setup pairs a branded rider kit with ride verification so brands get visibility and riders get rewarded. It is designed for commuters, students, and gig workers who already spend time on two wheels.",
+    highlights: [
+      "Simple attach-and-ride setup",
+      "Campaign visibility while you follow your normal route",
+      "Rewards linked to verified rides, not fake promises",
+    ],
+    imageAlt: "Movrr rider setup showing branded bike advertising concept",
+  },
+  cityLaunch: {
+    heading: {
+      eyebrow: "CITY LAUNCH",
+      title: "Launching soon in major cycling cities.",
+      subtitle: "Be among the first riders in your city to join MOVRR.",
+    },
+    cities: ["Rotterdam", "Amsterdam", "Utrecht"],
+    footnote:
+      "More cities will follow as the first launch markets open and rider demand grows.",
+  },
+  faq: {
+    heading: {
+      eyebrow: "FAQ",
+      title: "Everything riders need to know before launch.",
+      subtitle: "Short answers to the questions we expect most before early access opens.",
+    },
+    items: [
+      {
+        question: "How do I start riding with MOVRR?",
         answer:
-          "Riders earn rewards from verified rides, with bonuses during peak times and high-demand routes. Rates may vary at launch, but rewards are always fair and transparent.",
+          "Join the waitlist now. When MOVRR opens in your city, we will contact you with next steps for onboarding and setup.",
+      },
+      {
+        question: "How much can riders earn?",
+        answer:
+          "Rewards will depend on campaign activity and verified rides. We will keep payouts transparent and share details before launch.",
       },
       {
         question: "Do I need my own bike?",
         answer:
-          "Yes, you'll need a reliable bike to get started. We provide all advertising equipment and gear. Electric bikes are welcome and often earn higher rates thanks to their extended range.",
+          "Yes. You will need your own bike to ride with MOVRR, and we will provide the campaign display kit.",
       },
       {
-        question: "What cities are you launching in?",
+        question: "What type of ads will be displayed?",
         answer:
-          "We're starting in Rotterdam and will expand to other major cities across the Netherlands soon. Join the waitlist to be the first to know when Movrr launches in your area.",
+          "Only approved brand campaigns that fit the MOVRR network. Riders will know the kind of campaigns they are displaying.",
       },
       {
-        question: "How flexible are the hours?",
+        question: "Can I ride whenever I want?",
         answer:
-          "Completely flexible. Ride when you want, where you want. Many future riders plan to fit Movrr around their schedule, before class, during lunch, or on weekends. You'll always be in control.",
+          "Yes. MOVRR is designed to fit your existing routine, whether you ride daily, on weekends, or between other jobs.",
       },
       {
-        question: "What kind of advertising will I display?",
+        question: "When does MOVRR launch?",
         answer:
-          "Only premium, pre-approved brands that align with our community values. No spammy ads or shady sponsors, you'll always know what you're promoting and be proud to represent it.",
-      },
-      {
-        question: "Is there a minimum commitment?",
-        answer:
-          "Zero. No minimum hours or quotas. Whether you want a side hustle or steady income stream, you'll ride as much or as little as you want.",
-      },
-      {
-        question: "How do I get paid?",
-        answer:
-          "Once Movrr launches, rewards can be redeemed directly in the app. You'll see clear earnings breakdowns for every verified ride, so you always know how your rewards are calculated.",
-      },
-      {
-        question: "Can I use Movrr while working for delivery apps?",
-        answer:
-          "Yes. Many riders plan to use Movrr alongside apps like Thuisbezorgd, UberEats, or Flink. You'll keep 100% of your delivery earnings while earning extra from Movrr campaigns at the same time.",
-      },
-      {
-        question: "Do I need prior experience?",
-        answer:
-          "No experience needed. If you can ride a bike confidently and safely, you're ready. We'll provide everything you need to get started once Movrr launches.",
-      },
-      {
-        question: "When will the Movrr app be available?",
-        answer:
-          "The Movrr mobile app is currently in development. Signing up for the pre-launch waitlist ensures you'll be notified as soon as the app launches in your city, so you can start riding right away.",
+          "MOVRR is currently pre-launch. Join early access now and we will keep you updated as launch timing is confirmed for your city.",
       },
     ],
   },
   waitlistSection: {
-    titleLines: ["READY TO", "START EARNING?"],
-    subtitle: "Join the pre-launch. Be among the first riders in your city.",
+    eyebrow: "JOIN EARLY ACCESS",
+    title: "READY TO START EARNING?",
+    subtitle: "Join the early access waitlist and be among the first riders in your city.",
+    reassurance: "No spam. Early access only.",
   },
   waitlistForm: {
     labels: {
@@ -198,7 +257,7 @@ export const en: Dictionary = {
   },
   footer: {
     logoAlt: "Movrr Icon",
-    tagline: "Transform your ride. Transform your life.",
+    tagline: "Transform your ride.",
     privacy: "Privacy",
     terms: "Terms",
     copyrightSuffix: "Movrr. All rights reserved.",

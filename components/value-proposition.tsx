@@ -1,5 +1,3 @@
-﻿import Image from "next/image";
-import bob from "../public/movrr-ride-bob.png";
 import type { Dictionary } from "@/locales/en";
 
 interface ValuePropositionProps {
@@ -8,48 +6,43 @@ interface ValuePropositionProps {
 
 export function ValueProposition({ copy }: ValuePropositionProps) {
   return (
-    <section className="py-32 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="text-5xl md:text-6xl font-black text-foreground mb-8 leading-tight">
-                {copy.titleLines[0]}
-                <br />
-                {copy.titleLines[1]}
-                <br />
-                <span className="text-primary">{copy.titleLines[2]}</span>
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                {copy.description}
+    <section className="bg-white py-24 md:py-28">
+      <div className="container">
+        <div className="max-w-3xl">
+          {copy.heading.eyebrow ? (
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
+              {copy.heading.eyebrow}
+            </p>
+          ) : null}
+          <h2 className="mt-4 text-4xl font-black leading-tight text-secondary md:text-6xl">
+            {copy.heading.title}
+          </h2>
+          {copy.heading.subtitle ? (
+            <p className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl">
+              {copy.heading.subtitle}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {copy.items.map((item, index) => (
+            <article
+              key={item.title}
+              className="rounded-[2rem] border border-border bg-white p-8 shadow-sm transition-transform duration-200 hover:-translate-y-1"
+            >
+              <div className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
+                0{index + 1}
+              </div>
+              <h3 className="mt-5 text-3xl font-black text-secondary md:text-4xl">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
+                {item.description}
               </p>
-              <div className="space-y-6">
-                {copy.bullets.map((bullet) => (
-                  <div className="flex items-center gap-4" key={bullet}>
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                    <span className="text-lg font-medium">{bullet}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[520px] lg:h-[520px] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full overflow-hidden flex items-center justify-center">
-                <Image
-                  src={bob}
-                  alt={copy.imageAlt}
-                  width={520}
-                  height={520}
-                  placeholder="blur"
-                  sizes="(min-width:1024px) 520px, (min-width:768px) 320px, 240px"
-                  priority
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-
