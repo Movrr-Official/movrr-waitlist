@@ -7,25 +7,25 @@ export const nl: Dictionary = {
   metadata: {
     siteName: "Movrr",
     keywords:
-      "fietsreclame, fietsbanen, gig economy, stedelijke mobiliteit, merkadvertising",
+      "fietsreclame, fietsjobs, gig economy, stedelijke mobiliteit, buitenreclame",
     pages: {
       home: {
-        title: "Movrr - Transformeer Je Rit, Transformeer Je Stad",
+        title: "Movrr - Geef je rit meer waarde",
         description:
-          "Sluit je aan bij de beweging. Verdien geld terwijl je fietst en verander straten in een canvas voor merken. Flexibele uren, betrouwbare beloning en echte impact.",
+          "Sluit je aan bij de beweging. Verdien geld terwijl je fietst en maak van de stad een podium voor merken. Flexibele uren, duidelijke beloningen en echte impact.",
       },
       privacy: {
         title: "Privacybeleid | Movrr",
         description:
-          "Lees welke gegevens Movrr verzamelt, hoe we die gebruiken en welke privacyrechten je hebt.",
+          "Lees welke gegevens Movrr verzamelt, hoe we daarmee omgaan en welke privacyrechten je hebt.",
       },
       terms: {
         title: "Algemene Voorwaarden | Movrr",
         description:
-          "Lees de voorwaarden voor deelname aan de Movrr-wachtlijst en het gebruik van de website.",
+          "Lees de voorwaarden voor deelname aan de Movrr-wachtlijst en het gebruik van deze website.",
       },
       unauthorized: {
-        title: "Toegang Geweigerd | Movrr",
+        title: "Toegang geweigerd | Movrr",
         description: "Je hebt geen toestemming om deze pagina te bekijken.",
       },
     },
@@ -38,28 +38,28 @@ export const nl: Dictionary = {
     dutchName: "Nederlands",
   },
   hero: {
-    backgroundAlt: "Amsterdamse stadsgezicht met grachten en fietsen",
+    backgroundAlt: "Stadsgezicht van Amsterdam met grachten en fietsen",
     logoAlt: "Movrr icoon",
     titleLines: ["SLUIT JE AAN", "BIJ DE BEWEGING", "TRANSFORMEER", "JE RIT"],
     description:
-      "Of je nu student bent, bezorger of gewoon door de stad fietst, Movrr betaalt je voor elke rit. Geen diensten, geen bezorgstress, gewoon extra geld op jouw voorwaarden.",
-    cta: "Meld Je Nu Aan",
+      "Of je nu student bent, bezorger of gewoon graag door de stad fietst: met Movrr verdien je aan elke rit. Geen diensten, geen bezorgingen, gewoon extra geld op jouw voorwaarden.",
+    cta: "Schrijf je nu in",
   },
   valueProposition: {
     titleLines: ["RIJD.", "VERDIEN.", "HOOR ERBIJ."],
-    imageAlt: "Illustratie van de Movrr-rijdermascotte op een fiets",
+    imageAlt: "Illustratie van de Movrr-ridermascotte op een fiets",
     description:
-      "Maak van elke rit extra inkomen. Of je nu naar college fietst, eten bezorgt of gewoon door de stad rijdt: met Movrr laat je je wielen voor je werken.",
+      "Maak van elke rit een extra inkomstenbron. Of je nu naar college fietst, maaltijden bezorgt of gewoon door de stad rijdt: met Movrr laat je je fiets voor je werken.",
     bullets: [
-      "Verdien beloningen op geverifieerde ritten, eerlijk en transparant",
-      "Rijd wanneer jij wilt, zonder roosters en zonder baas",
-      "Maandelijkse beloningen, altijd transparant zonder verborgen kosten",
+      "Verdien aan geverifieerde ritten, eerlijk en transparant",
+      "Rijd wanneer het jou uitkomt, zonder roosters of bazen",
+      "Maandelijkse uitbetalingen, zonder verborgen kosten",
     ],
   },
   benefits: {
-    titleLines: ["ONTGRENDEL JOUW", "POTENTIEEL"],
+    titleLines: ["HAAL MEER UIT", "JE RITTEN"],
     subtitle:
-      "Elke rit is een kans. Elke straat is jouw podium. Elke kilometer brengt je dichter bij financiële vrijheid.",
+      "Elke rit is een kans. Elke straat is jouw podium. Elke kilometer brengt je dichter bij meer financiele vrijheid.",
     items: [
       {
         title: "Flexibel",
@@ -68,12 +68,12 @@ export const nl: Dictionary = {
       {
         title: "Betrouwbaar",
         description:
-          "Gegarandeerde maandelijkse beloningen. Prestatiebonussen. Geen verrassingen.",
+          "Duidelijke maandelijkse beloningen. Bonussen voor extra inzet. Geen verrassingen.",
       },
       {
-        title: "Waardevol",
+        title: "Motiverend",
         description:
-          "Word deel van een community van rijders die steden levendiger maakt.",
+          "Word onderdeel van een community van riders die steden zichtbaarder en levendiger maakt.",
       },
     ],
   },
@@ -81,139 +81,142 @@ export const nl: Dictionary = {
     titlePrefix: "HOE HET",
     titleAccent: "WERKT",
     subtitle:
-      "Vier eenvoudige stappen om te beginnen met verdienen. Meld je vandaag nog aan voor de pre-launch wachtlijst.",
+      "In vier simpele stappen naar je eerste verdiensten. Schrijf je vandaag nog in voor de pre-launch wachtlijst.",
     steps: [
       {
-        title: "Meld Je Aan",
-        description: "Kom op de wachtlijst. Wees als eerste.",
+        title: "Schrijf je in",
+        description:
+          "Zet jezelf op de wachtlijst en hoor als eerste van ons.",
       },
       {
-        title: "Krijg Uitrusting",
-        description: "Wij regelen de gear. Jij rijdt.",
+        title: "Ontvang je gear",
+        description:
+          "Wij regelen de uitrusting, jij hoeft alleen nog op te stappen.",
       },
       {
-        title: "Begin Met Rijden",
-        description: "Ga de straat op. Maak impact.",
+        title: "Ga de weg op",
+        description: "Rijd door de stad en maak zichtbaar verschil.",
       },
       {
-        title: "Word Betaald",
-        description: "Maandelijkse beloningen. Gegarandeerd.",
+        title: "Ontvang je beloning",
+        description:
+          "Je inkomsten worden helder bijgehouden en maandelijks uitbetaald.",
       },
     ],
   },
   faq: {
-    titleLines: ["VRAGEN?", "WIJ HEBBEN ANTWOORDEN."],
-    subtitle: "Alles wat je moet weten om mee te doen aan de beweging",
+    titleLines: ["VRAGEN?", "WIJ HEBBEN DE ANTWOORDEN."],
+    subtitle: "Alles wat je wilt weten voordat je je aanmeldt",
     items: [
       {
-        question: "Hoe kan ik starten met Movrr?",
+        question: "Hoe werkt starten met Movrr?",
         answer:
-          "Meld je vandaag aan voor onze pre-launch wachtlijst. Zodra Movrr officieel in jouw stad live gaat, krijg je van ons een bericht met instructies om te starten.",
+          "Schrijf je vandaag in voor de pre-launch wachtlijst. Zodra Movrr live gaat in jouw stad, krijg je van ons een bericht met alles wat je nodig hebt om te starten.",
       },
       {
         question: "Hoeveel kan ik verdienen?",
         answer:
-          "Rijders verdienen beloningen op geverifieerde ritten, met bonussen tijdens piekmomenten en populaire routes. Tarieven kunnen bij lancering verschillen, maar blijven eerlijk en transparant.",
+          "Je verdient aan geverifieerde ritten, met extra bonussen tijdens piekmomenten en op drukke routes. De exacte tarieven kunnen bij de start verschillen, maar zijn altijd duidelijk en transparant.",
       },
       {
         question: "Heb ik mijn eigen fiets nodig?",
         answer:
-          "Ja, je hebt een betrouwbare fiets nodig om te starten. Wij leveren alle advertentie-uitrusting en materialen. E-bikes zijn welkom en verdienen vaak hogere tarieven door hun grotere bereik.",
+          "Ja, om te starten heb je een betrouwbare fiets nodig. Wij zorgen voor de advertentie-uitrusting en overige materialen. E-bikes zijn ook welkom en leveren vaak extra voordeel op door hun grotere actieradius.",
       },
       {
         question: "In welke steden starten jullie?",
         answer:
-          "We starten in Rotterdam en breiden daarna uit naar andere grote steden in Nederland. Meld je aan voor de wachtlijst om als eerste te horen wanneer Movrr in jouw regio start.",
+          "We starten in Rotterdam en breiden daarna uit naar andere grote steden in Nederland. Schrijf je in voor de wachtlijst om als eerste te horen wanneer Movrr in jouw regio van start gaat.",
       },
       {
         question: "Hoe flexibel zijn de uren?",
         answer:
-          "Volledig flexibel. Rijd wanneer je wilt, waar je wilt. Veel toekomstige rijders plannen Movrr rond hun eigen schema, voor college, tijdens de lunch of in het weekend.",
+          "Volledig flexibel. Je rijdt wanneer het jou uitkomt en op de momenten die in jouw agenda passen, bijvoorbeeld voor college, tijdens je lunchpauze of in het weekend.",
       },
       {
         question: "Wat voor soort advertenties toon ik?",
         answer:
-          "Alleen premium, vooraf goedgekeurde merken die passen bij onze communitywaarden. Geen spam of dubieuze sponsors; je weet altijd wat je promoot.",
+          "Alleen sterke, vooraf goedgekeurde merken die passen bij onze community. Geen schreeuwerige campagnes of dubieuze sponsors. Je weet altijd welk merk je vertegenwoordigt.",
       },
       {
-        question: "Is er een minimale verplichting?",
+        question: "Moet ik een minimum aantal uren rijden?",
         answer:
-          "Nee. Geen minimumuren of quota. Of je nu een side hustle wilt of een stabiel extra inkomen, je rijdt zoveel of zo weinig als je wilt.",
+          "Nee. Er zijn geen minimumuren of quota. Of je nu af en toe wilt bijverdienen of structureel extra inkomsten zoekt, je bepaalt zelf hoeveel je rijdt.",
       },
       {
         question: "Hoe krijg ik betaald?",
         answer:
-          "Zodra Movrr live is, kun je beloningen direct in de app verzilveren. Je ziet heldere overzichten per geverifieerde rit, zodat je precies weet hoe je beloning wordt berekend.",
+          "Zodra Movrr live is, worden je beloningen inzichtelijk in de app. Je ziet per geverifieerde rit precies wat je hebt verdiend en hoe dat bedrag is opgebouwd.",
       },
       {
         question: "Kan ik Movrr combineren met bezorgapps?",
         answer:
-          "Ja. Veel rijders willen Movrr combineren met apps zoals Thuisbezorgd, UberEats of Flink. Je houdt 100% van je bezorginkomsten en verdient tegelijk extra via Movrr-campagnes.",
+          "Ja. Veel riders willen Movrr combineren met apps zoals Thuisbezorgd, Uber Eats of Flink. Je houdt 100% van je bezorginkomsten en verdient daarnaast extra via Movrr-campagnes.",
       },
       {
         question: "Heb ik ervaring nodig?",
         answer:
-          "Geen ervaring nodig. Als je veilig en zelfverzekerd kunt fietsen, ben je klaar. Wij zorgen voor de rest zodra Movrr start.",
+          "Nee, ervaring is niet nodig. Als je veilig en zelfverzekerd fietst, kun je aan de slag. Wij regelen de rest zodra Movrr van start gaat.",
       },
       {
         question: "Wanneer is de Movrr-app beschikbaar?",
         answer:
-          "De Movrr-app is momenteel in ontwikkeling. Door je aan te melden voor de pre-launch wachtlijst krijg je direct bericht zodra de app in jouw stad beschikbaar is.",
+          "De Movrr-app is op dit moment in ontwikkeling. Als je je inschrijft voor de pre-launch wachtlijst, hoor je meteen wanneer de app in jouw stad beschikbaar is.",
       },
     ],
   },
   waitlistSection: {
     titleLines: ["KLAAR OM TE", "BEGINNEN MET VERDIENEN?"],
     subtitle:
-      "Doe mee met de pre-launch. Word een van de eerste rijders in jouw stad.",
+      "Doe mee aan de pre-launch en hoor bij de eerste riders in jouw stad.",
   },
   waitlistForm: {
     labels: {
-      name: "Volledige Naam",
+      name: "Volledige naam",
       email: "E-mail",
       city: "Stad",
       bikeOwnership: "Heb je een fiets?",
     },
     placeholders: {
-      name: "Vul je naam in",
-      email: "Vul je e-mail in",
-      city: "Jouw stad",
+      name: "Typ je naam",
+      email: "Typ je e-mailadres",
+      city: "Bijvoorbeeld Amsterdam",
       bikeOwnership: "Kies een optie",
     },
     bikeOptions: {
       yes: "Ja, ik heb een fiets",
-      no: "Nee, maar ik ben geïnteresseerd",
-      planning: "Ik ben van plan er een te nemen",
+      no: "Nee, maar ik heb wel interesse",
+      planning: "Ik wil er binnenkort een aanschaffen",
     },
     validation: {
-      nameMin: "Naam moet minimaal 2 tekens bevatten",
+      nameMin: "Vul minimaal 2 tekens in",
       emailInvalid: "Voer een geldig e-mailadres in",
-      cityMin: "Stad moet minimaal 2 tekens bevatten",
-      bikeRequired: "Selecteer een optie",
+      cityMin: "Vul een geldige plaatsnaam in",
+      bikeRequired: "Kies een optie",
     },
     actions: {
       submitting: "Bezig met aanmelden...",
       submit: "Aanmelden voor de wachtlijst",
-      reset: "Nog Een Rijder Aanmelden",
+      reset: "Nog iemand aanmelden",
     },
     success: {
-      title: "Welkom bij de Beweging!",
+      title: "Welkom bij de beweging!",
       description:
-        "Je staat nu op de wachtlijst. We laten je weten wanneer Movrr in jouw stad start.",
+        "Je staat op de wachtlijst. We laten je weten zodra Movrr van start gaat in jouw stad.",
     },
     messages: {
-      success: "Je bent succesvol toegevoegd aan de wachtlijst!",
+      success: "Je inschrijving is binnen.",
       genericError: "Er ging iets mis. Probeer het opnieuw.",
     },
     consent: {
       line1:
-        "Door je aan te melden ga je akkoord met updates over de lancering van Movrr.",
-      line2: "Geen spam. Alleen relevante updates. Uitschrijven kan altijd.",
+        "Door je aan te melden ontvang je updates over de lancering van Movrr.",
+      line2: "Geen spam, alleen relevante updates. Uitschrijven kan altijd.",
     },
   },
   footer: {
     logoAlt: "Movrr icoon",
-    tagline: "Transformeer je rit. Transformeer je leven.",
+    tagline: "Meer uit elke rit.",
     privacy: "Privacy",
     terms: "Voorwaarden",
     copyrightSuffix: "Movrr. Alle rechten voorbehouden.",
@@ -222,30 +225,30 @@ export const nl: Dictionary = {
     backToMovrr: "Terug naar Movrr",
     title: "Privacybeleid",
     subtitle:
-      "Jouw privacy is belangrijk. Op deze pagina leggen we uit wat we verzamelen en hoe we dat gebruiken.",
+      "Je privacy is belangrijk voor ons. Op deze pagina lees je welke gegevens we verzamelen en hoe we die gebruiken.",
     lastUpdated: "Laatst bijgewerkt",
     sections: [
       {
         title: "1. Welke informatie we verzamelen",
         paragraph:
-          "Wanneer je je aanmeldt voor de Movrr-wachtlijst, kunnen we het volgende verzamelen:",
+          "Als je je aanmeldt voor de Movrr-wachtlijst, kunnen we de volgende gegevens verzamelen:",
         bullets: [
-          "Naam en contactgegevens (zoals e-mailadres)",
-          "Stad of voorkeursgebied om te rijden",
+          "Naam en contactgegevens, zoals je e-mailadres",
+          "Je stad of het gebied waar je het liefst rijdt",
         ],
       },
       {
         title: "2. Hoe we jouw informatie gebruiken",
         bullets: [
-          "Je informeren wanneer Movrr lanceert",
-          "Relevante updates en kansen delen",
-          "Het platform verbeteren voor de lancering",
+          "Je laten weten wanneer Movrr live gaat",
+          "Relevante updates en kansen met je delen",
+          "Het platform verder verbeteren richting de lancering",
         ],
       },
       {
         title: "3. Jouw rechten",
         paragraph:
-          "Je kunt op elk moment verzoeken om je gegevens in te zien, te wijzigen of te verwijderen. Neem contact met ons op via onderstaande gegevens.",
+          "Je kunt op elk moment vragen om je gegevens in te zien, aan te passen of te verwijderen. Neem daarvoor contact met ons op via onderstaande gegevens.",
       },
       {
         title: "4. Contact",
@@ -264,31 +267,32 @@ export const nl: Dictionary = {
   terms: {
     backToMovrr: "Terug naar Movrr",
     title: "Algemene Voorwaarden",
-    subtitle: "Eenvoudige regels voor het gebruik van Movrr vóór de lancering.",
+    subtitle:
+      "De belangrijkste afspraken voor het gebruik van Movrr in de aanloop naar de lancering.",
     lastUpdated: "Laatst bijgewerkt",
     sections: [
       {
         title: "1. Overeenkomst",
         paragraph:
-          "Door je aan te melden voor de Movrr-wachtlijst of onze website te gebruiken, ga je akkoord met deze voorwaarden. Als je niet akkoord gaat, gebruik de site dan niet.",
+          "Door je aan te melden voor de Movrr-wachtlijst of deze website te gebruiken, ga je akkoord met deze voorwaarden. Ga je niet akkoord, gebruik de website dan niet.",
       },
       {
         title: "2. Gebruik van Movrr",
         paragraph:
-          "Movrr bevindt zich momenteel in de pre-launch fase. We bieden informatie en laten je aanmelden voor de wachtlijst. Bij livegang kunnen aanvullende voorwaarden gelden.",
+          "Movrr zit momenteel in de pre-launch fase. We delen informatie en bieden je de mogelijkheid om je aan te melden voor de wachtlijst. Zodra het platform live gaat, kunnen aanvullende voorwaarden gelden.",
       },
       {
         title: "3. Verboden gebruik",
         bullets: [
-          "Geef geen onjuiste of misleidende informatie",
-          "Probeer de site niet te verstoren of misbruiken",
-          "Overtreed geen toepasselijke wetgeving bij gebruik van Movrr",
+          "Verstrek geen onjuiste of misleidende informatie",
+          "Misbruik de website niet en probeer deze niet te verstoren",
+          "Houd je aan de geldende wet- en regelgeving bij het gebruik van Movrr",
         ],
       },
       {
         title: "4. Geen garantie",
         paragraph:
-          "Movrr is in ontwikkeling. We garanderen niet wanneer het platform lanceert of dat je wordt geselecteerd voor campagnes.",
+          "Movrr is nog in ontwikkeling. We kunnen niet garanderen wanneer het platform precies live gaat of dat je wordt geselecteerd voor campagnes.",
       },
       {
         title: "5. Contact",
@@ -306,9 +310,9 @@ export const nl: Dictionary = {
   },
   unauthorized: {
     title: "TOEGANG GEWEIGERD",
-    description: "Je hebt geen toestemming om het admin dashboard te openen.",
-    note: "Dit incident is gelogd voor beveiligingsdoeleinden.",
-    returnHome: "Terug naar Home",
-    tryDifferentAccount: "Probeer Ander Account",
+    description: "Je hebt geen toegang tot het admin dashboard.",
+    note: "Deze poging is vastgelegd voor beveiligingsdoeleinden.",
+    returnHome: "Terug naar de homepage",
+    tryDifferentAccount: "Inloggen met een ander account",
   },
 };
