@@ -38,15 +38,10 @@ export const en: Dictionary = {
     dutchName: "Dutch",
   },
   hero: {
-    eyebrow: "EARLY ACCESS FOR URBAN RIDERS",
+    eyebrow: "Early access for urban riders",
     status: ["Launching soon", "Netherlands-first"],
     audienceLabel: "Built for riders",
-    audience: [
-      "Delivery riders",
-      "Students",
-      "Urban cyclists",
-      "Gig workers",
-    ],
+    audience: ["Delivery riders", "Students", "Urban cyclists", "Gig workers"],
     titleLines: ["GET PAID", "TO RIDE", "YOUR BIKE"],
     highlightedLine: "Turn everyday rides into extra income.",
     description:
@@ -144,34 +139,57 @@ export const en: Dictionary = {
   },
   productConcept: {
     heading: {
-      eyebrow: "THE PRODUCT CONCEPT",
-      title: "A lightweight rider kit built for everyday urban cycling.",
-      subtitle:
-        "MOVRR turns your bike into a moving campaign surface without changing how you move through the city.",
+      eyebrow: "Product Concept",
+      title: "Movrr display panel",
     },
-    body: "The MOVRR setup pairs a branded rider kit with ride verification so brands get visibility and riders get rewarded. It is designed for commuters, students, and gig workers who already spend time on two wheels.",
+    body: "A revolutionary lightweight, weather-proof digital or physical display that easily attaches to existing bike racks or backpacks. Earn rewards while you ride by displaying targeted ads.",
     highlights: [
-      "Simple attach-and-ride setup",
-      "Campaign visibility while you follow your normal route",
-      "Rewards linked to verified rides, not fake promises",
+      "Universal attachment",
+      "Durable & weather-resistant",
+      "High-visibility screen",
+      "Seamless app integration",
     ],
-    imageAlt: "Movrr rider setup showing branded bike advertising concept",
+    imageAlt: "Movrr display panel attached to a bicycle",
+    cta: "Join the Waitlist",
   },
   cityLaunch: {
     heading: {
-      eyebrow: "CITY LAUNCH",
-      title: "Launching soon in major cycling cities.",
-      subtitle: "Be among the first riders in your city to join MOVRR.",
+      eyebrow: "City Launch",
+      title: "Launching soon in major cities",
+      subtitle: "Be among the first riders in your city.",
     },
-    cities: ["Rotterdam", "Amsterdam", "Utrecht"],
-    footnote:
-      "More cities will follow as the first launch markets open and rider demand grows.",
+    badge: "Launching Soon",
+    cards: [
+      {
+        name: "Rotterdam",
+        asset: "/city-rotterdam-card.png",
+        cta: "Notify Me",
+        featured: true,
+        featuredLabel: "Launching first",
+      },
+      {
+        name: "Amsterdam",
+        asset: "/city-amsterdam-card.png",
+        cta: "Notify Me",
+      },
+      {
+        name: "Utrecht",
+        asset: "/city-utrecht-card.png",
+        cta: "Notify Me",
+      },
+      {
+        name: "The Hague",
+        asset: "/city-the-hague-card.png",
+        cta: "Notify Me",
+      },
+    ],
   },
   faq: {
     heading: {
       eyebrow: "FAQ",
       title: "Everything riders need to know before launch.",
-      subtitle: "Short answers to the questions we expect most before early access opens.",
+      subtitle:
+        "Short answers to the questions we expect most before early access opens.",
     },
     items: [
       {
@@ -190,11 +208,6 @@ export const en: Dictionary = {
           "Yes. You will need your own bike to ride with MOVRR, and we will provide the campaign display kit.",
       },
       {
-        question: "What type of ads will be displayed?",
-        answer:
-          "Only approved brand campaigns that fit the MOVRR network. Riders will know the kind of campaigns they are displaying.",
-      },
-      {
         question: "Can I ride whenever I want?",
         answer:
           "Yes. MOVRR is designed to fit your existing routine, whether you ride daily, on weekends, or between other jobs.",
@@ -208,8 +221,9 @@ export const en: Dictionary = {
   },
   waitlistSection: {
     eyebrow: "JOIN EARLY ACCESS",
-    title: "READY TO START EARNING?",
-    subtitle: "Join the early access waitlist and be among the first riders in your city.",
+    title: "Ready to start earning?",
+    subtitle:
+      "Join the early access waitlist and be among the first riders in your city.",
     reassurance: "No spam. Early access only.",
   },
   waitlistForm: {
@@ -257,7 +271,7 @@ export const en: Dictionary = {
   },
   footer: {
     logoAlt: "Movrr Icon",
-    tagline: "Transform your ride.",
+    tagline: "Transform your ride. Transform your life.",
     privacy: "Privacy",
     terms: "Terms",
     copyrightSuffix: "Movrr. All rights reserved.",

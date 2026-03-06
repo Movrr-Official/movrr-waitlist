@@ -35,13 +35,13 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
         <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] lg:gap-12">
           <div className="max-w-2xl">
             <div className="mb-6 flex flex-wrap gap-3">
-              <span className="rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-primary">
+              <span className="rounded-full border border-primary/20 bg-primary/8 px-3 py-1.5 text-sm font-bold tracking-wide text-primary">
                 {copy.eyebrow}
               </span>
               {copy.status.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-border bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground"
+                  className="rounded-full border border-border bg-white px-3 py-1.5 text-sm font-semibold tracking-wide text-muted-foreground"
                 >
                   {item}
                 </span>
@@ -69,7 +69,7 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 text-xl font-bold rounded-3xl uppercase tracking-wider shadow-2xl transform hover:scale-105 transition-all duration-200"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 text-xl font-bold rounded-lg uppercase tracking-wider shadow-2xl transform hover:scale-105 transition-all duration-200"
                 onClick={() => {
                   document
                     .getElementById("signup")
@@ -82,7 +82,7 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-14 rounded-3xl border-2 border-secondary px-6 text-base font-bold uppercase tracking-[0.2em] text-secondary hover:bg-secondary hover:text-white"
+                className="h-14 rounded-lg border-2 border-secondary px-6 text-lg font-bold uppercase tracking-wider text-secondary hover:bg-secondary hover:text-white"
                 onClick={() => {
                   document
                     .getElementById("how-it-works")
@@ -117,7 +117,7 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
               <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-black">
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent" />
                 <Image
-                  src="/amsterdam-cityscape-canals-bikes.png"
+                  src="/biking-through-rotterdam-cityscape.png"
                   alt={copy.backgroundAlt}
                   width={920}
                   height={1080}

@@ -38,7 +38,7 @@ export const nl: Dictionary = {
     dutchName: "Nederlands",
   },
   hero: {
-    eyebrow: "EARLY ACCESS VOOR URBAN RIDERS",
+    eyebrow: "Early access voor urban riders",
     status: ["Lanceert binnenkort", "Nederland eerst"],
     audienceLabel: "Gebouwd voor riders",
     audience: ["Bezorgers", "Studenten", "Stadsfietsers", "Gig workers"],
@@ -58,7 +58,8 @@ export const nl: Dictionary = {
   valueProposition: {
     heading: {
       eyebrow: "WAAROM MOVRR",
-      title: "Een eenvoudigere manier om te verdienen met de ritten die je al maakt.",
+      title:
+        "Een eenvoudigere manier om te verdienen met de ritten die je al maakt.",
       subtitle:
         "Gebouwd voor fietsers die zich elke dag door de stad verplaatsen.",
     },
@@ -141,29 +142,50 @@ export const nl: Dictionary = {
   },
   productConcept: {
     heading: {
-      eyebrow: "HET PRODUCTCONCEPT",
-      title: "Een lichte rider-kit voor dagelijks stedelijk fietsen.",
-      subtitle:
-        "MOVRR maakt van je fiets een rijdend campagnemiddel zonder hoe je beweegt te veranderen.",
+      eyebrow: "Productconcept",
+      title: "Movrr display Panel",
     },
-    body: "De MOVRR-setup combineert een branded rider-kit met ritverificatie zodat merken zichtbaarheid krijgen en riders beloningen ontvangen. Ontworpen voor commuters, studenten en gig workers die toch al veel op de fiets zitten.",
+    body: "Een revolutionair lichtgewicht, weerbestendig digitaal of fysiek display dat eenvoudig op bestaande bagagedragers of backpacks wordt bevestigd. Verdien beloningen terwijl je rijdt door gerichte advertenties te tonen.",
     highlights: [
-      "Eenvoudige attach-and-ride setup",
-      "Campagnezichtbaarheid terwijl je je normale route rijdt",
-      "Beloningen gekoppeld aan geverifieerde ritten",
+      "Universele bevestiging",
+      "Duurzaam en weerbestendig",
+      "Scherm met hoge zichtbaarheid",
+      "Naadloze app-integratie",
     ],
-    imageAlt: "Movrr rider-setup met branded fietsadvertentieconcept",
+    imageAlt: "Movrr displaypaneel bevestigd aan een fiets",
+    cta: "Aanmelden",
   },
   cityLaunch: {
     heading: {
-      eyebrow: "CITY LAUNCH",
-      title: "Lanceert binnenkort in grote fietssteden.",
-      subtitle:
-        "Hoor bij de eerste riders in jouw stad die met MOVRR starten.",
+      eyebrow: "Stadslancering",
+      title: "Lancering binnenkort in grote steden",
+      subtitle: "Hoor bij de eerste riders in jouw stad.",
     },
-    cities: ["Rotterdam", "Amsterdam", "Utrecht"],
-    footnote:
-      "Meer steden volgen zodra de eerste launch markets live gaan en de vraag groeit.",
+    badge: "Binnenkort live",
+    cards: [
+      {
+        name: "Rotterdam",
+        asset: "/city-rotterdam-card.png",
+        cta: "Houd me op de hoogte",
+        featured: true,
+        featuredLabel: "Eerste lancering",
+      },
+      {
+        name: "Amsterdam",
+        asset: "/city-amsterdam-card.png",
+        cta: "Houd me op de hoogte",
+      },
+      {
+        name: "Utrecht",
+        asset: "/city-utrecht-card.png",
+        cta: "Houd me op de hoogte",
+      },
+      {
+        name: "Den Haag",
+        asset: "/city-the-hague-card.png",
+        cta: "Houd me op de hoogte",
+      },
+    ],
   },
   faq: {
     heading: {
@@ -186,12 +208,7 @@ export const nl: Dictionary = {
       {
         question: "Heb ik mijn eigen fiets nodig?",
         answer:
-          "Ja. Je hebt je eigen fiets nodig om met MOVRR te rijden. Wij zorgen voor de campaign display-kit.",
-      },
-      {
-        question: "Wat voor soort ads worden getoond?",
-        answer:
-          "Alleen goedgekeurde merkcampagnes die passen binnen het MOVRR-netwerk. Riders weten welk type campagnes zichtbaar wordt.",
+          "Ja. Je hebt je eigen fiets nodig om met MOVRR te rijden. Wij zorgen voor de display-kit.",
       },
       {
         question: "Kan ik rijden wanneer ik wil?",
@@ -207,9 +224,9 @@ export const nl: Dictionary = {
   },
   waitlistSection: {
     eyebrow: "EARLY ACCESS",
-    title: "KLAAR OM TE BEGINNEN MET VERDIENEN?",
+    title: "Klaar om te beginnen met verdienen?",
     subtitle:
-      "Join de early access waitlist en hoor bij de eerste riders in jouw stad.",
+      "Meld je aan voor de early access waitlist en hoor bij de eerste riders in jouw stad.",
     reassurance: "Geen spam. Alleen early access.",
   },
   waitlistForm: {
@@ -258,7 +275,7 @@ export const nl: Dictionary = {
   },
   footer: {
     logoAlt: "Movrr icoon",
-    tagline: "Transformeer je rit.",
+    tagline: "Transformeer je rit. Transformeer je leven.",
     privacy: "Privacy",
     terms: "Voorwaarden",
     copyrightSuffix: "Movrr. Alle rechten voorbehouden.",

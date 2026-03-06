@@ -25,8 +25,10 @@ export function WaitlistSection({
             <h2 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
               {copy.title}
             </h2>
-            <p className="mt-5 text-lg text-white/75 md:text-xl">{copy.subtitle}</p>
-            <p className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-white/55">
+            <p className="mt-5 text-lg text-white/75 md:text-xl">
+              {copy.subtitle}
+            </p>
+            <p className="mt-8 text-sm font-semibold tracking-[0.2em] text-white/55">
               {copy.reassurance}
             </p>
           </div>

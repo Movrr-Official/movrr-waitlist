@@ -75,11 +75,18 @@ export interface Dictionary {
     body: string;
     highlights: string[];
     imageAlt: string;
+    cta: string;
   };
   cityLaunch: {
     heading: SectionHeading;
-    cities: string[];
-    footnote: string;
+    badge: string;
+    cards: Array<{
+      name: string;
+      asset: string;
+      cta: string;
+      featured?: boolean;
+      featuredLabel?: string;
+    }>;
   };
   faq: {
     heading: SectionHeading;
