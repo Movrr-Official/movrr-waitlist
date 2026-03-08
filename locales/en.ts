@@ -142,7 +142,7 @@ export const en: Dictionary = {
       eyebrow: "Product Concept",
       title: "Movrr display panel",
     },
-    body: "A revolutionary lightweight, weather-proof digital or physical display that easily attaches to existing bike racks or backpacks. Earn rewards while you ride by displaying targeted ads.",
+    body: "A lightweight, weatherproof display system built for everyday bikes and cargo bikes. It attaches to compatible bike setups, keeps brand campaigns visible on the move, and works with MOVRR to track eligible rides and rewards.",
     highlights: [
       "Universal attachment",
       "Durable & weather-resistant",

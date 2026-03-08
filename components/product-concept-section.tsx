@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Bike, MonitorSmartphone, PlugZap, Umbrella } from "lucide-react";
 import Image from "next/image";
@@ -19,8 +20,32 @@ interface ProductConceptSectionProps {
   copy: Dictionary["productConcept"];
 }
 
+const productConceptImages = [
+  {
+    id: 1,
+    title: "Wheel Cover",
+    src: "/movrr-wheel-disc-advertising.png",
+  },
+  {
+    id: 2,
+    title: "Frame Panel",
+    src: "/movrr-frame-panel-advertising.png",
+  },
+  {
+    id: 3,
+    title: "Rear Rack Panel",
+    src: "/movrr-rear-panel-advertising.png",
+  },
+  {
+    id: 4,
+    title: "Cargo Side Panel",
+    src: "/movrr-cargo-side-panel-advertising.png",
+  },
+] as const;
+
 export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
   const icons = [Bike, Umbrella, MonitorSmartphone, PlugZap];
+  const [activeIndex, setActiveIndex] = useState(2);
 
   return (
     <motion.section
@@ -85,14 +110,42 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
             className="relative overflow-hidden bg-muted/35"
             variants={imageReveal}
           >
-            <Image
-              src="/movrr-display-panel-scene.png"
-              alt={copy.imageAlt}
-              width={1280}
-              height={900}
-              className="h-[30rem] w-full object-cover"
-              priority
-            />
+            <div className="flex h-[30rem] flex-row items-center justify-center gap-4 overflow-hidden p-4">
+              {productConceptImages.map((item, index) => {
+                const isActive = index === activeIndex;
+
+                return (
+                  <div
+                    key={item.id}
+                    className={`relative h-full cursor-pointer overflow-hidden rounded-2xl transition-all duration-700 ease-in-out ${
+                      isActive ? "w-[58%]" : "w-[14%]"
+                    }`}
+                    onMouseEnter={() => setActiveIndex(index)}
+                    onFocus={() => setActiveIndex(index)}
+                    tabIndex={0}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={`${copy.imageAlt} - ${item.title}`}
+                      fill
+                      className="object-cover"
+                      priority={isActive}
+                    />
+                    <div className="absolute inset-0 bg-black/40" />
+
+                    <span
+                      className={`absolute text-lg font-semibold whitespace-nowrap text-white transition-all duration-300 ease-in-out ${
+                        isActive
+                          ? "bottom-6 left-1/2 -translate-x-1/2 rotate-0"
+                          : "bottom-24 left-1/2 -translate-x-1/2 rotate-90 text-left"
+                      }`}
+                    >
+                      {item.title}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </motion.div>
         </div>
       </div>

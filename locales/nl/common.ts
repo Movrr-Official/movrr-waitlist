@@ -146,7 +146,7 @@ export const nl: Dictionary = {
       eyebrow: "Productconcept",
       title: "Movrr displaypaneel",
     },
-    body: "Een revolutionair lichtgewicht, weerbestendig digitaal of fysiek display dat eenvoudig op bestaande bagagedragers of backpacks wordt bevestigd. Verdien beloningen terwijl je rijdt door gerichte advertenties te tonen.",
+    body: "Een lichtgewicht, weerbestendig displaysysteem voor gewone fietsen en cargobikes. Het wordt bevestigd aan compatibele fietsopstellingen, maakt merkcampagnes zichtbaar onderweg en werkt met MOVRR om in aanmerking komende ritten en beloningen bij te houden.",
     highlights: [
       "Universele bevestiging",
       "Duurzaam en weerbestendig",
