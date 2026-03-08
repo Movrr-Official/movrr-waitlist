@@ -38,12 +38,7 @@ export function PrivacyPage({ locale, dictionary }: PrivacyPageProps) {
             <h1 className="text-4xl md:text-5xl font-bold">{copy.title}</h1>
             <p className="text-gray-300">{copy.subtitle}</p>
             <p className="text-sm text-gray-400">
-              {copy.lastUpdated}:{" "}
-              {new Date().toLocaleDateString(locale === "nl" ? "nl-NL" : "en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+              {copy.lastUpdated}: {copy.lastUpdatedDate}
             </p>
           </div>
 

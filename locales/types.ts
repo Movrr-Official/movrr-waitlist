@@ -152,6 +152,7 @@ export interface Dictionary {
     title: string;
     subtitle: string;
     lastUpdated: string;
+    lastUpdatedDate: string;
     sections: LegalSection[];
   };
   terms: {
@@ -159,6 +160,7 @@ export interface Dictionary {
     title: string;
     subtitle: string;
     lastUpdated: string;
+    lastUpdatedDate: string;
     sections: LegalSection[];
   };
   unauthorized: {
