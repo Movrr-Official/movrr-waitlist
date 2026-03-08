@@ -1,7 +1,18 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Bike, MonitorSmartphone, PlugZap, Umbrella } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+import {
+  cardReveal,
+  headingReveal,
+  imageReveal,
+  sectionStagger,
+  viewportOnce,
+} from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
 interface ProductConceptSectionProps {
@@ -12,9 +23,15 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
   const icons = [Bike, Umbrella, MonitorSmartphone, PlugZap];
 
   return (
-    <section className="bg-white py-24 md:py-28">
+    <motion.section
+      className="bg-white py-24 md:py-28"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={sectionStagger}
+    >
       <div className="container">
-        <div className="max-w-3xl">
+        <motion.div className="max-w-3xl" variants={headingReveal}>
           {copy.heading.eyebrow ? (
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
               {copy.heading.eyebrow}
@@ -23,39 +40,51 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
           <h2 className="mt-4 text-4xl font-black leading-tight text-secondary md:text-6xl">
             {copy.heading.title}
           </h2>
-        </div>
+        </motion.div>
 
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          <div>
-            <p className="max-w-xl text-lg leading-8 text-secondary/90 md:text-xl">
+          <motion.div variants={sectionStagger}>
+            <motion.p
+              className="max-w-xl text-lg leading-8 text-secondary/90 md:text-xl"
+              variants={headingReveal}
+            >
               {copy.body}
-            </p>
+            </motion.p>
 
-            <div className="mt-8 space-y-5">
+            <motion.div className="mt-8 space-y-5" variants={sectionStagger}>
               {copy.highlights.map((highlight, index) => {
                 const Icon = icons[index];
 
                 return (
-                  <div className="flex items-center gap-3" key={highlight}>
+                  <motion.div
+                    className="flex items-center gap-3"
+                    key={highlight}
+                    variants={cardReveal}
+                  >
                     <Icon className="h-5 w-5 text-primary" />
                     <span className="text-base font-medium text-secondary">
                       {highlight}
                     </span>
-                  </div>
+                  </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
 
-            <Button
-              asChild
-              variant="outline"
-              className="mt-10 h-12 rounded-lg border-2 border-secondary bg-white px-6 text-base font-bold uppercase tracking-wide text-secondary hover:bg-secondary hover:text-white"
-            >
-              <Link href="#signup">{copy.cta}</Link>
-            </Button>
-          </div>
+            <motion.div variants={cardReveal}>
+              <Button
+                asChild
+                variant="outline"
+                className="mt-10 h-12 rounded-lg border-2 border-secondary bg-white px-6 text-base font-bold uppercase tracking-wide text-secondary hover:bg-secondary hover:text-white"
+              >
+                <Link href="#signup">{copy.cta}</Link>
+              </Button>
+            </motion.div>
+          </motion.div>
 
-          <div className="relative overflow-hidden bg-muted/35">
+          <motion.div
+            className="relative overflow-hidden bg-muted/35"
+            variants={imageReveal}
+          >
             <Image
               src="/movrr-display-panel-scene.png"
               alt={copy.imageAlt}
@@ -64,9 +93,9 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
               className="h-[30rem] w-full object-cover"
               priority
             />
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

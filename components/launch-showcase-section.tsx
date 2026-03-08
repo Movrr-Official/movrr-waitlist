@@ -1,8 +1,16 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { track } from "@vercel/analytics";
 import { Button } from "@/components/ui/button";
+
+import {
+  cardReveal,
+  headingReveal,
+  sectionStagger,
+  viewportOnce,
+} from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
 interface LaunchShowcaseSectionProps {
@@ -18,9 +26,15 @@ export function LaunchShowcaseSection({
   };
 
   return (
-    <section className="bg-secondary py-24 text-white md:py-28">
+    <motion.section
+      className="bg-secondary py-24 text-white md:py-28"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={sectionStagger}
+    >
       <div className="container">
-        <div className="max-w-3xl">
+        <motion.div className="max-w-3xl" variants={headingReveal}>
           <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
             {cityCopy.heading.eyebrow}
           </p>
@@ -32,19 +46,26 @@ export function LaunchShowcaseSection({
               {cityCopy.heading.subtitle}
             </p>
           ) : null}
-        </div>
+        </motion.div>
 
-        <div className="mt-10 flex justify-center md:justify-start">
+        <motion.div
+          className="mt-10 flex justify-center md:justify-start"
+          variants={headingReveal}
+        >
           <div className="inline-flex rounded-full bg-primary px-3 py-1.5 text-sm font-bold tracking-wide text-secondary">
             {cityCopy.badge}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-14 grid max-w-[920px] gap-5 md:grid-cols-3">
+        <motion.div
+          className="mt-14 grid max-w-[920px] gap-5 md:grid-cols-3"
+          variants={sectionStagger}
+        >
           {cityCopy.cards.map((card) => (
-            <article
+            <motion.article
               key={card.name}
               className="group relative min-h-[182px] overflow-hidden rounded-md border border-white/10 bg-white/5 shadow-[0_18px_50px_-30px_rgba(0,0,0,0.8)]"
+              variants={cardReveal}
             >
               <Image
                 src={card.asset}
@@ -75,10 +96,10 @@ export function LaunchShowcaseSection({
                   </Button>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

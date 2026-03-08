@@ -1,6 +1,11 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
+
 import type { Locale } from "@/lib/i18n/config";
 import { withLocalePath } from "@/lib/i18n/routing";
+import { headingReveal, sectionStagger, viewportOnce } from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
 interface FooterProps {
@@ -13,10 +18,19 @@ export function Footer({ locale, copy, brandName }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary py-0 text-white">
+    <motion.footer
+      className="bg-secondary py-0 text-white"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={sectionStagger}
+    >
       <div className="container">
         <div className="bg-secondary pb-10 pt-24">
-          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <motion.div
+            className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
+            variants={headingReveal}
+          >
             <div>
               <div className="flex items-center gap-2">
                 <img
@@ -44,12 +58,15 @@ export function Footer({ locale, copy, brandName }: FooterProps) {
                 {copy.terms}
               </Link>
             </div>
-          </div>
-          <div className="mt-16 text-sm text-white/60">
+          </motion.div>
+          <motion.div
+            className="mt-16 text-sm text-white/60"
+            variants={headingReveal}
+          >
             © {currentYear} {copy.copyrightSuffix}
-          </div>
+          </motion.div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+import { cardReveal, headingReveal, sectionStagger, viewportOnce } from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
 interface HowItWorksSectionProps {
@@ -6,12 +11,16 @@ interface HowItWorksSectionProps {
 
 export function HowItWorksSection({ copy }: HowItWorksSectionProps) {
   return (
-    <section
+    <motion.section
       id="how-it-works"
       className="bg-secondary py-24 text-white md:py-28"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={sectionStagger}
     >
       <div className="container">
-        <div className="max-w-3xl">
+        <motion.div className="max-w-3xl" variants={headingReveal}>
           {copy.heading.eyebrow ? (
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
               {copy.heading.eyebrow}
@@ -25,13 +34,17 @@ export function HowItWorksSection({ copy }: HowItWorksSectionProps) {
               {copy.heading.subtitle}
             </p>
           ) : null}
-        </div>
+        </motion.div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <motion.div
+          className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4"
+          variants={sectionStagger}
+        >
           {copy.steps.map((step, index) => (
-            <article
+            <motion.article
               className="rounded-[2rem] border border-white/10 bg-white/5 p-7 backdrop-blur-sm"
               key={step.title}
+              variants={cardReveal}
             >
               <div className="text-6xl font-black leading-none text-white/18">
                 0{index + 1}
@@ -42,10 +55,10 @@ export function HowItWorksSection({ copy }: HowItWorksSectionProps) {
               <p className="mt-4 text-base leading-7 text-white/72">
                 {step.description}
               </p>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

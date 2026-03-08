@@ -1,11 +1,18 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  cardReveal,
+  headingReveal,
+  sectionStagger,
+  viewportOnce,
+} from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
 interface FAQSectionProps {
@@ -14,9 +21,15 @@ interface FAQSectionProps {
 
 export function FAQSection({ copy }: FAQSectionProps) {
   return (
-    <section className="bg-white py-24 md:py-28">
+    <motion.section
+      className="bg-white py-24 md:py-28"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={sectionStagger}
+    >
       <div className="container">
-        <div className="max-w-3xl">
+        <motion.div className="max-w-3xl" variants={headingReveal}>
           {copy.heading.eyebrow ? (
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
               {copy.heading.eyebrow}
@@ -30,27 +43,28 @@ export function FAQSection({ copy }: FAQSectionProps) {
               {copy.heading.subtitle}
             </p>
           ) : null}
-        </div>
+        </motion.div>
 
-        <div className="mt-14 max-w-4xl">
+        <motion.div className="mt-14 max-w-4xl" variants={sectionStagger}>
           <Accordion type="single" collapsible className="w-full">
             {copy.items.map((faq, index) => (
-              <AccordionItem
-                key={faq.question}
-                value={`faq-${index}`}
-                className="border-b border-border"
-              >
-                <AccordionTrigger className="py-7 text-left text-lg font-bold text-secondary hover:no-underline md:text-xl">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="pb-7 text-base leading-7 text-muted-foreground md:text-lg">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <motion.div key={faq.question} variants={cardReveal}>
+                <AccordionItem
+                  value={`faq-${index}`}
+                  className="border-b border-border"
+                >
+                  <AccordionTrigger className="py-7 text-left text-lg font-bold text-secondary hover:no-underline md:text-xl">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-7 text-base leading-7 text-muted-foreground md:text-lg">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

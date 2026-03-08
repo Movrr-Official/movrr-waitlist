@@ -1,4 +1,9 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Coins, Eye, ShieldCheck, TimerReset } from "lucide-react";
+
+import { cardReveal, headingReveal, sectionStagger, viewportOnce } from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
 interface BenefitsSectionProps {
@@ -9,9 +14,15 @@ export function BenefitsSection({ copy }: BenefitsSectionProps) {
   const icons = [Coins, Eye, TimerReset, ShieldCheck];
 
   return (
-    <section className="bg-white py-24 md:py-28">
+    <motion.section
+      className="bg-white py-24 md:py-28"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={sectionStagger}
+    >
       <div className="container">
-        <div className="max-w-3xl">
+        <motion.div className="max-w-3xl" variants={headingReveal}>
           {copy.heading.eyebrow ? (
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
               {copy.heading.eyebrow}
@@ -25,16 +36,20 @@ export function BenefitsSection({ copy }: BenefitsSectionProps) {
               {copy.heading.subtitle}
             </p>
           ) : null}
-        </div>
+        </motion.div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <motion.div
+          className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4"
+          variants={sectionStagger}
+        >
           {copy.items.map((item, index) => {
             const Icon = icons[index];
 
             return (
-              <article
+              <motion.article
                 className="rounded-[2rem] border border-border bg-muted/30 p-8"
                 key={item.title}
+                variants={cardReveal}
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
                   <Icon className="h-6 w-6" />
@@ -45,11 +60,11 @@ export function BenefitsSection({ copy }: BenefitsSectionProps) {
                 <p className="mt-4 text-base leading-7 text-muted-foreground">
                   {item.description}
                 </p>
-              </article>
+              </motion.article>
             );
           })}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
