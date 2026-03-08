@@ -25,21 +25,25 @@ const productConceptImages = [
     id: 1,
     title: "Wheel Cover",
     src: "/movrr-wheel-disc-advertising.png",
+    objectPosition: "25% center",
   },
   {
     id: 2,
     title: "Frame Panel",
     src: "/movrr-frame-panel-advertising.png",
+    objectPosition: "center",
   },
   {
     id: 3,
     title: "Rear Rack Panel",
     src: "/movrr-rear-panel-advertising.png",
+    objectPosition: "center",
   },
   {
     id: 4,
     title: "Cargo Side Panel",
     src: "/movrr-cargo-side-panel-advertising.png",
+    objectPosition: "center",
   },
 ] as const;
 
@@ -129,9 +133,14 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
                       alt={`${copy.imageAlt} - ${item.title}`}
                       fill
                       className="object-cover"
+                      style={{ objectPosition: item.objectPosition }}
                       priority={isActive}
                     />
-                    <div className="absolute inset-0 bg-black/40" />
+                    <div
+                      className={`absolute inset-0 transition-colors duration-700 ease-in-out ${
+                        isActive ? "bg-black/20" : "bg-black/40"
+                      }`}
+                    />
 
                     <span
                       className={`absolute text-lg font-semibold whitespace-nowrap text-white transition-all duration-300 ease-in-out ${
