@@ -90,7 +90,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
           }}
           size="lg"
           variant="outline"
-          className="h-16 text-xl font-bold rounded-full border-2"
+          className="min-h-16 h-auto rounded-full border-2 px-6 py-4 text-center text-base font-bold leading-tight whitespace-normal md:text-xl"
         >
           {copy.actions.reset}
         </Button>
@@ -205,7 +205,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
         type="submit"
         size="lg"
         disabled={isSubmitting}
-        className="w-full bg-secondary hover:bg-secondary/90 text-white h-16 text-xl font-bold rounded-3xl uppercase tracking-wider disabled:opacity-50"
+        className="min-h-16 h-auto w-full rounded-3xl bg-secondary px-6 py-4 text-center text-base font-bold uppercase leading-tight tracking-[0.12em] text-white whitespace-normal hover:bg-secondary/90 disabled:opacity-50 md:text-xl"
       >
         {isSubmitting ? copy.actions.submitting : copy.actions.submit}
       </Button>

@@ -49,7 +49,7 @@ export function LaunchShowcaseSection({
         </motion.div>
 
         <motion.div
-          className="mt-10 flex justify-center md:justify-start"
+          className="mt-10 flex justify-start"
           variants={headingReveal}
         >
           <div className="inline-flex rounded-full bg-primary px-3 py-1.5 text-sm font-bold tracking-wide text-secondary">
