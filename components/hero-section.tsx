@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { track } from "@vercel/analytics";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import type { Dictionary } from "@/locales/en";
 
@@ -11,19 +10,32 @@ interface HeroSectionProps {
   brandName: string;
 }
 
+const HERO_IMAGE_CLIP_PATH = "polygon(28% 0%, 100% 0%, 100% 100%, 3% 100%)";
+const HERO_SEAM_CLIP_PATH = "polygon(27.4% 0%, 28.2% 0%, 3.6% 100%, 2.8% 100%)";
+const HERO_IMAGE_BLUR =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23f2f2f2'/%3E%3Cstop offset='45%25' stop-color='%23d8d8d8'/%3E%3Cstop offset='72%25' stop-color='%2323B245'/%3E%3Cstop offset='100%25' stop-color='%230f0f0f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23g)'/%3E%3C/svg%3E";
+
 export function HeroSection({ copy, brandName }: HeroSectionProps) {
+  const scrollToSection = (targetId: string, eventName: string) => {
+    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+    track(eventName);
+  };
+
   return (
     <section className="relative overflow-hidden bg-white">
-      <div className="absolute inset-x-0 top-0 h-[580px] bg-gradient-to-b from-muted/70 via-white to-white" />
-      <div className="absolute right-0 top-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute left-0 top-40 h-72 w-72 rounded-full bg-secondary/5 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[580px] bg-gradient-to-b from-muted/70 via-white to-white" />
+      <div className="pointer-events-none absolute right-0 top-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute left-0 top-40 h-72 w-72 rounded-full bg-secondary/5 blur-3xl" />
 
       <div className="relative container py-8 md:py-10 lg:py-12">
         <div className="mb-12 flex items-center justify-center md:justify-start">
           <div className="flex items-center gap-2">
-            <img
+            <Image
               src="/movrr-icon.png"
               alt={copy.logoAlt}
+              width={48}
+              height={48}
+              priority
               className="h-11 w-11 md:h-12 md:w-12"
             />
             <span className="text-2xl font-black tracking-tight text-secondary">
@@ -69,26 +81,20 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 text-xl font-bold rounded-lg uppercase tracking-wider shadow-2xl transform hover:scale-105 transition-all duration-200"
-                onClick={() => {
-                  document
-                    .getElementById("signup")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                  track("Join Waitlist Clicked");
-                }}
+                className="h-14 rounded-lg bg-primary px-8 text-xl font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-[0_18px_40px_-22px_rgba(35,178,69,0.55)] transition-colors duration-200 hover:bg-primary/90"
+                onClick={() =>
+                  scrollToSection("signup", "Join Waitlist Clicked")
+                }
               >
                 {copy.primaryCta}
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="h-14 rounded-lg border-2 border-secondary px-6 text-lg font-bold uppercase tracking-wider text-secondary hover:bg-secondary hover:text-white"
-                onClick={() => {
-                  document
-                    .getElementById("how-it-works")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                  track("See How It Works Clicked");
-                }}
+                className="h-14 rounded-lg border-2 border-secondary px-6 text-lg font-bold uppercase tracking-[0.12em] text-secondary transition-colors duration-200 hover:bg-secondary hover:text-white"
+                onClick={() =>
+                  scrollToSection("how-it-works", "See How It Works Clicked")
+                }
               >
                 {copy.secondaryCta}
               </Button>
@@ -111,41 +117,28 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -left-6 top-8 hidden h-28 w-28 rounded-full border border-primary/20 bg-primary/10 lg:block" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-border bg-secondary p-5 shadow-[0_30px_80px_rgba(0,0,0,0.18)] md:p-6">
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-black">
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent" />
-                <Image
-                  src="/biking-through-rotterdam-cityscape.png"
-                  alt={copy.backgroundAlt}
-                  width={920}
-                  height={1080}
-                  priority
-                  className="h-[420px] w-full object-cover object-center md:h-[520px]"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk9SQ2TQ6y+WgZPJ7FeYqSmL//Z"
-                />
-                <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/10 bg-white/95 p-5 shadow-2xl backdrop-blur md:inset-x-6 md:bottom-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">
-                    {copy.visualCardLabel}
-                  </p>
-                  <div className="mt-3 flex items-start justify-between gap-4">
-                    <div>
-                      <h2 className="text-2xl font-black tracking-tight text-secondary md:text-3xl">
-                        {copy.visualCardTitle}
-                      </h2>
-                      <p className="mt-3 text-sm text-muted-foreground md:text-base">
-                        {copy.visualCardDescription}
-                      </p>
-                    </div>
-                    <div className="rounded-full bg-primary p-3 text-white">
-                      <ArrowRight className="h-5 w-5" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="relative min-h-[420px] overflow-hidden md:min-h-[520px]">
+            <div
+              className="absolute inset-0 overflow-hidden"
+              style={{ clipPath: HERO_IMAGE_CLIP_PATH }}
+            >
+              <Image
+                src="/movrr-close-up-product-shot.png"
+                alt={copy.backgroundAlt}
+                fill
+                priority
+                sizes="(max-width: 1023px) 100vw, 48vw"
+                className="object-cover object-[76%_center] lg:object-[74%_center]"
+                placeholder="blur"
+                blurDataURL={HERO_IMAGE_BLUR}
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background/6" />
             </div>
+
+            <div
+              className="absolute inset-y-0 left-0 w-full bg-background/70"
+              style={{ clipPath: HERO_SEAM_CLIP_PATH }}
+            />
           </div>
         </div>
       </div>

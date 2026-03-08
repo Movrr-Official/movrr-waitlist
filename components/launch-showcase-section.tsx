@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { track } from "@vercel/analytics";
 import { Button } from "@/components/ui/button";
 import type { Dictionary } from "@/locales/en";
 
@@ -11,6 +12,11 @@ interface LaunchShowcaseSectionProps {
 export function LaunchShowcaseSection({
   cityCopy,
 }: LaunchShowcaseSectionProps) {
+  const scrollToSignup = (targetId: string, eventName: string) => {
+    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+    track(eventName);
+  };
+
   return (
     <section className="bg-secondary py-24 text-white md:py-28">
       <div className="container">
@@ -34,11 +40,11 @@ export function LaunchShowcaseSection({
           </div>
         </div>
 
-        <div className="mt-14 grid max-w-[920px] gap-4 md:grid-cols-3">
+        <div className="mt-14 grid max-w-[920px] gap-5 md:grid-cols-3">
           {cityCopy.cards.map((card) => (
             <article
               key={card.name}
-              className="group relative min-h-[168px] overflow-hidden rounded-md border border-white/10 bg-white/5"
+              className="group relative min-h-[182px] overflow-hidden rounded-md border border-white/10 bg-white/5 shadow-[0_18px_50px_-30px_rgba(0,0,0,0.8)]"
             >
               <Image
                 src={card.asset}
@@ -48,24 +54,22 @@ export function LaunchShowcaseSection({
                 className={`h-full w-full object-cover transition duration-300 ${
                   card.featured
                     ? "scale-[1.02]"
-                    : "grayscale group-hover:grayscale-0 group-hover:scale-[1.02]"
+                    : "grayscale group-hover:grayscale-0 group-hover:scale-[1.03]"
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/28 to-black/8" />
-              <div className="absolute inset-0 flex flex-col justify-between p-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/34 to-black/10" />
+              <div className="absolute inset-0 flex flex-col justify-end p-5">
                 <div />
-                <div>
-                  <h3 className="text-[2rem] font-bold leading-none text-white">
+                <div className="max-w-[180px]">
+                  <h3 className="text-[2rem] font-bold leading-none tracking-tight text-white">
                     {card.name}
                   </h3>
                   <Button
                     variant="outline"
-                    className="mt-4 rounded-md border border-white bg-white text-xs font-bold uppercase tracking-wide text-secondary hover:bg-white/90"
-                    onClick={() => {
-                      document
-                        .getElementById("signup")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
+                    className="mt-5 h-10 rounded-md border border-white bg-white px-4 text-[11px] font-bold uppercase tracking-[0.14em] text-secondary transition-colors duration-200 hover:bg-white/90"
+                    onClick={() =>
+                      scrollToSignup("signup", "Join Waitlist Clicked")
+                    }
                   >
                     {card.cta}
                   </Button>

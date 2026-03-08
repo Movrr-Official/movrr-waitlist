@@ -38,10 +38,10 @@ export const nl: Dictionary = {
     dutchName: "Nederlands",
   },
   hero: {
-    eyebrow: "Early access voor urban riders",
+    eyebrow: "Early access voor stadsfietsers",
     status: ["Lanceert binnenkort", "Nederland eerst"],
-    audienceLabel: "Gebouwd voor riders",
-    audience: ["Bezorgers", "Studenten", "Stadsfietsers", "Gig workers"],
+    audienceLabel: "Gebouwd voor fietsers",
+    audience: ["Bezorgers", "Studenten", "Stadsfietsers", "Platformwerkers"],
     titleLines: ["WORD BETAALD", "OM OP", "JE FIETS TE RIJDEN"],
     highlightedLine: "Maak van je dagelijkse ritten extra inkomen.",
     description:
@@ -52,7 +52,8 @@ export const nl: Dictionary = {
     visualCardTitle: "Rijd. Toon ads. Verdien beloningen.",
     visualCardDescription:
       "Bevestig de MOVRR-kit, rijd je normale routes en ontvang beloningen voor geverifieerde ritten.",
-    backgroundAlt: "Stadsgezicht van Amsterdam met grachten en fietsen",
+    backgroundAlt:
+      "Fietser die door Rotterdam rijdt met een MOVRR-displaypaneel",
     logoAlt: "Movrr icoon",
   },
   valueProposition: {
@@ -112,10 +113,10 @@ export const nl: Dictionary = {
   },
   riderBenefits: {
     heading: {
-      eyebrow: "WAAROM RIDERS MOVRR WILLEN",
+      eyebrow: "WAAROM FIETSERS VOOR MOVRR KIEZEN",
       title: "Extra inkomen zonder bezorgingen, roosters of bazen.",
       subtitle:
-        "Een flexibel model dat aansluit op hoe urban cyclists echt rijden.",
+        "Een flexibel model dat aansluit op hoe stadsfietsers echt rijden.",
     },
     items: [
       {
@@ -143,7 +144,7 @@ export const nl: Dictionary = {
   productConcept: {
     heading: {
       eyebrow: "Productconcept",
-      title: "Movrr display Panel",
+      title: "Movrr displaypaneel",
     },
     body: "Een revolutionair lichtgewicht, weerbestendig digitaal of fysiek display dat eenvoudig op bestaande bagagedragers of backpacks wordt bevestigd. Verdien beloningen terwijl je rijdt door gerichte advertenties te tonen.",
     highlights: [
@@ -159,7 +160,7 @@ export const nl: Dictionary = {
     heading: {
       eyebrow: "Stadslancering",
       title: "Lancering binnenkort in grote steden",
-      subtitle: "Hoor bij de eerste riders in jouw stad.",
+      subtitle: "Hoor bij de eerste fietsers in jouw stad.",
     },
     badge: "Binnenkort live",
     cards: [
@@ -190,7 +191,7 @@ export const nl: Dictionary = {
   faq: {
     heading: {
       eyebrow: "FAQ",
-      title: "Alles wat riders voor de launch willen weten.",
+      title: "Alles wat fietsers voor de lancering willen weten.",
       subtitle:
         "Korte antwoorden op de belangrijkste vragen voordat early access opent.",
     },
@@ -226,7 +227,7 @@ export const nl: Dictionary = {
     eyebrow: "EARLY ACCESS",
     title: "Klaar om te beginnen met verdienen?",
     subtitle:
-      "Meld je aan voor de early access waitlist en hoor bij de eerste riders in jouw stad.",
+      "Meld je aan voor de early access waitlist en hoor bij de eerste fietsers in jouw stad.",
     reassurance: "Geen spam. Alleen early access.",
   },
   waitlistForm: {

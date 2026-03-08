@@ -4,32 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Enhanced color system with energy orange accent and refined palette */
-  --background: oklch(1 0 0); /* Pure white background */
-  --foreground: oklch(0.15 0 0); /* Deep black for maximum contrast */
-  --card: oklch(0.98 0.002 240); /* Light gray for cards */
+  /* Core MOVRR tokens */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(0.98 0.002 240);
   --card-foreground: oklch(0.15 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0 0);
-  --primary: oklch(0.669 0.1897 146.47); /* Movrr brand green #23b245 */
+  --primary: oklch(0.669 0.1897 146.47);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.15 0 0); /* Deep black for Nike-style contrast */
+  --secondary: oklch(0.15 0 0);
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.96 0.002 240);
   --muted-foreground: oklch(0.45 0.005 240);
-  --accent: oklch(0.65 0.18 45); /* Energy orange #ff6b35 for CTAs */
+  --accent: oklch(0.65 0.18 45);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9 0.002 240);
   --input: oklch(1 0 0);
-  --ring: oklch(0.6 0.15 142); /* Green ring with subtle transparency */
-  --chart-1: oklch(0.669 0.1897 146.47); /* Brand green */
-  --chart-2: oklch(0.65 0.18 45); /* Energy orange */
-  --chart-3: oklch(0.15 0 0); /* Deep black */
-  --chart-4: oklch(0.45 0.005 240); /* Urban gray */
-  --chart-5: oklch(1 0 0); /* Pure white */
-  --radius: 0.75rem; /* Slightly larger radius for modern feel */
+  --ring: oklch(0.6 0.15 142);
+  --chart-1: oklch(0.669 0.1897 146.47);
+  --chart-2: oklch(0.65 0.18 45);
+  --chart-3: oklch(0.15 0 0);
+  --chart-4: oklch(0.45 0.005 240);
+  --chart-5: oklch(1 0 0);
+  --radius: 0.75rem;
   --sidebar: oklch(0.98 0.002 240);
   --sidebar-foreground: oklch(0.15 0 0);
   --sidebar-primary: oklch(0.55 0.15 142);
@@ -39,7 +39,6 @@
   --sidebar-border: oklch(0.9 0.002 240);
   --sidebar-ring: oklch(0.55 0.15 142 / 0.3);
 
-  /* Enhanced gradient and glass effect variables for premium feel */
   --gradient-primary: linear-gradient(
     135deg,
     oklch(0.98 0.002 120) 0%,
@@ -56,11 +55,9 @@
 }
 
 @theme inline {
-  /* Enhanced typography with Inter font family for modern readability */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Extended color palette with energy orange and refined tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -110,7 +107,6 @@
     @apply max-w-[1400px]! mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Enhanced typography scale for better hierarchy */
   h1 {
     @apply text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance;
   }
@@ -129,7 +125,6 @@
 }
 
 @layer components {
-  /* Conversion-focused utilities for better user engagement */
   .cta-primary {
     @apply bg-primary text-primary-foreground hover:bg-primary/90
            px-8 py-4 text-lg font-semibold rounded-lg
@@ -146,7 +141,6 @@
            transform hover:scale-105 active:scale-95;
   }
 
-  /* Social proof and trust building elements */
   .trust-badge {
     @apply bg-card border border-border rounded-lg p-4
            shadow-sm hover:shadow-md transition-shadow duration-200;
@@ -156,7 +150,6 @@
     @apply text-3xl md:text-4xl font-bold text-primary;
   }
 
-  /* Urgency and scarcity messaging utilities */
   .urgency-banner {
     @apply bg-accent text-accent-foreground px-4 py-2 rounded-full
            text-sm font-medium animate-pulse;
@@ -167,7 +160,6 @@
            px-3 py-1 rounded-full text-xs font-medium;
   }
 
-  /* Enhanced form styling for better conversions */
   .form-field {
     @apply w-full px-4 py-3 border border-border rounded-lg
            bg-background text-foreground
@@ -177,7 +169,6 @@
            focus:shadow-lg focus:shadow-primary/10;
   }
 
-  /* Layout utilities for bold minimalism */
   .hero-section {
     @apply min-h-screen flex items-center justify-center
            bg-gradient-to-br from-background via-background to-muted/30;
@@ -188,7 +179,6 @@
            [&>*:first-child]:md:col-span-2;
   }
 
-  /* Visual storytelling elements */
   .testimonial-card {
     @apply bg-card border border-border rounded-xl p-6
            shadow-lg hover:shadow-xl transition-all duration-300
@@ -202,12 +192,10 @@
            before:animate-pulse;
   }
 
-  /* Mobile-first touch targets */
   .touch-target {
     @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
 
-  /* Progressive disclosure patterns */
   .expandable-content {
     @apply overflow-hidden transition-all duration-300 ease-out;
   }
@@ -252,12 +240,10 @@
     animation: scaleIn 0.5s ease-out forwards;
   }
 
-  /* Focus states for accessibility and conversion optimization */
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
   }
 
-  /* Responsive spacing utilities for consistent layout */
   .section-padding {
     @apply py-16 md:py-24 lg:py-32;
   }
@@ -267,7 +253,6 @@
   }
 }
 
-/* Added keyframe animations outside of layers */
 @keyframes float {
   0%,
   100% {
