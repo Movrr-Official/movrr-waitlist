@@ -105,7 +105,7 @@ export function LaunchShowcaseSection({
                   </h3>
                   <Button
                     variant="outline"
-                    className="mt-5 h-10 rounded-md border border-white bg-white px-4 text-[11px] font-bold uppercase tracking-[0.14em] text-secondary transition-colors duration-200 hover:bg-white/90"
+                    className="mt-5 h-10 rounded-md border border-white bg-white px-4 text-[11px] font-bold uppercase tracking-[0.14em] text-secondary transition-colors duration-200 hover:border-primary hover:bg-white/90 hover:text-primary"
                     onClick={() =>
                       scrollToSignup(
                         "signup",
