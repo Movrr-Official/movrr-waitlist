@@ -39,7 +39,7 @@ export const nl: Dictionary = {
   },
   hero: {
     eyebrow: "Early access voor stadsfietsers",
-    status: ["Lanceert binnenkort", "Nederland eerst"],
+    status: ["Lanceert binnenkort"],
     audienceLabel: "Gebouwd voor fietsers",
     audience: ["Bezorgers", "Studenten", "Stadsfietsers", "Platformwerkers"],
     titleLines: ["WORD BETAALD", "OM OP", "JE FIETS TE RIJDEN"],

@@ -39,7 +39,7 @@ export const en: Dictionary = {
   },
   hero: {
     eyebrow: "Early access for urban riders",
-    status: ["Launching soon", "Netherlands-first"],
+    status: ["Launching soon"],
     audienceLabel: "Built for riders",
     audience: ["Delivery riders", "Students", "Urban cyclists", "Gig workers"],
     titleLines: ["GET PAID", "TO RIDE", "YOUR BIKE"],
