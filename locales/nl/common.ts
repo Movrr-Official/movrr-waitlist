@@ -44,8 +44,6 @@ export const nl: Dictionary = {
       "Eerste lancering in Rotterdam",
       "Gevestigd in Rotterdam",
       "Vroege toegang voor de lancering",
-      "Geen spam",
-      "Geen betaling nodig",
     ],
     audienceLabel: "Gebouwd voor fietsers",
     audience: ["Bezorgers", "Studenten", "Stadsfietsers", "Platformwerkers"],

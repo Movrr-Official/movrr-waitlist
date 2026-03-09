@@ -12,8 +12,8 @@ interface HeroSectionProps {
   brandName: string;
 }
 
-const HERO_IMAGE_CLIP_PATH = "polygon(28% 0%, 100% 0%, 100% 100%, 3% 100%)";
-const HERO_SEAM_CLIP_PATH = "polygon(27.4% 0%, 28.2% 0%, 3.6% 100%, 2.8% 100%)";
+const HERO_IMAGE_CLIP_PATH = "polygon(31% 0%, 100% 0%, 100% 100%, 4.5% 100%)";
+const HERO_SEAM_CLIP_PATH = "polygon(30.3% 0%, 31.1% 0%, 5.1% 100%, 4.3% 100%)";
 const HERO_IMAGE_BLUR =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23f2f2f2'/%3E%3Cstop offset='45%25' stop-color='%23d8d8d8'/%3E%3Cstop offset='72%25' stop-color='%2323B245'/%3E%3Cstop offset='100%25' stop-color='%230f0f0f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23g)'/%3E%3C/svg%3E";
 const containerVariants: Variants = {
@@ -77,7 +77,7 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[580px] bg-gradient-to-b from-muted/70 via-white to-white" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[640px] bg-gradient-to-b from-muted/75 via-white via-[58%] to-white" />
       <div className="pointer-events-none absolute right-0 top-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute left-0 top-40 h-72 w-72 rounded-full bg-secondary/5 blur-3xl" />
 
@@ -170,7 +170,7 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
             </motion.div>
 
             <motion.div
-              className="mt-6 flex flex-wrap gap-3"
+              className="mt-8 flex flex-wrap gap-3"
               variants={itemVariants}
               ref={proofPointsRef}
             >
@@ -205,7 +205,7 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
           </div>
 
           <motion.div
-            className="relative min-h-[420px] overflow-hidden md:min-h-[520px]"
+            className="relative min-h-[420px] overflow-hidden md:min-h-[520px] lg:-mt-20 lg:min-h-[660px]"
             initial={{
               clipPath:
                 "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
@@ -224,11 +224,12 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
                 priority
                 sizes="(max-width: 1023px) 100vw, 48vw"
                 quality={82}
-                className="object-cover object-[76%_center] lg:object-[74%_center]"
+                className="object-cover object-[72%_center] lg:object-[70%_center]"
                 placeholder="blur"
                 blurDataURL={HERO_IMAGE_BLUR}
               />
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background/6" />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background/8" />
+              <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/40 via-white/8 to-transparent" />
             </div>
 
             <div
