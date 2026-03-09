@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { track } from "@vercel/analytics";
 import { motion, type Variants } from "framer-motion";
@@ -38,6 +39,32 @@ const itemVariants: Variants = {
 };
 
 export function HeroSection({ copy, brandName }: HeroSectionProps) {
+  const proofPointsRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const element = proofPointsRef.current;
+    if (!element) return;
+
+    let hasTracked = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (!entry?.isIntersecting || hasTracked) return;
+
+        hasTracked = true;
+        track("Hero Trust Signals Viewed", {
+          signalCount: copy.proofPoints.length,
+        });
+        observer.disconnect();
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [copy.proofPoints.length]);
+
   const scrollToSection = (targetId: string, eventName: string) => {
     document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
     track(eventName);
@@ -143,7 +170,22 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
             </motion.div>
 
             <motion.div
-              className="mt-10 border-t border-border pt-6"
+              className="mt-6 flex flex-wrap gap-3"
+              variants={itemVariants}
+              ref={proofPointsRef}
+            >
+              {copy.proofPoints.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-border bg-white px-3 py-2 text-xs font-semibold tracking-[0.08em] text-muted-foreground"
+                >
+                  {item}
+                </span>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="mt-10 hidden border-t border-border pt-6 md:block"
               variants={itemVariants}
             >
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
@@ -181,6 +223,7 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
                 fill
                 priority
                 sizes="(max-width: 1023px) 100vw, 48vw"
+                quality={82}
                 className="object-cover object-[76%_center] lg:object-[74%_center]"
                 placeholder="blur"
                 blurDataURL={HERO_IMAGE_BLUR}

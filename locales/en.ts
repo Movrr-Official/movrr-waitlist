@@ -40,19 +40,22 @@ export const en: Dictionary = {
   hero: {
     eyebrow: "Early access for urban riders",
     status: ["Launching soon"],
+    proofPoints: [
+      "Launching first in Rotterdam",
+      "Based in Rotterdam",
+      "Pre-launch early access",
+      "No spam",
+      "No payment required",
+    ],
     audienceLabel: "Built for riders",
     audience: ["Delivery riders", "Students", "Urban cyclists", "Gig workers"],
     titleLines: ["GET PAID", "TO RIDE", "YOUR BIKE"],
-    highlightedLine: "Turn everyday rides into extra income.",
+    highlightedLine: "Earn rewards from the rides you already make.",
     description:
-      "Earn rewards by displaying brand campaigns while riding through your city.",
+      "MOVRR helps everyday riders earn rewards from eligible rides by showing brand campaigns on a compatible bike display panel across the city.",
     primaryCta: "Join the Waitlist",
     secondaryCta: "See how it works",
-    visualCardLabel: "How MOVRR works",
-    visualCardTitle: "Ride. Display ads. Earn rewards.",
-    visualCardDescription:
-      "Attach the MOVRR kit, ride your usual routes, and get rewarded for verified rides.",
-    backgroundAlt: "Amsterdam cityscape with canals and bikes",
+    backgroundAlt: "Close-up of a MOVRR bike advertising setup",
     logoAlt: "Movrr Icon",
   },
   valueProposition: {
@@ -70,7 +73,7 @@ export const en: Dictionary = {
       {
         title: "Earn",
         description:
-          "Display brand campaigns while cycling and earn rewards from verified rides.",
+          "Display brand campaigns while cycling and earn rewards from eligible rides.",
       },
       {
         title: "Belong",
@@ -82,7 +85,7 @@ export const en: Dictionary = {
   howItWorks: {
     heading: {
       eyebrow: "HOW IT WORKS",
-      title: "Four simple steps from sign-up to first payout.",
+      title: "Four simple steps from sign-up to first reward.",
       subtitle: "MOVRR is designed to fit into the way you already ride.",
     },
     steps: [
@@ -94,7 +97,7 @@ export const en: Dictionary = {
       {
         title: "Get Your Kit",
         description:
-          "Attach the MOVRR display panel or backpack kit to your bike setup.",
+          "Attach the MOVRR display panel to your compatible bike setup.",
       },
       {
         title: "Ride the City",
@@ -104,7 +107,7 @@ export const en: Dictionary = {
       {
         title: "Get Paid",
         description:
-          "Earn monthly rewards based on verified rides and transparent tracking.",
+          "Earn monthly rewards based on eligible rides and transparent tracking.",
       },
     ],
   },
@@ -133,21 +136,23 @@ export const en: Dictionary = {
       {
         title: "Transparent Rewards",
         description:
-          "Clear earnings, fair payouts, and visibility into how rewards are calculated.",
+          "Clear reward criteria, fair rewards, and visibility into how rewards are calculated.",
       },
     ],
+    cta: "Join the Waitlist",
+    ctaNote: "It takes less than 30 seconds to join.",
   },
   productConcept: {
     heading: {
       eyebrow: "Product Concept",
       title: "Movrr display panel",
     },
-    body: "A lightweight, weatherproof display system built for everyday bikes and cargo bikes. It attaches to compatible bike setups, keeps brand campaigns visible on the move, and works with MOVRR to track eligible rides and rewards.",
+    body: "A lightweight, weatherproof display panel system built for everyday bikes and cargo bikes. It mounts to compatible bike setups, keeps brand campaigns visible while you ride, and works with MOVRR to track eligible rides and rewards.",
     highlights: [
-      "Universal attachment",
+      "Compatible bike mounting",
       "Durable & weather-resistant",
-      "High-visibility screen",
-      "Seamless app integration",
+      "High-visibility display",
+      "Integrated reward tracking",
     ],
     imageAlt: "Movrr display panel attached to a bicycle",
     cta: "Join the Waitlist",
@@ -156,7 +161,7 @@ export const en: Dictionary = {
     heading: {
       eyebrow: "City Launch",
       title: "Launching soon in major cities",
-      subtitle: "Be among the first riders in your city.",
+      subtitle: "Join now and be first in line when MOVRR opens in your city.",
     },
     badge: "Launching Soon",
     cards: [
@@ -165,7 +170,6 @@ export const en: Dictionary = {
         asset: "/city-rotterdam-card.png",
         cta: "Notify Me",
         featured: true,
-        featuredLabel: "Launching first",
       },
       {
         name: "Amsterdam",
@@ -200,12 +204,12 @@ export const en: Dictionary = {
       {
         question: "How much can riders earn?",
         answer:
-          "Rewards will depend on campaign activity and verified rides. We will keep payouts transparent and share details before launch.",
+          "Rewards will depend on campaign activity and eligible rides. We will share the reward model clearly before launch.",
       },
       {
         question: "Do I need my own bike?",
         answer:
-          "Yes. You will need your own bike to ride with MOVRR, and we will provide the campaign display kit.",
+          "Yes. You will need your own bike to ride with MOVRR, and we will provide the display panel setup used in the program.",
       },
       {
         question: "Can I ride whenever I want?",
@@ -223,15 +227,15 @@ export const en: Dictionary = {
     eyebrow: "JOIN EARLY ACCESS",
     title: "Ready to start earning?",
     subtitle:
-      "Join the early access waitlist and be among the first riders in your city.",
-    reassurance: "No spam. Early access only.",
+      "Join the early access waitlist and be first in line when MOVRR opens in your city.",
+    reassurance: "Takes less than 30 seconds. Early access only.",
   },
   waitlistForm: {
     labels: {
       name: "Full Name",
       email: "Email",
       city: "City",
-      bikeOwnership: "Own a Bike?",
+      bikeOwnership: "Own a Bike? (Optional)",
     },
     placeholders: {
       name: "Enter your name",
@@ -248,12 +252,12 @@ export const en: Dictionary = {
       nameMin: "Name must be at least 2 characters",
       emailInvalid: "Please enter a valid email address",
       cityMin: "City must be at least 2 characters",
-      bikeRequired: "Please select an option",
     },
     actions: {
       submitting: "Joining...",
       submit: "Join the Waitlist",
       reset: "Join Another Rider",
+      revealBikeOwnership: "Add bike details (optional)",
     },
     success: {
       title: "Welcome to the Movement!",
@@ -268,6 +272,11 @@ export const en: Dictionary = {
       line1: "By joining, you agree to receive updates about Movrr's launch.",
       line2: "No spam. Just the good stuff. Unsubscribe anytime.",
     },
+    trustNotes: [
+      "No account required",
+      "No payment required",
+      "Early access only",
+    ],
   },
   footer: {
     logoAlt: "Movrr Icon",

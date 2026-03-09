@@ -14,7 +14,7 @@ interface AdminNotificationEmailProps {
   name: string;
   email: string;
   city: string;
-  bikeOwnership: string;
+  bikeOwnership?: string;
   timestamp: string; // ISO or pre-formatted string
   id?: string; // optional submission id or uuid
   source?: string; // optional form / campaign source
@@ -39,6 +39,7 @@ export default function AdminNotificationEmail({
     yes: "Owns a bike",
     no: "Doesn't own a bike",
     planning: "Planning to get a bike",
+    notProvided: "Not provided",
   };
 
   return (
@@ -191,11 +192,11 @@ export default function AdminNotificationEmail({
                         lineHeight: "1.4",
                       }}
                     >
-                      {
-                        bikeStatusText[
-                          bikeOwnership as keyof typeof bikeStatusText
-                        ]
-                      }
+                      {bikeOwnership
+                        ? bikeStatusText[
+                            bikeOwnership as keyof typeof bikeStatusText
+                          ]
+                        : bikeStatusText.notProvided}
                     </td>
                   </tr>
                   <tr>
@@ -311,7 +312,7 @@ export function adminNotificationText({
   name: string;
   email: string;
   city: string;
-  bikeOwnership: string;
+  bikeOwnership?: string;
   timestamp: string;
   id?: string;
   source?: string;
@@ -321,6 +322,7 @@ export function adminNotificationText({
     yes: "Owns a bike",
     no: "Doesn't own a bike",
     planning: "Planning to get a bike",
+    notProvided: "Not provided",
   } as const;
 
   const lines = [];
@@ -329,7 +331,12 @@ export function adminNotificationText({
   lines.push(`Email: ${email}`);
   lines.push(`City: ${city}`);
   lines.push(
-    `Bike ownership: ${bikeStatusText[bikeOwnership as keyof typeof bikeStatusText] ?? bikeOwnership}`,
+    `Bike ownership: ${
+      bikeOwnership
+        ? bikeStatusText[bikeOwnership as keyof typeof bikeStatusText] ??
+          bikeOwnership
+        : bikeStatusText.notProvided
+    }`,
   );
   lines.push(`Registered on: ${timestamp}`);
   if (source) lines.push(`Source: ${source}`);

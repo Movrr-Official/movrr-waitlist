@@ -14,7 +14,7 @@ export async function sendUserConfirmationEmail(
   email: string,
   name: string,
   city: string,
-  bikeOwnership: string
+  bikeOwnership?: string
 ) {
   try {
     const { data, error } = await resend.emails.send({
@@ -40,7 +40,7 @@ export async function sendAdminNotificationEmail(
   name: string,
   email: string,
   city: string,
-  bikeOwnership: string
+  bikeOwnership?: string
 ) {
   const timestamp = new Date().toLocaleString();
 

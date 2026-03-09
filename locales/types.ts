@@ -45,6 +45,7 @@ export interface Dictionary {
   hero: {
     eyebrow: string;
     status: string[];
+    proofPoints: string[];
     audienceLabel: string;
     audience: string[];
     titleLines: string[];
@@ -52,9 +53,6 @@ export interface Dictionary {
     description: string;
     primaryCta: string;
     secondaryCta: string;
-    visualCardLabel: string;
-    visualCardTitle: string;
-    visualCardDescription: string;
     backgroundAlt: string;
     logoAlt: string;
   };
@@ -69,6 +67,8 @@ export interface Dictionary {
   riderBenefits: {
     heading: SectionHeading;
     items: Array<{ title: string; description: string }>;
+    cta: string;
+    ctaNote?: string;
   };
   productConcept: {
     heading: SectionHeading;
@@ -85,7 +85,6 @@ export interface Dictionary {
       asset: string;
       cta: string;
       featured?: boolean;
-      featuredLabel?: string;
     }>;
   };
   faq: {
@@ -120,12 +119,12 @@ export interface Dictionary {
       nameMin: string;
       emailInvalid: string;
       cityMin: string;
-      bikeRequired: string;
     };
     actions: {
       submitting: string;
       submit: string;
       reset: string;
+      revealBikeOwnership: string;
     };
     success: {
       title: string;
@@ -139,6 +138,7 @@ export interface Dictionary {
       line1: string;
       line2: string;
     };
+    trustNotes: string[];
   };
   footer: {
     logoAlt: string;

@@ -63,7 +63,7 @@ export function Footer({ locale, copy, brandName }: FooterProps) {
             className="mt-16 text-sm text-white/60"
             variants={headingReveal}
           >
-            © {currentYear} {copy.copyrightSuffix}
+            {"\u00A9"} {currentYear} {copy.copyrightSuffix}
           </motion.div>
         </div>
       </div>

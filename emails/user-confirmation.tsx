@@ -14,7 +14,7 @@ import {
 interface UserConfirmationEmailProps {
   name: string;
   city: string;
-  bikeOwnership: string;
+  bikeOwnership?: string;
   id?: string;
   ctaUrl?: string;
   locale?: string;
@@ -32,6 +32,7 @@ export default function UserConfirmationEmail({
     yes: "Perfect! You're ready to ride.",
     no: "No worries - we'll help you get started.",
     planning: "Great! We'll keep you updated on bike options.",
+    notProvided: "You can tell us later what setup you ride with.",
   };
 
   return (
@@ -114,11 +115,11 @@ export default function UserConfirmationEmail({
                         lineHeight: "1.4",
                       }}
                     >
-                      {
-                        bikeStatusText[
-                          bikeOwnership as keyof typeof bikeStatusText
-                        ]
-                      }
+                      {bikeOwnership
+                        ? bikeStatusText[
+                            bikeOwnership as keyof typeof bikeStatusText
+                          ]
+                        : bikeStatusText.notProvided}
                     </td>
                   </tr>
                   {id && (
@@ -198,7 +199,7 @@ export function userConfirmationText({
 }: {
   name: string;
   city: string;
-  bikeOwnership: string;
+  bikeOwnership?: string;
   id?: string;
   ctaUrl?: string;
 }) {
@@ -206,6 +207,7 @@ export function userConfirmationText({
     yes: "Perfect! You're ready to ride.",
     no: "No worries - we'll help you get started.",
     planning: "Great! We'll keep you updated on bike options.",
+    notProvided: "You can tell us later what setup you ride with.",
   } as const;
 
   const lines = [];
@@ -213,7 +215,12 @@ export function userConfirmationText({
   lines.push("");
   lines.push(`City: ${city}`);
   lines.push(
-    `Bike status: ${bikeStatusText[bikeOwnership as keyof typeof bikeStatusText] ?? bikeOwnership}`,
+    `Bike status: ${
+      bikeOwnership
+        ? bikeStatusText[bikeOwnership as keyof typeof bikeStatusText] ??
+          bikeOwnership
+        : bikeStatusText.notProvided
+    }`,
   );
   if (id) lines.push(`Signup ID: ${id}`);
   lines.push("");

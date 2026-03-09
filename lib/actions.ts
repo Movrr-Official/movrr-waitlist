@@ -13,7 +13,7 @@ const waitlistSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   city: z.string().min(2),
-  bikeOwnership: z.enum(["yes", "no", "planning"]),
+  bikeOwnership: z.enum(["yes", "no", "planning"]).optional(),
   locale: z.string().optional(),
 });
 
@@ -31,7 +31,7 @@ export async function submitWaitlistForm(data: WaitlistFormData) {
       name: validatedData.name,
       email: validatedData.email,
       city: validatedData.city,
-      bike_ownership: validatedData.bikeOwnership,
+      bike_ownership: validatedData.bikeOwnership ?? null,
     });
 
     if (dbError) {
@@ -39,18 +39,18 @@ export async function submitWaitlistForm(data: WaitlistFormData) {
     }
 
     await sendUserConfirmationEmail(
-      validatedData.email,
-      validatedData.name,
-      validatedData.city,
-      validatedData.bikeOwnership
-    );
+        validatedData.email,
+        validatedData.name,
+        validatedData.city,
+        validatedData.bikeOwnership
+      );
 
     await sendAdminNotificationEmail(
-      validatedData.name,
-      validatedData.email,
-      validatedData.city,
-      validatedData.bikeOwnership
-    );
+        validatedData.name,
+        validatedData.email,
+        validatedData.city,
+        validatedData.bikeOwnership
+      );
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
 

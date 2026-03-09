@@ -134,7 +134,12 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
                       fill
                       className="object-cover"
                       style={{ objectPosition: item.objectPosition }}
-                      priority={isActive}
+                      sizes={
+                        isActive
+                          ? "(max-width: 1023px) 72vw, 34vw"
+                          : "(max-width: 1023px) 18vw, 8vw"
+                      }
+                      quality={78}
                     />
                     <div
                       className={`absolute inset-0 transition-colors duration-700 ease-in-out ${

@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { track } from "@vercel/analytics";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -25,18 +25,19 @@ interface WaitlistFormProps {
 }
 
 export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
+  const trustNotesRef = useRef<HTMLDivElement | null>(null);
+  const hasTrackedFormStart = useRef(false);
   const waitlistSchema = z.object({
     name: z.string().min(2, copy.validation.nameMin),
     email: z.string().email(copy.validation.emailInvalid),
     city: z.string().min(2, copy.validation.cityMin),
-    bikeOwnership: z.enum(["yes", "no", "planning"], {
-      required_error: copy.validation.bikeRequired,
-    }),
+    bikeOwnership: z.enum(["yes", "no", "planning"]).optional(),
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [showBikeOwnership, setShowBikeOwnership] = useState(false);
 
   const {
     register,
@@ -51,6 +52,65 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
 
   const bikeOwnership = watch("bikeOwnership");
 
+  useEffect(() => {
+    const handleCitySelected = (event: Event) => {
+      const customEvent = event as CustomEvent<string>;
+      if (!customEvent.detail) return;
+
+      setValue("city", customEvent.detail, {
+        shouldDirty: true,
+        shouldValidate: true,
+      });
+
+      track("Waitlist City Field Updated", {
+        city: customEvent.detail,
+        source: "city-launch-card",
+      });
+    };
+
+    window.addEventListener("movrr:city-selected", handleCitySelected);
+    return () => {
+      window.removeEventListener("movrr:city-selected", handleCitySelected);
+    };
+  }, [setValue]);
+
+  useEffect(() => {
+    const element = trustNotesRef.current;
+    if (!element) return;
+
+    let hasTracked = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (!entry?.isIntersecting || hasTracked) return;
+
+        hasTracked = true;
+        track("Waitlist Trust Notes Viewed", {
+          noteCount: copy.trustNotes.length,
+          locale,
+        });
+        observer.disconnect();
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [copy.trustNotes.length, locale]);
+
+  const handleFormStarted = (
+    field: "name" | "email" | "city" | "bikeOwnership"
+  ) => {
+    if (hasTrackedFormStart.current) return;
+
+    hasTrackedFormStart.current = true;
+    track("Waitlist Form Started", {
+      field,
+      locale,
+    });
+  };
+
   const onSubmit = async (data: WaitlistFormData) => {
     setIsSubmitting(true);
     setSubmitMessage(null);
@@ -59,14 +119,27 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
       const result = await submitWaitlistForm({ ...data, locale });
 
       if (result.success) {
-        track("Waitlist Form Submitted");
+        track("Waitlist Form Submitted", {
+          locale,
+          bikeOwnershipProvided: Boolean(data.bikeOwnership),
+        });
         setSubmitSuccess(true);
         setSubmitMessage(result.message || copy.messages.success);
         reset();
+        setShowBikeOwnership(false);
+        hasTrackedFormStart.current = false;
       } else {
+        track("Waitlist Form Submission Failed", {
+          locale,
+          reason: "server_validation",
+        });
         setSubmitMessage(result.message || copy.messages.genericError);
       }
     } catch (_error) {
+      track("Waitlist Form Submission Failed", {
+        locale,
+        reason: "network_or_unknown",
+      });
       setSubmitMessage(copy.messages.genericError);
     } finally {
       setIsSubmitting(false);
@@ -85,8 +158,10 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
         </div>
         <Button
           onClick={() => {
+            track("Waitlist Form Reset Clicked", { locale });
             setSubmitSuccess(false);
             setSubmitMessage(null);
+            setShowBikeOwnership(false);
           }}
           size="lg"
           variant="outline"
@@ -100,7 +175,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid gap-6 md:grid-cols-2">
         <div className="space-y-3">
           <Label
             htmlFor="name"
@@ -114,6 +189,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
             placeholder={copy.placeholders.name}
             className="h-14 border-2 border-muted rounded-3xl"
             disabled={isSubmitting}
+            onFocus={() => handleFormStarted("name")}
           />
           {errors.name && (
             <p className="text-sm text-red-600 font-medium">{errors.name.message}</p>
@@ -133,31 +209,34 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
             placeholder={copy.placeholders.email}
             className="h-14 border-2 border-muted rounded-3xl"
             disabled={isSubmitting}
+            onFocus={() => handleFormStarted("email")}
           />
           {errors.email && (
             <p className="text-sm text-red-600 font-medium">{errors.email.message}</p>
           )}
         </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="space-y-3">
-          <Label
-            htmlFor="city"
-            className="text-sm font-bold text-secondary uppercase tracking-wide"
-          >
-            {copy.labels.city}
-          </Label>
-          <Input
-            id="city"
-            {...register("city")}
-            placeholder={copy.placeholders.city}
-            className="h-14 border-2 border-muted rounded-3xl"
-            disabled={isSubmitting}
-          />
-          {errors.city && (
-            <p className="text-sm text-red-600 font-medium">{errors.city.message}</p>
-          )}
-        </div>
+      <div className="space-y-3">
+        <Label
+          htmlFor="city"
+          className="text-sm font-bold text-secondary uppercase tracking-wide"
+        >
+          {copy.labels.city}
+        </Label>
+        <Input
+          id="city"
+          {...register("city")}
+          placeholder={copy.placeholders.city}
+          className="h-14 border-2 border-muted rounded-3xl"
+          disabled={isSubmitting}
+          onFocus={() => handleFormStarted("city")}
+        />
+        {errors.city && (
+          <p className="text-sm text-red-600 font-medium">{errors.city.message}</p>
+        )}
+      </div>
+
+      {showBikeOwnership ? (
         <div className="space-y-3">
           <Label
             htmlFor="bike"
@@ -167,9 +246,14 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
           </Label>
           <Select
             value={bikeOwnership}
-            onValueChange={(value) =>
-              setValue("bikeOwnership", value as "yes" | "no" | "planning")
-            }
+            onValueChange={(value) => {
+              handleFormStarted("bikeOwnership");
+              track("Waitlist Bike Ownership Selected", {
+                value,
+                locale,
+              });
+              setValue("bikeOwnership", value as "yes" | "no" | "planning");
+            }}
             disabled={isSubmitting}
           >
             <SelectTrigger className="w-full min-h-14 border-2 border-muted rounded-3xl">
@@ -181,13 +265,22 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
               <SelectItem value="planning">{copy.bikeOptions.planning}</SelectItem>
             </SelectContent>
           </Select>
-          {errors.bikeOwnership && (
-            <p className="text-sm text-red-600 font-medium">
-              {errors.bikeOwnership.message}
-            </p>
-          )}
         </div>
-      </div>
+      ) : (
+        <div>
+          <Button
+            type="button"
+            variant="outline"
+            className="h-12 rounded-3xl border-2 border-muted px-5 text-sm font-bold uppercase tracking-[0.12em] text-secondary hover:bg-muted/30 hover:text-secondary"
+            onClick={() => {
+              setShowBikeOwnership(true);
+              track("Waitlist Bike Details Revealed", { locale });
+            }}
+          >
+            {copy.actions.revealBikeOwnership}
+          </Button>
+        </div>
+      )}
 
       {submitMessage && (
         <div
@@ -209,6 +302,17 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
       >
         {isSubmitting ? copy.actions.submitting : copy.actions.submit}
       </Button>
+
+      <div ref={trustNotesRef} className="flex flex-wrap justify-center gap-3">
+        {copy.trustNotes.map((item) => (
+          <span
+            key={item}
+            className="rounded-full border border-border bg-muted/40 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-secondary/75"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
 
       <div className="text-center pt-4">
         <p className="text-gray-600 font-medium">

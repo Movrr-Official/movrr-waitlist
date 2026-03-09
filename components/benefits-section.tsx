@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { track } from "@vercel/analytics";
 import { Coins, Eye, ShieldCheck, TimerReset } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import { cardReveal, headingReveal, sectionStagger, viewportOnce } from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
@@ -12,6 +14,10 @@ interface BenefitsSectionProps {
 
 export function BenefitsSection({ copy }: BenefitsSectionProps) {
   const icons = [Coins, Eye, TimerReset, ShieldCheck];
+  const scrollToSignup = () => {
+    document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
+    track("Benefits Join Waitlist Clicked");
+  };
 
   return (
     <motion.section
@@ -63,6 +69,24 @@ export function BenefitsSection({ copy }: BenefitsSectionProps) {
               </motion.article>
             );
           })}
+        </motion.div>
+
+        <motion.div
+          className="mt-12 flex flex-col items-start gap-4"
+          variants={headingReveal}
+        >
+          <Button
+            type="button"
+            onClick={scrollToSignup}
+            className="h-12 rounded-lg px-6 text-base font-bold uppercase tracking-[0.12em]"
+          >
+            {copy.cta}
+          </Button>
+          {copy.ctaNote ? (
+            <p className="text-sm font-medium text-muted-foreground">
+              {copy.ctaNote}
+            </p>
+          ) : null}
         </motion.div>
       </div>
     </motion.section>
