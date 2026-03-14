@@ -281,6 +281,8 @@ export const en: Dictionary = {
     tagline: "Transform your ride. Transform your life.",
     privacy: "Privacy",
     terms: "Terms",
+    instagram: "Instagram",
+    instagramHref: "https://www.instagram.com/movrr.nl/",
     copyrightSuffix: "Movrr. All rights reserved.",
   },
   privacy: {

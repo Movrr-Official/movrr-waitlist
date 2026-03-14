@@ -47,10 +47,10 @@ export const nl: Dictionary = {
     ],
     audienceLabel: "Gebouwd voor fietsers",
     audience: ["Bezorgers", "Studenten", "Stadsfietsers", "Platformwerkers"],
-    titleLines: ["WORD BETAALD", "OM OP", "JE FIETS TE RIJDEN"],
-    highlightedLine: "Verdien beloningen met de ritten die je toch al maakt.",
+    titleLines: ["VERDIEN GELD", "MET", "FIETSEN"],
+    highlightedLine: "Ontvang beloningen voor de ritten die je toch al maakt.",
     description:
-      "MOVRR helpt dagelijkse fietsers beloningen te verdienen met ritten die in aanmerking komen door merkcampagnes te tonen op een compatibel displaypaneel op de fiets in de stad.",
+      "MOVRR helpt dagelijkse fietsers geld te verdienen met ritten die in aanmerking komen voor merkcampagnes op een compatibel displaypaneel.",
     primaryCta: "Schrijf je in",
     secondaryCta: "Bekijk hoe het werkt",
     backgroundAlt:
@@ -61,7 +61,7 @@ export const nl: Dictionary = {
     heading: {
       eyebrow: "WAAROM MOVRR",
       title:
-        "Een eenvoudigere manier om te verdienen met de ritten die je al maakt.",
+        "Een eenvoudigere manier om te verdienen met de ritten die je toch al maakt.",
       subtitle:
         "Gebouwd voor fietsers die zich elke dag door de stad verplaatsen.",
     },
@@ -69,7 +69,7 @@ export const nl: Dictionary = {
       {
         title: "Rijd",
         description:
-          "Maak van je dagelijkse routes een verdienkans zonder je routine te veranderen.",
+          "Maak van je dagelijkse routes een extra inkomstenbron, zonder je routine te veranderen.",
       },
       {
         title: "Verdien",
@@ -86,8 +86,8 @@ export const nl: Dictionary = {
   howItWorks: {
     heading: {
       eyebrow: "HOE HET WERKT",
-      title: "Vier simpele stappen van inschrijving tot je eerste beloning.",
-      subtitle: "MOVRR sluit aan op de manier waarop je nu al rijdt.",
+      title: "Vier eenvoudige stappen van inschrijving tot je eerste beloning.",
+      subtitle: "MOVRR sluit naadloos aan op de manier waarop je nu al fietst.",
     },
     steps: [
       {
@@ -103,12 +103,12 @@ export const nl: Dictionary = {
       {
         title: "Rijd door de stad",
         description:
-          "Rijd zoals je normaal doet terwijl je fiets campagnes zichtbaar maakt in de stad.",
+          "Fiets zoals je normaal doet terwijl je merkcampagnes zichtbaar maakt in de stad.",
       },
       {
         title: "Ontvang je beloning",
         description:
-          "Verdien maandelijkse beloningen op basis van ritten die in aanmerking komen en duidelijke tracking.",
+          "Verdien maandelijkse beloningen op basis van ritten die in aanmerking komen, met duidelijke tracking.",
       },
     ],
   },
@@ -123,17 +123,17 @@ export const nl: Dictionary = {
       {
         title: "Verdien terwijl je rijdt",
         description:
-          "Maak van dagelijkse ritten een passieve inkomstenstroom zonder extra diensten.",
+          "Maak van je dagelijkse ritten een passieve inkomstenbron, zonder extra diensten.",
       },
       {
         title: "Geen bezorgingen nodig",
         description:
-          "Je hoeft geen bestellingen af te leveren of eten te vervoeren om te verdienen.",
+          "Je hoeft geen bestellingen te bezorgen of eten te vervoeren om geld te verdienen.",
       },
       {
         title: "Flexibel",
         description:
-          "Rijd wanneer jij wilt en laat MOVRR aansluiten op jouw planning.",
+          "Fiets wanneer het jou uitkomt en laat MOVRR aansluiten op jouw planning.",
       },
       {
         title: "Transparante beloningen",
@@ -149,12 +149,12 @@ export const nl: Dictionary = {
       eyebrow: "Productconcept",
       title: "Movrr displaypaneel",
     },
-    body: "Een lichtgewicht, weerbestendig displaypaneelsysteem voor gewone fietsen en cargobikes. Het wordt gemonteerd op compatibele fietsopstellingen, houdt merkcampagnes zichtbaar terwijl je rijdt en werkt met MOVRR om ritten die in aanmerking komen en beloningen bij te houden.",
+    body: "Een lichtgewicht en weerbestendig displaysysteem voor gewone fietsen en cargobikes. Het paneel wordt eenvoudig gemonteerd op compatibele fietsopstellingen, maakt merkcampagnes zichtbaar terwijl je rijdt en werkt samen met de MOVRR app om ritten die in aanmerking komen en je beloningen automatisch bij te houden.",
     highlights: [
       "Compatibele fietsbevestiging",
       "Duurzaam en weerbestendig",
-      "Goed zichtbaar display",
-      "Geintegreerde beloningstracking",
+      "Helder en goed zichtbaar display",
+      "Geïntegreerde tracking van beloningen",
     ],
     imageAlt: "Movrr displaypaneel bevestigd aan een fiets",
     cta: "Aanmelden",
@@ -162,8 +162,8 @@ export const nl: Dictionary = {
   cityLaunch: {
     heading: {
       eyebrow: "Stadslancering",
-      title: "Lancering binnenkort in grote steden",
-      subtitle: "Meld je nu aan en sta vooraan zodra MOVRR opent in jouw stad.",
+      title: "Binnenkort gelanceerd in grote steden",
+      subtitle: "Meld je nu aan en sta vooraan zodra MOVRR beschikbaar is in jouw stad.",
     },
     badge: "Binnenkort live",
     cards: [
@@ -193,7 +193,7 @@ export const nl: Dictionary = {
   faq: {
     heading: {
       eyebrow: "FAQ",
-      title: "Alles wat fietsers voor de lancering willen weten.",
+      title: "Alles wat fietsers willen weten voor de lancering.",
       subtitle:
         "Korte antwoorden op de belangrijkste vragen voordat early access opent.",
     },
@@ -201,17 +201,17 @@ export const nl: Dictionary = {
       {
         question: "Hoe start ik met rijden via MOVRR?",
         answer:
-          "Schrijf je nu in voor de wachtlijst. Zodra MOVRR opent in jouw stad, ontvang je van ons de volgende stappen voor onboarding en setup.",
+          "Schrijf je in voor de wachtlijst. Zodra MOVRR beschikbaar is in jouw stad, ontvang je van ons de volgende stappen voor onboarding en installatie.",
       },
       {
         question: "Hoeveel kunnen fietsers verdienen?",
         answer:
-          "Beloningen hangen af van campagneactiviteit en ritten die in aanmerking komen. Voor de lancering delen we duidelijk hoe het beloningsmodel werkt.",
+          "Beloningen hangen af van de campagneactiviteit en het aantal ritten dat in aanmerking komt. Voor de lancering delen we duidelijke informatie over hoe het beloningsmodel werkt.",
       },
       {
         question: "Heb ik mijn eigen fiets nodig?",
         answer:
-          "Ja. Je hebt je eigen fiets nodig om met MOVRR te rijden. Wij zorgen voor de displaypaneel-opstelling die in het programma wordt gebruikt.",
+          "Ja. Je hebt een eigen fiets nodig om met MOVRR te rijden. Wij zorgen voor het displaypaneel dat binnen het programma wordt gebruikt.",
       },
       {
         question: "Kan ik rijden wanneer ik wil?",
@@ -221,7 +221,7 @@ export const nl: Dictionary = {
       {
         question: "Wanneer lanceert MOVRR?",
         answer:
-          "MOVRR zit nog in de pre-launch fase. Meld je aan voor early access en we houden je op de hoogte zodra de timing voor jouw stad vastligt.",
+          "MOVRR bevindt zich momenteel in de pre-launchfase. Meld je aan voor early access en we houden je op de hoogte zodra de lancering in jouw stad gepland staat.",
       },
     ],
   },
@@ -286,6 +286,8 @@ export const nl: Dictionary = {
     tagline: "Transformeer je rit. Transformeer je leven.",
     privacy: "Privacy",
     terms: "Voorwaarden",
+    instagram: "Instagram",
+    instagramHref: "https://www.instagram.com/movrr.nl/",
     copyrightSuffix: "Movrr. Alle rechten voorbehouden.",
   },
   privacy: {

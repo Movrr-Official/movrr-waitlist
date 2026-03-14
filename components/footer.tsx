@@ -1,5 +1,6 @@
 "use client";
 
+import { Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -44,19 +45,30 @@ export function Footer({ locale, copy, brandName }: FooterProps) {
               </div>
               <p className="mt-3 text-lg text-white/78">{copy.tagline}</p>
             </div>
-            <div className="flex items-center gap-8 text-base text-white/82">
-              <Link
-                href={withLocalePath(locale, "/privacy")}
-                className="transition-colors hover:text-white"
+            <div className="flex flex-col items-start gap-6 md:items-end">
+              <a
+                href={copy.instagramHref}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={copy.instagram}
+                className="inline-flex items-center text-white transition-colors hover:text-primary"
               >
-                {copy.privacy}
-              </Link>
-              <Link
-                href={withLocalePath(locale, "/terms")}
-                className="transition-colors hover:text-white"
-              >
-                {copy.terms}
-              </Link>
+                <Instagram className="h-8 w-8 md:h-9 md:w-9" />
+              </a>
+              <div className="flex items-center gap-8 text-base text-white/82">
+                <Link
+                  href={withLocalePath(locale, "/privacy")}
+                  className="transition-colors hover:text-white"
+                >
+                  {copy.privacy}
+                </Link>
+                <Link
+                  href={withLocalePath(locale, "/terms")}
+                  className="transition-colors hover:text-white"
+                >
+                  {copy.terms}
+                </Link>
+              </div>
             </div>
           </motion.div>
           <motion.div

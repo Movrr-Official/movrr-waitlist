@@ -145,6 +145,8 @@ export interface Dictionary {
     tagline: string;
     privacy: string;
     terms: string;
+    instagram: string;
+    instagramHref: string;
     copyrightSuffix: string;
   };
   privacy: {
