@@ -91,7 +91,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
         });
         observer.disconnect();
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     observer.observe(element);
@@ -100,7 +100,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
   }, [copy.trustNotes.length, locale]);
 
   const handleFormStarted = (
-    field: "name" | "email" | "city" | "bikeOwnership"
+    field: "name" | "email" | "city" | "bikeOwnership",
   ) => {
     if (hasTrackedFormStart.current) return;
 
@@ -116,7 +116,17 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
     setSubmitMessage(null);
 
     try {
-      const result = await submitWaitlistForm({ ...data, locale });
+      const params = new URLSearchParams(window.location.search);
+      const result = await submitWaitlistForm({
+        ...data,
+        locale,
+        utm_source: params.get("utm_source") ?? undefined,
+        utm_medium: params.get("utm_medium") ?? undefined,
+        utm_campaign: params.get("utm_campaign") ?? undefined,
+        referrer: document.referrer
+          ? document.referrer.slice(0, 500)
+          : undefined,
+      });
 
       if (result.success) {
         track("Waitlist Form Submitted", {
@@ -154,7 +164,9 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
           <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
             {copy.success.title}
           </h3>
-          <p className="text-lg text-muted-foreground mb-6">{copy.success.description}</p>
+          <p className="text-lg text-muted-foreground mb-6">
+            {copy.success.description}
+          </p>
         </div>
         <Button
           onClick={() => {
@@ -192,7 +204,9 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
             onFocus={() => handleFormStarted("name")}
           />
           {errors.name && (
-            <p className="text-sm text-red-600 font-medium">{errors.name.message}</p>
+            <p className="text-sm text-red-600 font-medium">
+              {errors.name.message}
+            </p>
           )}
         </div>
         <div className="space-y-3">
@@ -212,7 +226,9 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
             onFocus={() => handleFormStarted("email")}
           />
           {errors.email && (
-            <p className="text-sm text-red-600 font-medium">{errors.email.message}</p>
+            <p className="text-sm text-red-600 font-medium">
+              {errors.email.message}
+            </p>
           )}
         </div>
       </div>
@@ -232,7 +248,9 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
           onFocus={() => handleFormStarted("city")}
         />
         {errors.city && (
-          <p className="text-sm text-red-600 font-medium">{errors.city.message}</p>
+          <p className="text-sm text-red-600 font-medium">
+            {errors.city.message}
+          </p>
         )}
       </div>
 
@@ -262,7 +280,9 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
             <SelectContent>
               <SelectItem value="yes">{copy.bikeOptions.yes}</SelectItem>
               <SelectItem value="no">{copy.bikeOptions.no}</SelectItem>
-              <SelectItem value="planning">{copy.bikeOptions.planning}</SelectItem>
+              <SelectItem value="planning">
+                {copy.bikeOptions.planning}
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -324,4 +344,3 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
     </form>
   );
 }
-
