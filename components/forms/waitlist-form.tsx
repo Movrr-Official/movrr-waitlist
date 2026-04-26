@@ -8,13 +8,6 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { submitWaitlistForm, type WaitlistFormData } from "@/lib/actions";
 import type { Dictionary } from "@/locales/en";
 import type { Locale } from "@/lib/i18n/config";
@@ -123,9 +116,12 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
         utm_source: params.get("utm_source") ?? undefined,
         utm_medium: params.get("utm_medium") ?? undefined,
         utm_campaign: params.get("utm_campaign") ?? undefined,
+        utm_content: params.get("utm_content") ?? undefined,
+        utm_term: params.get("utm_term") ?? undefined,
         referrer: document.referrer
           ? document.referrer.slice(0, 500)
           : undefined,
+        landing_path: window.location.pathname.slice(0, 500),
       });
 
       if (result.success) {
@@ -256,49 +252,50 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
 
       {showBikeOwnership ? (
         <div className="space-y-3">
-          <Label
-            htmlFor="bike"
-            className="text-sm font-bold text-secondary uppercase tracking-wide"
-          >
+          <p className="text-sm font-bold text-secondary uppercase tracking-wide">
             {copy.labels.bikeOwnership}
-          </Label>
-          <Select
-            value={bikeOwnership}
-            onValueChange={(value) => {
-              handleFormStarted("bikeOwnership");
-              track("Waitlist Bike Ownership Selected", {
-                value,
-                locale,
-              });
-              setValue("bikeOwnership", value as "yes" | "no" | "planning");
-            }}
-            disabled={isSubmitting}
-          >
-            <SelectTrigger className="w-full min-h-14 border-2 border-muted rounded-3xl">
-              <SelectValue placeholder={copy.placeholders.bikeOwnership} />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="yes">{copy.bikeOptions.yes}</SelectItem>
-              <SelectItem value="no">{copy.bikeOptions.no}</SelectItem>
-              <SelectItem value="planning">
-                {copy.bikeOptions.planning}
-              </SelectItem>
-            </SelectContent>
-          </Select>
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {(["own", "interested", "planning"] as const).map((value) => (
+              <button
+                key={value}
+                type="button"
+                disabled={isSubmitting}
+                onClick={() => {
+                  handleFormStarted("bikeOwnership");
+                  const next = bikeOwnership === value ? undefined : value;
+                  setValue("bikeOwnership", next);
+                  if (next) {
+                    track("Waitlist Bike Ownership Selected", {
+                      value: next,
+                      locale,
+                    });
+                  }
+                }}
+                className={`rounded-full border-2 px-5 py-2.5 text-sm font-bold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 ${
+                  bikeOwnership === value
+                    ? "border-secondary bg-secondary text-white"
+                    : "border-muted text-secondary/50 hover:border-secondary/40 hover:text-secondary"
+                }`}
+              >
+                {copy.bikeOptions[value]}
+              </button>
+            ))}
+          </div>
         </div>
       ) : (
         <div>
-          <Button
+          <button
             type="button"
-            variant="outline"
-            className="h-12 rounded-3xl border-2 border-muted px-5 text-sm font-bold uppercase tracking-[0.12em] text-secondary hover:bg-muted/30 hover:text-secondary"
+            disabled={isSubmitting}
             onClick={() => {
               setShowBikeOwnership(true);
               track("Waitlist Bike Details Revealed", { locale });
             }}
+            className="text-sm text-secondary/50 underline underline-offset-2 transition-colors duration-150 hover:text-secondary disabled:cursor-not-allowed"
           >
             {copy.actions.revealBikeOwnership}
-          </Button>
+          </button>
         </div>
       )}
 

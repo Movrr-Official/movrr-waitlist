@@ -36,8 +36,8 @@ export default function AdminNotificationEmail({
   timeZone = "UTC",
 }: AdminNotificationEmailProps) {
   const bikeStatusText = {
-    yes: "Owns a bike",
-    no: "Doesn't own a bike",
+    own: "Owns a bike",
+    interested: "Doesn't own a bike, but interested",
     planning: "Planning to get a bike",
     notProvided: "Not provided",
   };
@@ -319,8 +319,8 @@ export function adminNotificationText({
   adminUrl?: string;
 }) {
   const bikeStatusText = {
-    yes: "Owns a bike",
-    no: "Doesn't own a bike",
+    own: "Owns a bike",
+    interested: "Doesn't own a bike, but interested",
     planning: "Planning to get a bike",
     notProvided: "Not provided",
   } as const;
@@ -333,8 +333,8 @@ export function adminNotificationText({
   lines.push(
     `Bike ownership: ${
       bikeOwnership
-        ? bikeStatusText[bikeOwnership as keyof typeof bikeStatusText] ??
-          bikeOwnership
+        ? (bikeStatusText[bikeOwnership as keyof typeof bikeStatusText] ??
+          bikeOwnership)
         : bikeStatusText.notProvided
     }`,
   );

@@ -53,8 +53,7 @@ export const nl: Dictionary = {
       "MOVRR helpt dagelijkse fietsers geld te verdienen met ritten die in aanmerking komen voor merkcampagnes op een compatibel displaypaneel.",
     primaryCta: "Schrijf je in",
     secondaryCta: "Bekijk hoe het werkt",
-    backgroundAlt:
-      "Close-up van een MOVRR-fiets met displaypaneel",
+    backgroundAlt: "Close-up van een MOVRR-fiets met displaypaneel",
     logoAlt: "Movrr icoon",
   },
   valueProposition: {
@@ -163,7 +162,8 @@ export const nl: Dictionary = {
     heading: {
       eyebrow: "Stadslancering",
       title: "Binnenkort gelanceerd in grote steden",
-      subtitle: "Meld je nu aan en sta vooraan zodra MOVRR beschikbaar is in jouw stad.",
+      subtitle:
+        "Meld je nu aan en sta vooraan zodra MOVRR beschikbaar is in jouw stad.",
     },
     badge: "Binnenkort live",
     cards: [
@@ -246,8 +246,8 @@ export const nl: Dictionary = {
       bikeOwnership: "Kies een optie",
     },
     bikeOptions: {
-      yes: "Ja, ik heb een fiets",
-      no: "Nee, maar ik heb wel interesse",
+      own: "Ik heb een fiets",
+      interested: "Nog niet, maar ik ben wel geïnteresseerd",
       planning: "Ik wil er binnenkort een aanschaffen",
     },
     validation: {

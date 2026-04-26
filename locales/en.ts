@@ -242,8 +242,8 @@ export const en: Dictionary = {
       bikeOwnership: "Select option",
     },
     bikeOptions: {
-      yes: "Yes, I own a bike",
-      no: "No, but interested",
+      own: "I own a bike",
+      interested: "Not yet, but interested",
       planning: "Planning to get one",
     },
     validation: {
@@ -400,7 +400,8 @@ export const en: Dictionary = {
   terms: {
     backToMovrr: "Back to Movrr",
     title: "Terms of Service",
-    subtitle: "The terms that govern use of the MOVRR pre-launch waitlist website.",
+    subtitle:
+      "The terms that govern use of the MOVRR pre-launch waitlist website.",
     lastUpdated: "Last updated",
     lastUpdatedDate: "March 8, 2026",
     sections: [

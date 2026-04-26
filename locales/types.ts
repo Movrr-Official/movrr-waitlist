@@ -111,8 +111,8 @@ export interface Dictionary {
       bikeOwnership: string;
     };
     bikeOptions: {
-      yes: string;
-      no: string;
+      own: string;
+      interested: string;
       planning: string;
     };
     validation: {
