@@ -165,7 +165,7 @@ export const nl: Dictionary = {
     heading: {
       eyebrow: "Stadslancering",
       title: "Lancering in de Randstad.",
-      subtitle: "Rotterdam eerst. Nederland daarna.",
+      subtitle: "Rotterdam eerst. Den Haag daarna.",
     },
     badge: "Binnenkort live",
     cards: [
