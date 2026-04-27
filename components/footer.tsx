@@ -1,9 +1,11 @@
 "use client";
 
 import { Instagram } from "lucide-react";
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+import { LanguageSwitcher } from "@/components/language-switcher";
 import type { Locale } from "@/lib/i18n/config";
 import { withLocalePath } from "@/lib/i18n/routing";
 import { headingReveal, sectionStagger, viewportOnce } from "@/lib/motion";
@@ -13,21 +15,27 @@ interface FooterProps {
   locale: Locale;
   copy: Dictionary["footer"];
   brandName: string;
+  languageSwitcherLabels: Dictionary["languageSwitcher"];
 }
 
-export function Footer({ locale, copy, brandName }: FooterProps) {
+export function Footer({
+  locale,
+  copy,
+  brandName,
+  languageSwitcherLabels,
+}: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
     <motion.footer
-      className="bg-secondary py-0 text-white"
+      className="bg-movrr-bg-footer py-0 text-movrr-text-inverse"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
       variants={sectionStagger}
     >
       <div className="container">
-        <div className="bg-secondary pb-10 pt-24">
+        <div className="pb-12 pt-24">
           <motion.div
             className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
             variants={headingReveal}
@@ -37,13 +45,15 @@ export function Footer({ locale, copy, brandName }: FooterProps) {
                 <img
                   src="/movrr-icon.png"
                   alt={copy.logoAlt}
-                  className="h-11 w-11 md:h-12 md:w-12"
+                  className="h-7 w-7"
                 />
-                <h3 className="text-4xl font-black tracking-tight text-primary">
+                <h3 className="text-xl font-semibold tracking-tight text-movrr-text-inverse">
                   {brandName}
                 </h3>
               </div>
-              <p className="mt-3 text-lg text-white/78">{copy.tagline}</p>
+              <p className="mt-3 text-sm leading-relaxed text-movrr-text-inverse/45">
+                {copy.tagline}
+              </p>
             </div>
             <div className="flex flex-col items-start gap-6 md:items-end">
               <a
@@ -51,20 +61,20 @@ export function Footer({ locale, copy, brandName }: FooterProps) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={copy.instagram}
-                className="inline-flex items-center text-white transition-colors hover:text-primary"
+                className="inline-flex items-center text-movrr-text-inverse/40 transition-colors hover:text-primary"
               >
-                <Instagram className="h-8 w-8 md:h-9 md:w-9" />
+                <Instagram className="h-6 w-6" />
               </a>
-              <div className="flex items-center gap-8 text-base text-white/82">
+              <div className="flex items-center gap-8 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-movrr-text-inverse/35">
                 <Link
                   href={withLocalePath(locale, "/privacy")}
-                  className="transition-colors hover:text-white"
+                  className="transition-colors hover:text-movrr-text-inverse/60"
                 >
                   {copy.privacy}
                 </Link>
                 <Link
                   href={withLocalePath(locale, "/terms")}
-                  className="transition-colors hover:text-white"
+                  className="transition-colors hover:text-movrr-text-inverse/60"
                 >
                   {copy.terms}
                 </Link>
@@ -72,10 +82,15 @@ export function Footer({ locale, copy, brandName }: FooterProps) {
             </div>
           </motion.div>
           <motion.div
-            className="mt-16 text-sm text-white/60"
+            className="mt-14 flex items-center justify-between"
             variants={headingReveal}
           >
-            {"\u00A9"} {currentYear} {copy.copyrightSuffix}
+            <Suspense>
+              <LanguageSwitcher labels={languageSwitcherLabels} />
+            </Suspense>
+            <div className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-movrr-text-inverse/20">
+              {"©"} {currentYear} {copy.copyrightSuffix}
+            </div>
           </motion.div>
         </div>
       </div>

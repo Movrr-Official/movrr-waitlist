@@ -2,7 +2,12 @@
 
 import { motion } from "framer-motion";
 
-import { cardReveal, headingReveal, sectionStagger, viewportOnce } from "@/lib/motion";
+import {
+  cardReveal,
+  headingReveal,
+  sectionStagger,
+  viewportOnce,
+} from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
 interface HowItWorksSectionProps {
@@ -13,51 +18,53 @@ export function HowItWorksSection({ copy }: HowItWorksSectionProps) {
   return (
     <motion.section
       id="how-it-works"
-      className="bg-secondary py-24 text-white md:py-28"
+      className="border-b border-movrr-text-inverse/10 bg-movrr-bg-primary py-32 text-movrr-text-inverse lg:py-44"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
       variants={sectionStagger}
     >
       <div className="container">
-        <motion.div className="max-w-3xl" variants={headingReveal}>
-          {copy.heading.eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
-              {copy.heading.eyebrow}
-            </p>
-          ) : null}
-          <h2 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
-            {copy.heading.title}
-          </h2>
+        <div className="mb-20 grid gap-8 lg:mb-28 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
+          <motion.div variants={headingReveal}>
+            {copy.heading.eyebrow ? (
+              <p className="mb-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-primary">
+                {copy.heading.eyebrow}
+              </p>
+            ) : null}
+            <h2 className="text-[clamp(2rem,3.5vw,4.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-movrr-text-inverse">
+              {copy.heading.title}
+            </h2>
+          </motion.div>
           {copy.heading.subtitle ? (
-            <p className="mt-5 max-w-2xl text-lg text-white/72 md:text-xl">
+            <motion.p
+              className="self-end text-base leading-relaxed text-movrr-text-inverse/50 lg:max-w-sm"
+              variants={headingReveal}
+            >
               {copy.heading.subtitle}
-            </p>
+            </motion.p>
           ) : null}
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4"
-          variants={sectionStagger}
-        >
+        <div className="divide-y divide-movrr-text-inverse/10">
           {copy.steps.map((step, index) => (
-            <motion.article
-              className="rounded-[2rem] border border-white/10 bg-white/5 p-7 backdrop-blur-sm"
+            <motion.div
               key={step.title}
               variants={cardReveal}
+              className="grid grid-cols-1 gap-5 py-12 lg:grid-cols-[9rem_1fr_minmax(0,26rem)] lg:items-center lg:gap-12 lg:py-16"
             >
-              <div className="text-6xl font-black leading-none text-white/18">
+              <span className="text-[clamp(3.5rem,7vw,7rem)] font-semibold leading-none tracking-[-0.04em] text-movrr-text-inverse/[0.08]">
                 0{index + 1}
-              </div>
-              <h3 className="mt-10 text-2xl font-black tracking-wide text-white">
+              </span>
+              <h3 className="text-[clamp(1.75rem,2.5vw,2.75rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-movrr-text-inverse">
                 {step.title}
               </h3>
-              <p className="mt-4 text-base leading-7 text-white/72">
+              <p className="text-base leading-relaxed text-movrr-text-inverse/50">
                 {step.description}
               </p>
-            </motion.article>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );

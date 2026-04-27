@@ -18,14 +18,15 @@ interface LandingPageProps {
 export function LandingPage({ locale, dictionary }: LandingPageProps) {
   return (
     <div className="min-h-screen overflow-hidden bg-background">
-      <HeroSection copy={dictionary.hero} brandName={dictionary.branding.wordmark} />
+      <HeroSection
+        copy={dictionary.hero}
+        brandName={dictionary.branding.wordmark}
+      />
       <ValueProposition copy={dictionary.valueProposition} />
       <HowItWorksSection copy={dictionary.howItWorks} />
       <BenefitsSection copy={dictionary.riderBenefits} />
       <ProductConceptSection copy={dictionary.productConcept} />
-      <LaunchShowcaseSection
-        cityCopy={dictionary.cityLaunch}
-      />
+      <LaunchShowcaseSection cityCopy={dictionary.cityLaunch} />
       <WaitlistSection
         locale={locale}
         copy={dictionary.waitlistSection}
@@ -36,6 +37,7 @@ export function LandingPage({ locale, dictionary }: LandingPageProps) {
         locale={locale}
         copy={dictionary.footer}
         brandName={dictionary.branding.wordmark}
+        languageSwitcherLabels={dictionary.languageSwitcher}
       />
     </div>
   );

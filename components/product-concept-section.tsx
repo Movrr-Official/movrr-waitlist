@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Bike, MonitorSmartphone, PlugZap, Umbrella } from "lucide-react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 import {
@@ -53,44 +52,52 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
 
   return (
     <motion.section
-      className="bg-white py-24 md:py-28"
+      className="border-b border-border bg-white py-32 lg:py-44"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
       variants={sectionStagger}
     >
       <div className="container">
-        <motion.div className="max-w-3xl" variants={headingReveal}>
-          {copy.heading.eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
-              {copy.heading.eyebrow}
-            </p>
-          ) : null}
-          <h2 className="mt-4 text-4xl font-black leading-tight text-secondary md:text-6xl">
-            {copy.heading.title}
-          </h2>
-        </motion.div>
-
-        <div className="mt-14 grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          <motion.div variants={sectionStagger}>
+        <div className="mb-20 grid gap-8 lg:mb-28 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
+          <motion.div variants={headingReveal}>
+            {copy.heading.eyebrow ? (
+              <p className="mb-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-primary">
+                {copy.heading.eyebrow}
+              </p>
+            ) : null}
+            <h2 className="text-[clamp(2rem,3.5vw,4.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-secondary">
+              {copy.heading.title}
+            </h2>
+          </motion.div>
+          {copy.body ? (
             <motion.p
-              className="max-w-xl text-lg leading-8 text-secondary/90 md:text-xl"
+              className="self-end text-base leading-relaxed text-muted-foreground lg:max-w-sm"
               variants={headingReveal}
             >
               {copy.body}
             </motion.p>
+          ) : null}
+        </div>
 
-            <motion.div className="mt-8 space-y-5" variants={sectionStagger}>
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+          <motion.div variants={sectionStagger}>
+            <motion.div
+              className="border-t divide-y divide-border"
+              variants={sectionStagger}
+            >
               {copy.highlights.map((highlight, index) => {
                 const Icon = icons[index];
-
                 return (
                   <motion.div
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-5 py-5"
                     key={highlight}
                     variants={cardReveal}
                   >
-                    <Icon className="h-5 w-5 text-primary" />
+                    <Icon
+                      className="h-5 w-5 shrink-0 text-primary"
+                      strokeWidth={1.5}
+                    />
                     <span className="text-base font-medium text-secondary">
                       {highlight}
                     </span>
@@ -99,29 +106,28 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
               })}
             </motion.div>
 
-            <motion.div variants={cardReveal}>
-              <Button
-                asChild
-                variant="outline"
-                className="mt-10 h-12 rounded-lg border-2 border-secondary bg-white px-6 text-base font-bold uppercase tracking-wide text-secondary hover:bg-secondary hover:text-white"
+            <motion.div variants={cardReveal} className="lg:pl-10">
+              <Link
+                href="#signup"
+                className="mt-10 inline-flex h-12 items-center rounded-xl border border-secondary px-6 text-sm font-semibold text-secondary transition-colors duration-200 hover:bg-secondary/[0.08]"
               >
-                <Link href="#signup">{copy.cta}</Link>
-              </Button>
+                {copy.cta}
+              </Link>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="relative overflow-hidden bg-muted/35"
+            className="relative overflow-hidden"
             variants={imageReveal}
           >
-            <div className="flex h-[30rem] flex-row items-center justify-center gap-4 overflow-hidden p-4">
+            <div className="flex h-[30rem] flex-row items-center justify-center gap-3 overflow-hidden bg-muted/30 p-3">
               {productConceptImages.map((item, index) => {
                 const isActive = index === activeIndex;
 
                 return (
                   <div
                     key={item.id}
-                    className={`relative h-full cursor-pointer overflow-hidden rounded-2xl transition-all duration-700 ease-in-out ${
+                    className={`relative h-full cursor-pointer overflow-hidden transition-all duration-700 ease-in-out ${
                       isActive ? "w-[58%]" : "w-[14%]"
                     }`}
                     onMouseEnter={() => setActiveIndex(index)}
@@ -148,7 +154,7 @@ export function ProductConceptSection({ copy }: ProductConceptSectionProps) {
                     />
 
                     <span
-                      className={`absolute text-lg font-semibold whitespace-nowrap text-white transition-all duration-300 ease-in-out ${
+                      className={`absolute text-sm font-semibold whitespace-nowrap text-white transition-all duration-300 ease-in-out ${
                         isActive
                           ? "bottom-6 left-1/2 -translate-x-1/2 rotate-0"
                           : "bottom-24 left-1/2 -translate-x-1/2 rotate-90 text-left"

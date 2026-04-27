@@ -129,6 +129,14 @@ export interface Dictionary {
     success: {
       title: string;
       description: string;
+      instagram: {
+        eyebrow: string;
+        heading: string;
+        body: string;
+        cta: string;
+        handle: string;
+        href: string;
+      };
     };
     messages: {
       success: string;

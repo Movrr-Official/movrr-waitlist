@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import { track } from "@vercel/analytics";
-import { Coins, Eye, ShieldCheck, TimerReset } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { cardReveal, headingReveal, sectionStagger, viewportOnce } from "@/lib/motion";
+import { ArrowRight, Coins, Eye, ShieldCheck, TimerReset } from "lucide-react";
+import {
+  cardReveal,
+  headingReveal,
+  sectionStagger,
+  viewportOnce,
+} from "@/lib/motion";
 import type { Dictionary } from "@/locales/en";
 
 interface BenefitsSectionProps {
@@ -21,72 +24,75 @@ export function BenefitsSection({ copy }: BenefitsSectionProps) {
 
   return (
     <motion.section
-      className="bg-white py-24 md:py-28"
+      className="border-b border-border bg-white py-32 lg:py-44"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
       variants={sectionStagger}
     >
       <div className="container">
-        <motion.div className="max-w-3xl" variants={headingReveal}>
-          {copy.heading.eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
-              {copy.heading.eyebrow}
-            </p>
-          ) : null}
-          <h2 className="mt-4 text-4xl font-black leading-tight text-secondary md:text-6xl">
-            {copy.heading.title}
-          </h2>
+        <div className="mb-20 grid gap-8 lg:mb-28 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
+          <motion.div variants={headingReveal}>
+            {copy.heading.eyebrow ? (
+              <p className="mb-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-primary">
+                {copy.heading.eyebrow}
+              </p>
+            ) : null}
+            <h2 className="text-[clamp(2rem,3.5vw,4.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-secondary">
+              {copy.heading.title}
+            </h2>
+          </motion.div>
           {copy.heading.subtitle ? (
-            <p className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl">
+            <motion.p
+              className="self-end text-base leading-relaxed text-muted-foreground lg:max-w-sm"
+              variants={headingReveal}
+            >
               {copy.heading.subtitle}
-            </p>
+            </motion.p>
           ) : null}
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4"
-          variants={sectionStagger}
-        >
+        <div className="divide-y divide-border">
           {copy.items.map((item, index) => {
             const Icon = icons[index];
-
             return (
               <motion.article
-                className="rounded-[2rem] border border-border bg-muted/30 p-8"
                 key={item.title}
                 variants={cardReveal}
+                className="grid grid-cols-1 gap-5 py-12 lg:grid-cols-[9rem_1fr_minmax(0,26rem)] lg:items-center lg:gap-12 lg:py-16"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-8 text-2xl font-black text-secondary">
+                <Icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
+                <h3 className="text-[clamp(1.5rem,2vw,2.25rem)] font-semibold leading-snug tracking-[-0.03em] text-secondary">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-muted-foreground">
+                <p className="text-base leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </motion.article>
             );
           })}
-        </motion.div>
+        </div>
 
         <motion.div
-          className="mt-12 flex flex-col items-start gap-4"
+          className="mt-4 grid grid-cols-1 gap-5 pt-12 lg:grid-cols-[9rem_1fr_minmax(0,26rem)] lg:gap-12"
           variants={headingReveal}
         >
-          <Button
-            type="button"
-            onClick={scrollToSignup}
-            className="h-12 rounded-lg px-6 text-base font-bold uppercase tracking-[0.12em]"
-          >
-            {copy.cta}
-          </Button>
-          {copy.ctaNote ? (
-            <p className="text-sm font-medium text-muted-foreground">
-              {copy.ctaNote}
-            </p>
-          ) : null}
+          <div className="hidden lg:block" />
+          <div className="flex flex-col items-start gap-3">
+            <button
+              type="button"
+              onClick={scrollToSignup}
+              className="group inline-flex h-12 items-center gap-2.5 rounded-xl bg-movrr-bg-primary px-7 text-sm font-semibold text-movrr-text-inverse transition-colors duration-200 hover:bg-movrr-bg-secondary"
+            >
+              {copy.cta}
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:rotate-45" />
+            </button>
+            {copy.ctaNote ? (
+              <p className="text-xs font-semibold text-muted-foreground/70">
+                {copy.ctaNote}
+              </p>
+            ) : null}
+          </div>
         </motion.div>
       </div>
     </motion.section>

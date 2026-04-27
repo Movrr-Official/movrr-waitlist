@@ -7,12 +7,12 @@ export const nl: Dictionary = {
   metadata: {
     siteName: "Movrr",
     keywords:
-      "fietsreclame, fietsjobs, gig economy, stedelijke mobiliteit, buitenreclame",
+      "bewegingsbeloningen, stedelijk fietsen, fietsbeloningen, dagelijks fietsen, beloond bewegen, Rotterdam",
     pages: {
       home: {
-        title: "Movrr - Geef je rit meer waarde",
+        title: "Movrr — Dagelijkse ritten, beloond.",
         description:
-          "Sluit je aan bij de beweging. Verdien geld terwijl je fietst en maak van de stad een podium voor merken. Flexibele uren, duidelijke beloningen en echte impact.",
+          "Doe mee met MOVRR early access. Rijd je bestaande routes, verdien per geverifieerde kilometer, en wees een van de eerste fietsers in Rotterdam.",
       },
       privacy: {
         title: "Privacybeleid | Movrr",
@@ -38,20 +38,25 @@ export const nl: Dictionary = {
     dutchName: "Nederlands",
   },
   hero: {
-    eyebrow: "Early access voor stadsfietsers",
+    eyebrow: "Early access",
     status: ["Lanceert binnenkort"],
     proofPoints: [
-      "Eerste lancering in Rotterdam",
-      "Gevestigd in Rotterdam",
-      "Vroege toegang voor de lancering",
+      "Lancering in Rotterdam",
+      "Dan Den Haag, Amsterdam, Utrecht",
+      "Alleen early access",
     ],
     audienceLabel: "Gebouwd voor fietsers",
-    audience: ["Bezorgers", "Studenten", "Stadsfietsers", "Platformwerkers"],
-    titleLines: ["VERDIEN GELD", "MET", "FIETSEN"],
-    highlightedLine: "Ontvang beloningen voor de ritten die je toch al maakt.",
+    audience: [
+      "Dagelijkse forensen",
+      "Studenten",
+      "Stadsfietsers",
+      "Weekendrijders",
+    ],
+    titleLines: ["RIJD.", "VERDIEN.", "HOOR ERBIJ."],
+    highlightedLine: "Jouw dagelijkse routes. Nu meer waard.",
     description:
-      "MOVRR helpt dagelijkse fietsers geld te verdienen met ritten die in aanmerking komen voor merkcampagnes op een compatibel displaypaneel.",
-    primaryCta: "Schrijf je in",
+      "Rijd je bestaande routes. Verdien per geverifieerde kilometer. Geen bezorgingen, geen rooster — MOVRR loopt stil mee met de ritten die je toch al maakt.",
+    primaryCta: "Krijg early access",
     secondaryCta: "Bekijk hoe het werkt",
     backgroundAlt: "Close-up van een MOVRR-fiets met displaypaneel",
     logoAlt: "Movrr icoon",
@@ -59,101 +64,99 @@ export const nl: Dictionary = {
   valueProposition: {
     heading: {
       eyebrow: "WAAROM MOVRR",
-      title:
-        "Een eenvoudigere manier om te verdienen met de ritten die je toch al maakt.",
+      title: "Bewegen heeft waarde. MOVRR geeft het terug.",
       subtitle:
-        "Gebouwd voor fietsers die zich elke dag door de stad verplaatsen.",
+        "Geen omwegen. Geen bezorgingen. Alleen de routes die je toch al rijdt.",
     },
     items: [
       {
         title: "Rijd",
         description:
-          "Maak van je dagelijkse routes een extra inkomstenbron, zonder je routine te veranderen.",
+          "Wat je toch al doet, begint op te leveren. Geen omwegen, geen bezorgingen nodig.",
       },
       {
         title: "Verdien",
         description:
-          "Toon merkcampagnes terwijl je fietst en verdien beloningen met ritten die in aanmerking komen.",
+          "Ritten leveren standaard beloningen op. Merkcampagnes verhogen die — maar je verdient hoe dan ook.",
       },
       {
         title: "Hoor erbij",
         description:
-          "Word onderdeel van een nieuwe beweging die stedelijke advertising opnieuw vormgeeft.",
+          "De eerste fietsers bepalen mee hoe MOVRR wordt in jouw stad. Jij hoort bij de founding cohort.",
       },
     ],
   },
   howItWorks: {
     heading: {
       eyebrow: "HOE HET WERKT",
-      title: "Vier eenvoudige stappen van inschrijving tot je eerste beloning.",
-      subtitle: "MOVRR sluit naadloos aan op de manier waarop je nu al fietst.",
+      title: "Eenvoudig by design.",
+      subtitle: "Vier stappen van aanmelding tot jouw eerste beloning.",
     },
     steps: [
       {
-        title: "Schrijf je in",
-        description:
-          "Meld je aan voor early access en laat weten in welke stad je rijdt.",
+        title: "Aanmelden",
+        description: "We nemen contact op zodra jouw stad live gaat.",
       },
       {
         title: "Ontvang je kit",
         description:
-          "Bevestig het MOVRR-displaypaneel aan je compatibele fietsopstelling.",
+          "Bevestig het MOVRR-displaypaneel op je fiets. Kwestie van minuten.",
       },
       {
         title: "Rijd door de stad",
         description:
-          "Fiets zoals je normaal doet terwijl je merkcampagnes zichtbaar maakt in de stad.",
+          "Rijd je routes. Campagnes lopen stil mee. Jouw routine blijft jouw routine.",
       },
       {
-        title: "Ontvang je beloning",
+        title: "Beloning ophalen",
         description:
-          "Verdien maandelijkse beloningen op basis van ritten die in aanmerking komen, met duidelijke tracking.",
+          "Je saldo groeit met elke geverifieerde rit. Duidelijke criteria, niets verborgen.",
       },
     ],
   },
   riderBenefits: {
     heading: {
-      eyebrow: "WAAROM FIETSERS VOOR MOVRR KIEZEN",
-      title: "Extra inkomen zonder bezorgingen, roosters of bazen.",
+      eyebrow: "VOOR DAGELIJKSE FIETSERS",
+      title: "Jouw dagelijkse rit. Meer waard.",
       subtitle:
-        "Een flexibel model dat aansluit op hoe stadsfietsers echt rijden.",
+        "Een flexibel model dat aansluit op de routes die je toch al rijdt.",
     },
     items: [
       {
         title: "Verdien terwijl je rijdt",
         description:
-          "Maak van je dagelijkse ritten een passieve inkomstenbron, zonder extra diensten.",
+          "Jouw bestaande routes, jouw bestaande schema — nu beloond.",
       },
       {
-        title: "Geen bezorgingen nodig",
+        title: "Pure beweging",
         description:
-          "Je hoeft geen bestellingen te bezorgen of eten te vervoeren om geld te verdienen.",
+          "MOVRR beloont het fietsen zelf. Geen pakketten, geen opdrachten, niets extra's vereist.",
       },
       {
         title: "Flexibel",
         description:
-          "Fiets wanneer het jou uitkomt en laat MOVRR aansluiten op jouw planning.",
+          "Geen minimumschema, geen verplichtingen. Rijd wanneer je rijdt.",
       },
       {
-        title: "Transparante beloningen",
+        title: "Heldere verdienstes",
         description:
-          "Duidelijke voorwaarden, eerlijke beloningen en inzicht in hoe beloningen worden berekend.",
+          "Elke beloning heeft een reden. Jouw saldo, jouw criteria — altijd inzichtelijk.",
       },
     ],
     cta: "Aanmelden",
-    ctaNote: "Het kost minder dan 30 seconden.",
+    ctaNote: "Geen verplichtingen. Alleen founding cohort.",
   },
   productConcept: {
     heading: {
-      eyebrow: "Productconcept",
-      title: "Movrr displaypaneel",
+      eyebrow: "De hardware",
+      title: "Het MOVRR-displaypaneel.",
     },
-    body: "Een lichtgewicht en weerbestendig displaysysteem voor gewone fietsen en cargobikes. Het paneel wordt eenvoudig gemonteerd op compatibele fietsopstellingen, maakt merkcampagnes zichtbaar terwijl je rijdt en werkt samen met de MOVRR app om ritten die in aanmerking komen en je beloningen automatisch bij te houden.",
+    body: "Een lichtgewicht, weerbestendig paneel dat op compatibele fietsen wordt gemonteerd. Het synchroniseert met MOVRR om elke kilometer te verifiëren en campagnebeloningen te ontgrendelen terwijl je rijdt.",
     highlights: [
       "Compatibele fietsbevestiging",
       "Duurzaam en weerbestendig",
-      "Helder en goed zichtbaar display",
-      "Geïntegreerde tracking van beloningen",
+      "Geverifieerde rittracking",
+      "Naadloze beloningssync",
     ],
     imageAlt: "Movrr displaypaneel bevestigd aan een fiets",
     cta: "Aanmelden",
@@ -161,52 +164,50 @@ export const nl: Dictionary = {
   cityLaunch: {
     heading: {
       eyebrow: "Stadslancering",
-      title: "Binnenkort gelanceerd in grote steden",
-      subtitle:
-        "Meld je nu aan en sta vooraan zodra MOVRR beschikbaar is in jouw stad.",
+      title: "Lancering in de Randstad.",
+      subtitle: "Rotterdam eerst. Nederland daarna.",
     },
     badge: "Binnenkort live",
     cards: [
       {
         name: "Rotterdam",
         asset: "/city-rotterdam-card.png",
-        cta: "Houd me op de hoogte",
+        cta: "Aanmelden",
         featured: true,
-      },
-      {
-        name: "Amsterdam",
-        asset: "/city-amsterdam-card.png",
-        cta: "Houd me op de hoogte",
-      },
-      {
-        name: "Utrecht",
-        asset: "/city-utrecht-card.png",
-        cta: "Houd me op de hoogte",
       },
       {
         name: "Den Haag",
         asset: "/city-the-hague-card.png",
-        cta: "Houd me op de hoogte",
+        cta: "Aanmelden",
+      },
+      {
+        name: "Amsterdam",
+        asset: "/city-amsterdam-card.png",
+        cta: "Aanmelden",
+      },
+      {
+        name: "Utrecht",
+        asset: "/city-utrecht-card.png",
+        cta: "Aanmelden",
       },
     ],
   },
   faq: {
     heading: {
       eyebrow: "FAQ",
-      title: "Alles wat fietsers willen weten voor de lancering.",
-      subtitle:
-        "Korte antwoorden op de belangrijkste vragen voordat early access opent.",
+      title: "Wat fietsers het meest vragen.",
+      subtitle: "Heldere antwoorden voor de lancering.",
     },
     items: [
       {
         question: "Hoe start ik met rijden via MOVRR?",
         answer:
-          "Schrijf je in voor de wachtlijst. Zodra MOVRR beschikbaar is in jouw stad, ontvang je van ons de volgende stappen voor onboarding en installatie.",
+          "Meld je aan voor early access. Zodra MOVRR beschikbaar is in jouw stad, nemen we contact op met alles wat je nodig hebt om te beginnen.",
       },
       {
         question: "Hoeveel kunnen fietsers verdienen?",
         answer:
-          "Beloningen hangen af van de campagneactiviteit en het aantal ritten dat in aanmerking komt. Voor de lancering delen we duidelijke informatie over hoe het beloningsmodel werkt.",
+          "Beloningen zijn gebaseerd op geverifieerde ritactiviteit. We delen het volledige beloningsmodel voor de lancering.",
       },
       {
         question: "Heb ik mijn eigen fiets nodig?",
@@ -216,21 +217,20 @@ export const nl: Dictionary = {
       {
         question: "Kan ik rijden wanneer ik wil?",
         answer:
-          "Ja. MOVRR is bedoeld om aan te sluiten op je bestaande routine, of je nu dagelijks rijdt, in het weekend, of tussen andere jobs door.",
+          "Ja. MOVRR past op jouw bestaande routine — of je nu dagelijks rijdt, in het weekend, of gewoon wanneer het uitkomt.",
       },
       {
         question: "Wanneer lanceert MOVRR?",
         answer:
-          "MOVRR bevindt zich momenteel in de pre-launchfase. Meld je aan voor early access en we houden je op de hoogte zodra de lancering in jouw stad gepland staat.",
+          "MOVRR is pre-launch. Meld je aan voor early access en we houden je op de hoogte zodra de lancering in jouw stad bevestigd is.",
       },
     ],
   },
   waitlistSection: {
     eyebrow: "EARLY ACCESS",
-    title: "Klaar om te beginnen met verdienen?",
-    subtitle:
-      "Meld je aan voor de early access waitlist en sta vooraan zodra MOVRR opent in jouw stad.",
-    reassurance: "Kost minder dan 30 seconden. Alleen early access.",
+    title: "Jouw stad. Jouw route. Jouw beloningen.",
+    subtitle: "Zeker je plek in de founding rider-groep.",
+    reassurance: "Geen verplichtingen. Alleen founding cohort.",
   },
   waitlistForm: {
     labels: {
@@ -247,8 +247,8 @@ export const nl: Dictionary = {
     },
     bikeOptions: {
       own: "Ik heb een fiets",
-      interested: "Nog niet, maar ik ben wel geïnteresseerd",
-      planning: "Ik wil er binnenkort een aanschaffen",
+      interested: "Nog niet",
+      planning: "Binnenkort",
     },
     validation: {
       nameMin: "Vul minimaal 2 tekens in",
@@ -257,37 +257,44 @@ export const nl: Dictionary = {
     },
     actions: {
       submitting: "Bezig met aanmelden...",
-      submit: "Aanmelden voor de wachtlijst",
-      reset: "Nog iemand aanmelden",
+      submit: "Krijg early access",
+      reset: "Nog iemand registreren",
       revealBikeOwnership: "Fietsdetails toevoegen (optioneel)",
     },
     success: {
-      title: "Welkom bij de beweging!",
+      title: "Je staat erin.",
       description:
-        "Je staat op de wachtlijst. We laten je weten zodra Movrr van start gaat in jouw stad.",
+        "We houden je op de hoogte zodra MOVRR live gaat in jouw stad.",
+      instagram: {
+        eyebrow: "Blijf op de hoogte",
+        heading: "De founding riders community is in opbouw.",
+        body: "Volg @movrr.app voor lanceringsupdates en behind-the-scenes vanuit Rotterdam.",
+        cta: "Volgen op Instagram",
+        handle: "@movrr.app",
+        href: "https://www.instagram.com/movrr.app/",
+      },
     },
     messages: {
-      success: "Je inschrijving is binnen.",
+      success: "Je staat op de lijst.",
       genericError: "Er ging iets mis. Probeer het opnieuw.",
     },
     consent: {
-      line1:
-        "Door je aan te melden ontvang je updates over de lancering van Movrr.",
-      line2: "Geen spam, alleen relevante updates. Uitschrijven kan altijd.",
+      line1: "Je ontvangt lanceringsupdates voor jouw stad. Verder niets.",
+      line2: "Geen spam. Uitschrijven kan altijd.",
     },
     trustNotes: [
       "Geen account nodig",
       "Geen betaling nodig",
-      "Alleen early access",
+      "Alleen founding cohort",
     ],
   },
   footer: {
     logoAlt: "Movrr icoon",
-    tagline: "Transformeer je rit. Transformeer je leven.",
+    tagline: "Jouw beweging, beloond.",
     privacy: "Privacy",
     terms: "Voorwaarden",
     instagram: "Instagram",
-    instagramHref: "https://www.instagram.com/movrr.nl/",
+    instagramHref: "https://www.instagram.com/movrr.app/",
     copyrightSuffix: "Movrr. Alle rechten voorbehouden.",
   },
   privacy: {

@@ -1,13 +1,13 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { track } from "@vercel/analytics";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { WaitlistSuccessState } from "@/components/waitlist-success-state";
 import { submitWaitlistForm, type WaitlistFormData } from "@/lib/actions";
 import type { Dictionary } from "@/locales/en";
 import type { Locale } from "@/lib/i18n/config";
@@ -154,97 +154,84 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
 
   if (submitSuccess) {
     return (
-      <div className="text-center py-12">
-        <div className="text-6xl mb-6">{"\uD83D\uDEB4"}</div>
-        <div className="mb-12">
-          <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-            {copy.success.title}
-          </h3>
-          <p className="text-lg text-muted-foreground mb-6">
-            {copy.success.description}
-          </p>
-        </div>
-        <Button
-          onClick={() => {
-            track("Waitlist Form Reset Clicked", { locale });
-            setSubmitSuccess(false);
-            setSubmitMessage(null);
-            setShowBikeOwnership(false);
-          }}
-          size="lg"
-          variant="outline"
-          className="min-h-16 h-auto rounded-full border-2 px-6 py-4 text-center text-base font-bold leading-tight whitespace-normal md:text-xl"
-        >
-          {copy.actions.reset}
-        </Button>
-      </div>
+      <WaitlistSuccessState
+        copy={copy}
+        locale={locale}
+        onReset={() => {
+          setSubmitSuccess(false);
+          setSubmitMessage(null);
+          setShowBikeOwnership(false);
+          hasTrackedFormStart.current = false;
+        }}
+      />
     );
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="space-y-3">
-          <Label
+      <div className="grid gap-5 md:grid-cols-2">
+        <div className="space-y-2">
+          <label
             htmlFor="name"
-            className="text-sm font-bold text-secondary uppercase tracking-wide"
+            className="block text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-movrr-text-brand/60"
           >
             {copy.labels.name}
-          </Label>
+          </label>
           <Input
             id="name"
             {...register("name")}
             placeholder={copy.placeholders.name}
-            className="h-14 border-2 border-muted rounded-3xl"
+            className="h-12 rounded-xl border-movrr-border-soft px-4 text-sm focus-visible:border-movrr-border-strong focus-visible:ring-movrr-border-strong/10"
             disabled={isSubmitting}
             onFocus={() => handleFormStarted("name")}
           />
           {errors.name && (
-            <p className="text-sm text-red-600 font-medium">
+            <p className="text-xs font-medium text-destructive">
               {errors.name.message}
             </p>
           )}
         </div>
-        <div className="space-y-3">
-          <Label
+        <div className="space-y-2">
+          <label
             htmlFor="email"
-            className="text-sm font-bold text-secondary uppercase tracking-wide"
+            className="block text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-movrr-text-brand/60"
           >
             {copy.labels.email}
-          </Label>
+          </label>
           <Input
             id="email"
             type="email"
             {...register("email")}
             placeholder={copy.placeholders.email}
-            className="h-14 border-2 border-muted rounded-3xl"
+            className="h-12 rounded-xl border-movrr-border-soft px-4 text-sm focus-visible:border-movrr-border-strong focus-visible:ring-movrr-border-strong/10"
             disabled={isSubmitting}
             onFocus={() => handleFormStarted("email")}
           />
           {errors.email && (
-            <p className="text-sm text-red-600 font-medium">
+            <p className="text-xs font-medium text-destructive">
               {errors.email.message}
             </p>
           )}
         </div>
       </div>
-      <div className="space-y-3">
-        <Label
+
+      <div className="space-y-2">
+        <label
           htmlFor="city"
-          className="text-sm font-bold text-secondary uppercase tracking-wide"
+          className="block text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-movrr-text-brand/60"
         >
           {copy.labels.city}
-        </Label>
+        </label>
         <Input
           id="city"
           {...register("city")}
           placeholder={copy.placeholders.city}
-          className="h-14 border-2 border-muted rounded-3xl"
+          className="h-12 rounded-xl border-movrr-border-soft px-4 text-sm focus-visible:border-movrr-border-strong focus-visible:ring-movrr-border-strong/10"
           disabled={isSubmitting}
           onFocus={() => handleFormStarted("city")}
         />
         {errors.city && (
-          <p className="text-sm text-red-600 font-medium">
+          <p className="text-xs font-medium text-destructive">
             {errors.city.message}
           </p>
         )}
@@ -252,7 +239,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
 
       {showBikeOwnership ? (
         <div className="space-y-3">
-          <p className="text-sm font-bold text-secondary uppercase tracking-wide">
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-movrr-text-brand/60">
             {copy.labels.bikeOwnership}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -272,10 +259,10 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
                     });
                   }
                 }}
-                className={`rounded-full border-2 px-5 py-2.5 text-sm font-bold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 ${
+                className={`rounded-xl border px-5 py-2.5 text-sm font-medium transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 ${
                   bikeOwnership === value
-                    ? "border-secondary bg-secondary text-white"
-                    : "border-muted text-secondary/50 hover:border-secondary/40 hover:text-secondary"
+                    ? "border-movrr-bg-primary bg-movrr-bg-primary text-movrr-text-inverse"
+                    : "border-movrr-border-soft text-muted-foreground hover:border-movrr-border-muted hover:text-foreground"
                 }`}
               >
                 {copy.bikeOptions[value]}
@@ -292,7 +279,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
               setShowBikeOwnership(true);
               track("Waitlist Bike Details Revealed", { locale });
             }}
-            className="text-sm text-secondary/50 underline underline-offset-2 transition-colors duration-150 hover:text-secondary disabled:cursor-not-allowed"
+            className="text-sm text-muted-foreground underline underline-offset-2 transition-colors duration-150 hover:text-foreground disabled:cursor-not-allowed"
           >
             {copy.actions.revealBikeOwnership}
           </button>
@@ -301,43 +288,48 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
 
       {submitMessage && (
         <div
-          className={`p-4 rounded-3xl border-2 ${
+          className={`rounded-xl border p-4 text-sm font-medium ${
             submitSuccess
-              ? "bg-green-50 border-green-200 text-green-800"
-              : "bg-red-50 border-red-200 text-red-800"
+              ? "border-movrr-success/20 bg-movrr-success/8 text-movrr-text-brand"
+              : "border-destructive/20 bg-destructive/8 text-destructive"
           }`}
         >
-          <p className="font-medium">{submitMessage}</p>
+          {submitMessage}
         </div>
       )}
 
-      <Button
+      <button
         type="submit"
-        size="lg"
         disabled={isSubmitting}
-        className="min-h-16 h-auto w-full rounded-3xl bg-secondary px-6 py-4 text-center text-base font-bold uppercase leading-tight tracking-[0.12em] text-white whitespace-normal hover:bg-secondary/90 disabled:opacity-50 md:text-xl"
+        className="group inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-xl bg-movrr-bg-primary px-6 text-sm font-semibold text-movrr-text-inverse transition-colors duration-200 hover:bg-movrr-bg-secondary disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {isSubmitting ? copy.actions.submitting : copy.actions.submit}
-      </Button>
+        {isSubmitting ? (
+          copy.actions.submitting
+        ) : (
+          <>
+            {copy.actions.submit}
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:rotate-45" />
+          </>
+        )}
+      </button>
 
-      <div ref={trustNotesRef} className="flex flex-wrap justify-center gap-3">
+      <div ref={trustNotesRef} className="flex flex-wrap gap-2.5">
         {copy.trustNotes.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-border bg-muted/40 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-secondary/75"
+            className="inline-flex items-center rounded-full border border-movrr-border-soft px-3 py-1.5 text-[0.65rem] font-semibold tracking-[0.08em] text-muted-foreground"
           >
             {item}
           </span>
         ))}
       </div>
 
-      <div className="text-center pt-4">
-        <p className="text-gray-600 font-medium">
-          {copy.consent.line1}
-          <br />
-          <span className="font-bold">{copy.consent.line2}</span>
-        </p>
-      </div>
+      <p className="text-xs leading-relaxed text-muted-foreground/70">
+        {copy.consent.line1}{" "}
+        <span className="font-semibold text-muted-foreground">
+          {copy.consent.line2}
+        </span>
+      </p>
     </form>
   );
 }

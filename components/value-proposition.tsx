@@ -17,51 +17,53 @@ interface ValuePropositionProps {
 export function ValueProposition({ copy }: ValuePropositionProps) {
   return (
     <motion.section
-      className="bg-white py-24 md:py-28"
+      className="border-b border-border bg-white py-32 lg:py-44"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
       variants={sectionStagger}
     >
       <div className="container">
-        <motion.div className="max-w-3xl" variants={headingReveal}>
-          {copy.heading.eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
-              {copy.heading.eyebrow}
-            </p>
-          ) : null}
-          <h2 className="mt-4 text-4xl font-black leading-tight text-secondary md:text-6xl">
-            {copy.heading.title}
-          </h2>
+        <div className="mb-20 grid gap-8 lg:mb-28 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
+          <motion.div variants={headingReveal}>
+            {copy.heading.eyebrow ? (
+              <p className="mb-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-primary">
+                {copy.heading.eyebrow}
+              </p>
+            ) : null}
+            <h2 className="text-[clamp(2rem,3.5vw,4.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-secondary">
+              {copy.heading.title}
+            </h2>
+          </motion.div>
           {copy.heading.subtitle ? (
-            <p className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              {copy.heading.subtitle}
-            </p>
-          ) : null}
-        </motion.div>
-
-        <motion.div
-          className="mt-14 grid gap-6 md:grid-cols-3"
-          variants={sectionStagger}
-        >
-          {copy.items.map((item, index) => (
-            <motion.article
-              key={item.title}
-              className="rounded-[2rem] border border-border bg-white p-8 shadow-sm transition-transform duration-200 hover:-translate-y-1"
-              variants={cardReveal}
+            <motion.p
+              className="self-end text-base leading-relaxed text-muted-foreground lg:max-w-sm"
+              variants={headingReveal}
             >
-              <div className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
+              {copy.heading.subtitle}
+            </motion.p>
+          ) : null}
+        </div>
+
+        <div className="border-t divide-y divide-border">
+          {copy.items.map((item, index) => (
+            <motion.div
+              key={item.title}
+              variants={cardReveal}
+              className="grid grid-cols-1 gap-5 py-12 lg:grid-cols-[9rem_1fr_minmax(0,26rem)] lg:items-center lg:gap-12 lg:py-16"
+            >
+              <span className="text-[clamp(3.5rem,7vw,7rem)] font-semibold leading-none tracking-[-0.04em] text-secondary/[0.07]">
                 0{index + 1}
-              </div>
-              <h3 className="mt-5 text-3xl font-black text-secondary md:text-4xl">
+              </span>
+              <h3 className="text-[clamp(1.75rem,2.5vw,2.75rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-secondary">
                 {item.title}
               </h3>
-              <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
+              <p className="text-base leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
-            </motion.article>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );

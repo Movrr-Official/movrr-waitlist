@@ -7,12 +7,12 @@ export const en: Dictionary = {
   metadata: {
     siteName: "Movrr",
     keywords:
-      "bike advertising, cycling jobs, gig economy, urban mobility, brand advertising",
+      "movement rewards, urban cycling, cycling rewards, everyday cycling, rewarded mobility, Rotterdam",
     pages: {
       home: {
-        title: "Movrr - Transform Your Ride, Transform Your City",
+        title: "Movrr — Everyday rides, rewarded.",
         description:
-          "Join the movement. Earn money while cycling and transform city streets into a canvas for brands. Flexible hours, reliable pay, and make an impact.",
+          "Join MOVRR early access. Ride your existing routes, earn per verified kilometre, and be among the first riders in Rotterdam.",
       },
       privacy: {
         title: "Privacy Policy | Movrr",
@@ -38,195 +38,197 @@ export const en: Dictionary = {
     dutchName: "Dutch",
   },
   hero: {
-    eyebrow: "Early access for urban riders",
+    eyebrow: "Early access",
     status: ["Launching soon"],
     proofPoints: [
-      "Launching first in Rotterdam",
-      "Based in Rotterdam",
-      "Pre-launch early access",
+      "Launching in Rotterdam",
+      "The Hague, Amsterdam, Utrecht next",
+      "Early access only",
     ],
     audienceLabel: "Built for riders",
-    audience: ["Delivery riders", "Students", "Urban cyclists", "Gig workers"],
-    titleLines: ["GET PAID", "TO RIDE", "YOUR BIKE"],
-    highlightedLine: "Earn rewards from the rides you already make.",
+    audience: [
+      "Daily commuters",
+      "Students",
+      "Urban cyclists",
+      "Weekend riders",
+    ],
+    titleLines: ["RIDE.", "EARN.", "BELONG."],
+    highlightedLine: "Your everyday routes. Now worth more.",
     description:
-      "MOVRR helps everyday riders earn rewards from eligible rides by showing brand campaigns on a compatible bike display panel across the city.",
-    primaryCta: "Join the Waitlist",
+      "Ride your existing routes. Earn per verified kilometre. No deliveries, no schedule — MOVRR runs quietly around the rides you already take.",
+    primaryCta: "Get Early Access",
     secondaryCta: "See how it works",
-    backgroundAlt: "Close-up of a MOVRR bike advertising setup",
+    backgroundAlt:
+      "A cyclist riding through Rotterdam with the MOVRR display panel",
     logoAlt: "Movrr Icon",
   },
   valueProposition: {
     heading: {
       eyebrow: "WHY MOVRR",
-      title: "A simpler way to earn from the rides you already make.",
-      subtitle: "Built for cyclists who move through the city every day.",
+      title: "Movement is worth something. MOVRR gives it back.",
+      subtitle: "No detours. No deliveries. Just the routes you already ride.",
     },
     items: [
       {
         title: "Ride",
         description:
-          "Turn your everyday routes into earning opportunities without changing your routine.",
+          "What you already do, now pays. No detours, no deliveries required.",
       },
       {
         title: "Earn",
         description:
-          "Display brand campaigns while cycling and earn rewards from eligible rides.",
+          "Rides earn rewards by default. Brand campaigns can boost them — but you earn either way.",
       },
       {
         title: "Belong",
         description:
-          "Join a new movement of riders reshaping urban advertising city by city.",
+          "Early riders shape what MOVRR becomes. Be part of the founding cohort.",
       },
     ],
   },
   howItWorks: {
     heading: {
       eyebrow: "HOW IT WORKS",
-      title: "Four simple steps from sign-up to first reward.",
-      subtitle: "MOVRR is designed to fit into the way you already ride.",
+      title: "Simple by design.",
+      subtitle: "Four steps from sign-up to your first reward.",
     },
     steps: [
       {
-        title: "Sign Up",
-        description:
-          "Join the early access waitlist and tell us which city you ride in.",
+        title: "Join",
+        description: "We'll be in touch when your city goes live.",
       },
       {
         title: "Get Your Kit",
         description:
-          "Attach the MOVRR display panel to your compatible bike setup.",
+          "Attach the MOVRR display panel to your bike. Takes minutes.",
       },
       {
         title: "Ride the City",
         description:
-          "Ride as usual while your bike displays campaigns around your city.",
+          "Ride your routes. Campaigns run quietly alongside. Your routine stays yours.",
       },
       {
-        title: "Get Paid",
+        title: "Collect Rewards",
         description:
-          "Earn monthly rewards based on eligible rides and transparent tracking.",
+          "Your balance builds with every verified ride. Clear criteria, nothing hidden.",
       },
     ],
   },
   riderBenefits: {
     heading: {
-      eyebrow: "WHY RIDERS LOVE MOVRR",
-      title: "Extra income without deliveries, schedules, or bosses.",
-      subtitle: "A flexible model built around real urban cycling habits.",
+      eyebrow: "FOR EVERYDAY RIDERS",
+      title: "Your daily ride. Worth more.",
+      subtitle: "A flexible model built around the routes you already ride.",
     },
     items: [
       {
         title: "Earn While Riding",
         description:
-          "Turn daily rides into passive income with no extra shifts required.",
+          "Your existing routes, your existing schedule — now rewarded.",
       },
       {
-        title: "No Deliveries Required",
+        title: "Pure movement",
         description:
-          "You do not need to complete orders or carry food to start earning.",
+          "MOVRR rewards the riding itself. No packages, no tasks, nothing extra required.",
       },
       {
         title: "Flexible",
-        description:
-          "Ride when you want, where you want, and fit MOVRR around your own schedule.",
+        description: "No minimum schedule, no commitment. Ride when you ride.",
       },
       {
-        title: "Transparent Rewards",
+        title: "Clear earnings",
         description:
-          "Clear reward criteria, fair rewards, and visibility into how rewards are calculated.",
+          "Every reward has a reason. Your balance, your criteria — always visible.",
       },
     ],
-    cta: "Join the Waitlist",
-    ctaNote: "It takes less than 30 seconds to join.",
+    cta: "Get Early Access",
+    ctaNote: "No commitment. Founding cohort only.",
   },
   productConcept: {
     heading: {
-      eyebrow: "Product Concept",
-      title: "Movrr display panel",
+      eyebrow: "The Hardware",
+      title: "The MOVRR display panel.",
     },
-    body: "A lightweight, weatherproof display panel system built for everyday bikes and cargo bikes. It mounts to compatible bike setups, keeps brand campaigns visible while you ride, and works with MOVRR to track eligible rides and rewards.",
+    body: "A lightweight, weatherproof panel that mounts to compatible bikes. It syncs with MOVRR to verify every kilometre and unlock campaign rewards as you ride.",
     highlights: [
       "Compatible bike mounting",
-      "Durable & weather-resistant",
-      "High-visibility display",
-      "Integrated reward tracking",
+      "Durable & weatherproof",
+      "Verified ride tracking",
+      "Seamless reward sync",
     ],
     imageAlt: "Movrr display panel attached to a bicycle",
-    cta: "Join the Waitlist",
+    cta: "Get Early Access",
   },
   cityLaunch: {
     heading: {
       eyebrow: "City Launch",
-      title: "Launching soon in major cities",
-      subtitle: "Join now and be first in line when MOVRR opens in your city.",
+      title: "Launching in the Randstad.",
+      subtitle: "Rotterdam first. The Hague next.",
     },
     badge: "Launching Soon",
     cards: [
       {
         name: "Rotterdam",
         asset: "/city-rotterdam-card.png",
-        cta: "Notify Me",
+        cta: "Join Waitlist",
         featured: true,
-      },
-      {
-        name: "Amsterdam",
-        asset: "/city-amsterdam-card.png",
-        cta: "Notify Me",
-      },
-      {
-        name: "Utrecht",
-        asset: "/city-utrecht-card.png",
-        cta: "Notify Me",
       },
       {
         name: "The Hague",
         asset: "/city-the-hague-card.png",
-        cta: "Notify Me",
+        cta: "Join Waitlist",
+      },
+      {
+        name: "Amsterdam",
+        asset: "/city-amsterdam-card.png",
+        cta: "Join Waitlist",
+      },
+      {
+        name: "Utrecht",
+        asset: "/city-utrecht-card.png",
+        cta: "Join Waitlist",
       },
     ],
   },
   faq: {
     heading: {
       eyebrow: "FAQ",
-      title: "Everything riders need to know before launch.",
-      subtitle:
-        "Short answers to the questions we expect most before early access opens.",
+      title: "What riders ask most.",
+      subtitle: "Clear answers before launch.",
     },
     items: [
       {
         question: "How do I start riding with MOVRR?",
         answer:
-          "Join the waitlist now. When MOVRR opens in your city, we will contact you with next steps for onboarding and setup.",
+          "Join early access now. When MOVRR opens in your city, we'll be in touch with everything you need to get started.",
       },
       {
         question: "How much can riders earn?",
         answer:
-          "Rewards will depend on campaign activity and eligible rides. We will share the reward model clearly before launch.",
+          "Rewards are based on verified ride activity. We'll share the full reward model before launch.",
       },
       {
         question: "Do I need my own bike?",
         answer:
-          "Yes. You will need your own bike to ride with MOVRR, and we will provide the display panel setup used in the program.",
+          "Yes. You'll need your own bike. MOVRR provides the display panel as part of the programme.",
       },
       {
         question: "Can I ride whenever I want?",
         answer:
-          "Yes. MOVRR is designed to fit your existing routine, whether you ride daily, on weekends, or between other jobs.",
+          "Yes. MOVRR fits your existing routine — whether you ride daily, on weekends, or just whenever.",
       },
       {
         question: "When does MOVRR launch?",
         answer:
-          "MOVRR is currently pre-launch. Join early access now and we will keep you updated as launch timing is confirmed for your city.",
+          "MOVRR is pre-launch. Join early access and we'll keep you updated as launch timing is confirmed for your city.",
       },
     ],
   },
   waitlistSection: {
     eyebrow: "JOIN EARLY ACCESS",
-    title: "Ready to start earning?",
-    subtitle:
-      "Join the early access waitlist and be first in line when MOVRR opens in your city.",
-    reassurance: "Takes less than 30 seconds. Early access only.",
+    title: "Your city. Your route. Your rewards.",
+    subtitle: "Secure your spot in the founding rider cohort.",
+    reassurance: "No commitment required. Founding cohort only.",
   },
   waitlistForm: {
     labels: {
@@ -243,8 +245,8 @@ export const en: Dictionary = {
     },
     bikeOptions: {
       own: "I own a bike",
-      interested: "Not yet, but interested",
-      planning: "Planning to get one",
+      interested: "Not yet",
+      planning: "Getting one soon",
     },
     validation: {
       nameMin: "Name must be at least 2 characters",
@@ -253,36 +255,43 @@ export const en: Dictionary = {
     },
     actions: {
       submitting: "Joining...",
-      submit: "Join the Waitlist",
-      reset: "Join Another Rider",
+      submit: "Get Early Access",
+      reset: "Register another rider",
       revealBikeOwnership: "Add bike details (optional)",
     },
     success: {
-      title: "Welcome to the Movement!",
-      description:
-        "You're now on the waitlist. We'll notify you when Movrr launches in your city.",
+      title: "You're in.",
+      description: "We'll be in touch when MOVRR goes live in your city.",
+      instagram: {
+        eyebrow: "Stay in the loop",
+        heading: "The founding rider circle is forming.",
+        body: "Follow @movrr.app for launch updates and behind-the-scenes from Rotterdam.",
+        cta: "Follow on Instagram",
+        handle: "@movrr.app",
+        href: "https://www.instagram.com/movrr.app/",
+      },
     },
     messages: {
-      success: "Successfully joined the waitlist!",
+      success: "You're on the list.",
       genericError: "Something went wrong. Please try again.",
     },
     consent: {
-      line1: "By joining, you agree to receive updates about Movrr's launch.",
-      line2: "No spam. Just the good stuff. Unsubscribe anytime.",
+      line1: "You'll receive launch updates for your city. Nothing else.",
+      line2: "No spam. Unsubscribe anytime.",
     },
     trustNotes: [
-      "No account required",
+      "No account needed",
       "No payment required",
-      "Early access only",
+      "Founding cohort only",
     ],
   },
   footer: {
     logoAlt: "Movrr Icon",
-    tagline: "Transform your ride. Transform your life.",
+    tagline: "Your movement, rewarded.",
     privacy: "Privacy",
     terms: "Terms",
     instagram: "Instagram",
-    instagramHref: "https://www.instagram.com/movrr.nl/",
+    instagramHref: "https://www.instagram.com/movrr.app/",
     copyrightSuffix: "Movrr. All rights reserved.",
   },
   privacy: {

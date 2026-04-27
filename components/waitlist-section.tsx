@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { formReveal, headingReveal, sectionStagger, viewportOnce } from "@/lib/motion";
+import {
+  formReveal,
+  headingReveal,
+  sectionStagger,
+  viewportOnce,
+} from "@/lib/motion";
 import { WaitlistForm } from "./forms/waitlist-form";
 import type { Dictionary } from "@/locales/en";
 import type { Locale } from "@/lib/i18n/config";
@@ -22,35 +26,35 @@ export function WaitlistSection({
   return (
     <motion.section
       id="signup"
-      className="bg-secondary py-24 text-white md:py-28"
+      className="border-b border-movrr-text-inverse/10 bg-movrr-bg-primary py-32 text-movrr-text-inverse lg:py-44"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
       variants={sectionStagger}
     >
       <div className="container">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-          <motion.div className="max-w-xl" variants={headingReveal}>
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
+        <div className="grid gap-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-20">
+          <motion.div variants={headingReveal}>
+            <p className="mb-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-primary">
               {copy.eyebrow}
             </p>
-            <h2 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
+            <h2 className="text-[clamp(2rem,3.5vw,4.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-movrr-text-inverse">
               {copy.title}
             </h2>
-            <p className="mt-5 text-lg text-white/75 md:text-xl">
+            <p className="mt-6 text-base leading-relaxed text-movrr-text-inverse/50 lg:max-w-sm">
               {copy.subtitle}
             </p>
-            <p className="mt-8 text-sm font-semibold tracking-[0.2em] text-white/55">
+            <p className="mt-10 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-movrr-text-inverse/30">
               {copy.reassurance}
             </p>
           </motion.div>
 
           <motion.div variants={formReveal}>
-            <Card className="border border-white/10 bg-white shadow-[0_24px_80px_rgba(0,0,0,0.25)]">
-              <CardContent className="p-8 md:p-12">
+            <div className="rounded-none border border-movrr-text-inverse/10 bg-movrr-bg-canvas text-foreground shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
+              <div className="p-8 md:p-12">
                 <WaitlistForm copy={formCopy} locale={locale} />
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

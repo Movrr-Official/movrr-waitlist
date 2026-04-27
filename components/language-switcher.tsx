@@ -45,35 +45,37 @@ export function LanguageSwitcher({ labels }: LanguageSwitcherProps) {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
-      <div className="inline-flex items-center rounded-full border border-white/20 bg-black/55 p-1 shadow-2xl backdrop-blur-md">
-        <button
-          type="button"
-          aria-label={`${labels.ariaLabel}: ${labels.englishName}`}
-          aria-pressed={currentLocale === "en"}
-          className={`min-w-11 rounded-full px-3 py-1.5 text-xs font-bold tracking-wide transition-colors ${
-            currentLocale === "en"
-              ? "bg-primary text-primary-foreground"
-              : "text-white/80 hover:text-white"
-          }`}
-          onClick={() => switchLanguage("en")}
-        >
-          {labels.englishLabel}
-        </button>
-        <button
-          type="button"
-          aria-label={`${labels.ariaLabel}: ${labels.dutchName}`}
-          aria-pressed={currentLocale === "nl"}
-          className={`min-w-11 rounded-full px-3 py-1.5 text-xs font-bold tracking-wide transition-colors ${
-            currentLocale === "nl"
-              ? "bg-primary text-primary-foreground"
-              : "text-white/80 hover:text-white"
-          }`}
-          onClick={() => switchLanguage("nl")}
-        >
-          {labels.dutchLabel}
-        </button>
-      </div>
+    <div
+      className="inline-flex items-center gap-0.5"
+      aria-label={labels.ariaLabel}
+    >
+      <button
+        type="button"
+        aria-label={`${labels.ariaLabel}: ${labels.englishName}`}
+        aria-pressed={currentLocale === "en"}
+        className={`px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-150 ${
+          currentLocale === "en"
+            ? "text-movrr-text-inverse"
+            : "text-movrr-text-inverse/30 hover:text-movrr-text-inverse/55"
+        }`}
+        onClick={() => switchLanguage("en")}
+      >
+        {labels.englishLabel}
+      </button>
+      <span className="text-[0.65rem] text-movrr-text-inverse/20">/</span>
+      <button
+        type="button"
+        aria-label={`${labels.ariaLabel}: ${labels.dutchName}`}
+        aria-pressed={currentLocale === "nl"}
+        className={`px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-150 ${
+          currentLocale === "nl"
+            ? "text-movrr-text-inverse"
+            : "text-movrr-text-inverse/30 hover:text-movrr-text-inverse/55"
+        }`}
+        onClick={() => switchLanguage("nl")}
+      >
+        {labels.dutchLabel}
+      </button>
     </div>
   );
 }

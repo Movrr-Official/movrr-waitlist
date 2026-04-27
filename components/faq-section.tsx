@@ -1,12 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
 import {
   cardReveal,
   headingReveal,
@@ -19,50 +15,96 @@ interface FAQSectionProps {
   copy: Dictionary["faq"];
 }
 
+function FAQItem({
+  question,
+  answer,
+  index,
+}: {
+  question: string;
+  answer: string;
+  index: number;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <motion.div
+      variants={cardReveal}
+      className="border-b border-border last:border-0"
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-start justify-between gap-6 py-7 text-left transition-opacity duration-150 hover:opacity-70"
+      >
+        <span className="text-base font-semibold tracking-[-0.01em] text-secondary md:text-lg">
+          {question}
+        </span>
+        {open ? (
+          <Minus className="mt-1 h-5 w-5 shrink-0 text-secondary/40" />
+        ) : (
+          <Plus className="mt-1 h-5 w-5 shrink-0 text-secondary/40" />
+        )}
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <p className="pb-7 pr-8 text-base leading-relaxed text-muted-foreground">
+              {answer}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
 export function FAQSection({ copy }: FAQSectionProps) {
   return (
     <motion.section
-      className="bg-white py-24 md:py-28"
+      className="border-b border-border bg-white py-32 lg:py-44"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
       variants={sectionStagger}
     >
       <div className="container">
-        <motion.div className="max-w-3xl" variants={headingReveal}>
-          {copy.heading.eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
-              {copy.heading.eyebrow}
-            </p>
-          ) : null}
-          <h2 className="mt-4 text-4xl font-black leading-tight text-secondary md:text-6xl">
-            {copy.heading.title}
-          </h2>
+        <div className="mb-20 grid gap-8 lg:mb-28 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
+          <motion.div variants={headingReveal}>
+            {copy.heading.eyebrow ? (
+              <p className="mb-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-primary">
+                {copy.heading.eyebrow}
+              </p>
+            ) : null}
+            <h2 className="text-[clamp(2rem,3.5vw,4.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-secondary">
+              {copy.heading.title}
+            </h2>
+          </motion.div>
           {copy.heading.subtitle ? (
-            <p className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl">
+            <motion.p
+              className="self-end text-base leading-relaxed text-muted-foreground lg:max-w-sm"
+              variants={headingReveal}
+            >
               {copy.heading.subtitle}
-            </p>
+            </motion.p>
           ) : null}
-        </motion.div>
+        </div>
 
-        <motion.div className="mt-14 max-w-4xl" variants={sectionStagger}>
-          <Accordion type="single" collapsible className="w-full">
-            {copy.items.map((faq, index) => (
-              <motion.div key={faq.question} variants={cardReveal}>
-                <AccordionItem
-                  value={`faq-${index}`}
-                  className="border-b border-border"
-                >
-                  <AccordionTrigger className="py-7 text-left text-lg font-bold text-secondary hover:no-underline md:text-xl">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-7 text-base leading-7 text-muted-foreground md:text-lg">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              </motion.div>
-            ))}
-          </Accordion>
+        <motion.div
+          className="border-t border-border"
+          variants={sectionStagger}
+        >
+          {copy.items.map((faq, index) => (
+            <FAQItem
+              key={faq.question}
+              question={faq.question}
+              answer={faq.answer}
+              index={index}
+            />
+          ))}
         </motion.div>
       </div>
     </motion.section>
