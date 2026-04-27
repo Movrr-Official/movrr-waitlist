@@ -3,6 +3,7 @@
 import { Instagram } from "lucide-react";
 import { Suspense } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -42,9 +43,11 @@ export function Footer({
           >
             <div>
               <div className="flex items-center gap-2">
-                <img
+                <Image
                   src="/movrr-icon.png"
                   alt={copy.logoAlt}
+                  width={28}
+                  height={28}
                   className="h-7 w-7"
                 />
                 <h3 className="text-xl font-semibold tracking-tight text-movrr-text-inverse">

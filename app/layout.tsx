@@ -19,6 +19,11 @@ const metadataBase = process.env.NEXT_PUBLIC_SITE_URL
 export const metadata: Metadata = {
   metadataBase,
   authors: [{ name: "Movrr" }],
+  robots: { index: true, follow: true },
+  title: {
+    template: "%s | Movrr",
+    default: "Movrr — Everyday rides, rewarded.",
+  },
 };
 
 export default async function RootLayout({

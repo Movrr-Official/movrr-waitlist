@@ -15,151 +15,68 @@ interface UserConfirmationEmailProps {
   name: string;
   city: string;
   bikeOwnership?: string;
-  id?: string;
   ctaUrl?: string;
   locale?: string;
 }
+
+const bikeStatusText: Record<string, string> = {
+  own: "You already own a bike — you're ready to ride.",
+  interested: "No bike yet — no problem. We'll keep you updated.",
+  planning: "Getting one soon — great timing to join early.",
+};
 
 export default function UserConfirmationEmail({
   name,
   city,
   bikeOwnership,
-  id,
   ctaUrl = "https://movrr.nl",
-  locale = "en-US",
+  locale = "en",
 }: UserConfirmationEmailProps) {
-  const bikeStatusText = {
-    yes: "Perfect! You're ready to ride.",
-    no: "No worries - we'll help you get started.",
-    planning: "Great! We'll keep you updated on bike options.",
-    notProvided: "You can tell us later what setup you ride with.",
-  };
+  const bikeNote = bikeOwnership ? bikeStatusText[bikeOwnership] : null;
 
   return (
-    <Html lang={locale.split("-")[0] || "en"}>
+    <Html lang={locale}>
       <Head />
-      <Preview>Welcome to Movrr — next steps inside</Preview>
+      <Preview>You're on the MOVRR waitlist for {city}.</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={header}>
             <Img
               src="https://res.cloudinary.com/dgy9bf37b/image/upload/v1769860718/movrr_logo_icon_green_no_bg_pycuih.png"
-              width="150"
-              height="50"
-              alt="Movrr Logo"
+              width="32"
+              height="32"
+              alt="Movrr"
               style={logo}
             />
-            <Text style={tagline}>Ride. Earn. Make Cities Move.</Text>
+            <Text style={wordmark}>MOVRR</Text>
           </Section>
 
           <Section style={content}>
-            <Heading style={h1}>Welcome to the Movement, {name}!</Heading>
+            <Heading style={h1}>You're in, {name}.</Heading>
 
             <Text style={text}>
-              You've just joined something bigger than a waitlist - you've
-              joined a movement that's transforming city streets into
-              opportunities.
+              You're on the early access list for {city}. We'll be in touch when
+              MOVRR goes live in your city — with everything you need to get
+              started.
             </Text>
 
-            <Section style={infoBox}>
-              <Text style={infoTitle}>Your registration details</Text>
-              <table
-                role="presentation"
-                width="100%"
-                cellPadding={0}
-                cellSpacing={0}
-                border={0}
-                style={{
-                  borderCollapse: "collapse",
-                  fontFamily: main.fontFamily,
-                  color: "#374151",
-                  fontSize: "14px",
-                }}
+            {bikeNote ? (
+              <Section style={infoBox}>
+                <Text style={infoText}>{bikeNote}</Text>
+              </Section>
+            ) : null}
+
+            <Text style={text}>
+              In the meantime, follow{" "}
+              <Link
+                href="https://www.instagram.com/movrr.app/"
+                style={{ color: "#4a9e6f" }}
               >
-                <tbody>
-                  <tr>
-                    <td
-                      style={{
-                        padding: "6px 8px",
-                        verticalAlign: "top",
-                        fontWeight: 600,
-                        width: 140,
-                      }}
-                    >
-                      City:
-                    </td>
-                    <td
-                      style={{
-                        padding: "6px 8px",
-                        fontFamily: main.fontFamily,
-                        lineHeight: "1.4",
-                      }}
-                    >
-                      {city}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style={{
-                        padding: "6px 8px",
-                        verticalAlign: "top",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Bike status:
-                    </td>
-                    <td
-                      style={{
-                        padding: "6px 8px",
-                        fontFamily: main.fontFamily,
-                        lineHeight: "1.4",
-                      }}
-                    >
-                      {bikeOwnership
-                        ? bikeStatusText[
-                            bikeOwnership as keyof typeof bikeStatusText
-                          ]
-                        : bikeStatusText.notProvided}
-                    </td>
-                  </tr>
-                  {id && (
-                    <tr>
-                      <td
-                        style={{
-                          padding: "6px 8px",
-                          verticalAlign: "top",
-                          fontWeight: 600,
-                        }}
-                      >
-                        Signup ID:
-                      </td>
-                      <td
-                        style={{
-                          padding: "6px 8px",
-                          fontFamily: main.fontFamily,
-                          lineHeight: "1.4",
-                        }}
-                      >
-                        {id}
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </Section>
-
-            <Text style={text}>
-              <strong>What happens next?</strong>
+                @movrr.app
+              </Link>{" "}
+              on Instagram for launch updates and behind-the-scenes from
+              Rotterdam.
             </Text>
-
-            <div style={{ marginTop: 8 }}>
-              <ul style={{ margin: "8px 0 16px 20px", padding: 0 }}>
-                <li>We'll notify you as soon as Movrr launches in {city}.</li>
-                <li>You'll get early access to our rider onboarding.</li>
-                <li>Start earning rewards while exploring your city.</li>
-                <li>Join a community of riders making cities more vibrant.</li>
-              </ul>
-            </div>
 
             <Section style={ctaSection}>
               <Link
@@ -167,19 +84,18 @@ export default function UserConfirmationEmail({
                 style={{
                   ...button,
                   fontFamily: main.fontFamily,
-                  lineHeight: "1.2",
                   textDecoration: "none",
                 }}
-                aria-label="Learn more about Movrr"
+                aria-label="Visit Movrr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Learn More About Movrr
+                Visit Movrr
               </Link>
             </Section>
 
             <Text style={footer}>
-              Questions? Reply to this email — we're here to help!
+              Questions? Reply to this email.
               <br />
               The Movrr Team
             </Text>
@@ -188,53 +104,6 @@ export default function UserConfirmationEmail({
       </Body>
     </Html>
   );
-}
-
-export function userConfirmationText({
-  name,
-  city,
-  bikeOwnership,
-  id,
-  ctaUrl,
-}: {
-  name: string;
-  city: string;
-  bikeOwnership?: string;
-  id?: string;
-  ctaUrl?: string;
-}) {
-  const bikeStatusText = {
-    yes: "Perfect! You're ready to ride.",
-    no: "No worries - we'll help you get started.",
-    planning: "Great! We'll keep you updated on bike options.",
-    notProvided: "You can tell us later what setup you ride with.",
-  } as const;
-
-  const lines = [];
-  lines.push(`Welcome to Movrr — ${name}`);
-  lines.push("");
-  lines.push(`City: ${city}`);
-  lines.push(
-    `Bike status: ${
-      bikeOwnership
-        ? bikeStatusText[bikeOwnership as keyof typeof bikeStatusText] ??
-          bikeOwnership
-        : bikeStatusText.notProvided
-    }`,
-  );
-  if (id) lines.push(`Signup ID: ${id}`);
-  lines.push("");
-  lines.push("What happens next:");
-  lines.push("- We will notify you when Movrr launches in your city.");
-  lines.push("- You will get early access to onboarding.");
-  lines.push("- Start earning rewards while exploring your city.");
-  lines.push("");
-  if (ctaUrl) lines.push(`Learn more: ${ctaUrl}`);
-  lines.push("");
-  lines.push("Questions? Reply to this email.");
-  lines.push("The Movrr Team");
-
-  return lines.join("\n");
 }
 
 const main = {
@@ -246,97 +115,90 @@ const main = {
 const container = {
   margin: "0 auto",
   padding: "20px 0 48px",
-  maxWidth: "600px",
+  maxWidth: "560px",
 };
 
 const header = {
-  backgroundColor: "#000000",
-  padding: "32px 24px",
+  backgroundColor: "#2a3d30",
+  padding: "28px 24px",
   textAlign: "center" as const,
 };
 
 const logo = {
-  margin: "auto",
-  marginBottom: "4px",
+  margin: "0 auto 8px",
+  display: "block" as const,
 };
 
-const tagline = {
+const wordmark = {
   color: "#ffffff",
-  fontSize: "16px",
-  fontWeight: "500",
+  fontSize: "14px",
+  fontWeight: "600",
+  letterSpacing: "0.12em",
   margin: "0",
-  opacity: 0.9,
 };
 
 const content = {
-  padding: "32px 24px",
+  padding: "36px 24px",
 };
 
 const h1 = {
-  color: "#000000",
-  fontSize: "28px",
+  color: "#111111",
+  fontSize: "26px",
   fontWeight: "700",
-  lineHeight: "1.3",
-  margin: "0 0 24px 0",
+  lineHeight: "1.2",
+  margin: "0 0 20px 0",
   fontFamily:
     "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
 };
 
 const text = {
-  color: "#374151",
-  fontSize: "16px",
-  lineHeight: "1.6",
+  color: "#555555",
+  fontSize: "15px",
+  lineHeight: "1.65",
   margin: "0 0 16px 0",
   fontFamily:
     "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
 };
 
 const infoBox = {
-  backgroundColor: "#f9fafb",
-  border: "2px solid #e5e7eb",
-  padding: "20px",
-  margin: "24px 0",
-};
-
-const infoTitle = {
-  color: "#000000",
-  fontSize: "16px",
-  fontWeight: "600",
-  margin: "0 0 12px 0",
-  fontFamily:
-    "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  backgroundColor: "#f5f9f6",
+  border: "1px solid #d4e8dc",
+  borderRadius: "8px",
+  padding: "14px 18px",
+  margin: "0 0 20px 0",
 };
 
 const infoText = {
-  color: "#374151",
+  color: "#2a6644",
   fontSize: "14px",
-  margin: "0 0 8px 0",
+  fontWeight: "500",
+  margin: "0",
   fontFamily:
     "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
 };
 
 const ctaSection = {
   textAlign: "center" as const,
-  margin: "32px 0",
+  margin: "28px 0",
 };
 
 const button = {
-  backgroundColor: "#16a34a",
+  backgroundColor: "#2a3d30",
   color: "#ffffff",
-  fontSize: "15px",
+  fontSize: "14px",
   fontWeight: "600",
   textDecoration: "none",
-  padding: "14px 30px",
-  borderRadius: "999px",
+  padding: "13px 28px",
+  borderRadius: "10px",
   display: "inline-block",
   fontFamily:
     "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
 };
 
 const footer = {
-  color: "#6b7280",
-  fontSize: "14px",
+  color: "#aaaaaa",
+  fontSize: "13px",
   lineHeight: "1.5",
-  margin: "32px 0 0 0",
+  margin: "28px 0 0 0",
   textAlign: "center" as const,
 };

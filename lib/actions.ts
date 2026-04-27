@@ -104,7 +104,5 @@ export async function submitWaitlistForm(data: WaitlistFormData) {
     console.error("[waitlist] email delivery failed:", emailErr);
   }
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
   return { success: true, message: dictionary.waitlistForm.messages.success };
 }
