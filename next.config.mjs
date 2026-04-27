@@ -7,7 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    qualities: [25, 50, 75, 100],
+    qualities: [25, 50, 75, 78, 90, 100],
     formats: ["image/avif", "image/webp"],
   },
 };

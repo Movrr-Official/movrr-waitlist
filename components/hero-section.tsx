@@ -66,9 +66,9 @@ export function HeroSection({ copy, brandName }: HeroSectionProps) {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="grid min-h-[88vh] grid-cols-1 lg:grid-cols-[1fr_minmax(0,40vw)]">
+      <div className="grid min-h-[60vh] grid-cols-1 lg:grid-cols-[1fr_minmax(0,40vw)]">
         {/* Text column */}
-        <div className="flex flex-col justify-between px-6 pb-20 pt-24 lg:px-12 lg:pb-16 lg:pt-36">
+        <div className="flex flex-col justify-between px-6 pb-14 pt-14 lg:px-12 lg:pb-12 lg:pt-16">
           <div>
             {/* Logo lockup */}
             <motion.div
