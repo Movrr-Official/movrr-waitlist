@@ -77,7 +77,7 @@ export const en: Dictionary = {
       {
         title: "Earn",
         description:
-          "Rides earn rewards by default. Brand campaigns can boost them — but you earn either way.",
+          "Every verified kilometre earns MOVRR Points. Campaign rides run by partner brands multiply them — sometimes several times over. You earn either way.",
       },
       {
         title: "Belong",
@@ -136,9 +136,9 @@ export const en: Dictionary = {
         description: "No minimum schedule, no commitment. Ride when you ride.",
       },
       {
-        title: "Clear earnings",
+        title: "Spend on what you want",
         description:
-          "Every reward has a reason. Your balance, your criteria — always visible.",
+          "MOVRR Points redeem against real partner rewards — cycling gear, food, vouchers, and everyday items. Earn per kilometre. Spend when you choose.",
       },
     ],
     cta: "Get Early Access",
@@ -203,9 +203,9 @@ export const en: Dictionary = {
           "Join early access now. When MOVRR opens in your city, we'll be in touch with everything you need to get started.",
       },
       {
-        question: "How much can riders earn?",
+        question: "How much can I earn?",
         answer:
-          "Rewards are based on verified ride activity. We'll share the full reward model before launch.",
+          "You earn MOVRR Points for every GPS-verified kilometre you ride. Campaign rides — run by partner brands — multiply your earnings on top, sometimes significantly. Points redeem through the app against a partner catalogue: cycling gear, food, vouchers, and everyday items. Exact per-kilometre rates are confirmed at launch.",
       },
       {
         question: "Do I need my own bike?",
@@ -216,6 +216,11 @@ export const en: Dictionary = {
         question: "Can I ride whenever I want?",
         answer:
           "Yes. MOVRR fits your existing routine — whether you ride daily, on weekends, or just whenever.",
+      },
+      {
+        question: "What if a ride doesn't verify?",
+        answer:
+          "Verification is GPS-based and automatic. If a ride doesn't meet the criteria, you'll see the reason clearly in the app — and edge cases can be flagged for review. Points are only awarded for rides that genuinely verify. That's what makes them worth something to every rider who earns them honestly.",
       },
       {
         question: "When does MOVRR launch?",

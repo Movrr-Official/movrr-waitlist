@@ -77,7 +77,7 @@ export const nl: Dictionary = {
       {
         title: "Verdien",
         description:
-          "Ritten leveren standaard beloningen op. Merkcampagnes verhogen die — maar je verdient hoe dan ook.",
+          "Elke geverifieerde kilometer levert MOVRR Points op. Campagneritten van merkpartners vermenigvuldigen die — soms meerdere keren. Je verdient hoe dan ook.",
       },
       {
         title: "Hoor erbij",
@@ -138,9 +138,9 @@ export const nl: Dictionary = {
           "Geen minimumschema, geen verplichtingen. Rijd wanneer je rijdt.",
       },
       {
-        title: "Heldere verdienstes",
+        title: "Besteed aan wat jij wil",
         description:
-          "Elke beloning heeft een reden. Jouw saldo, jouw criteria — altijd inzichtelijk.",
+          "MOVRR Points zijn inwisselbaar voor echte partnerbeloningen — fietsuitrusting, eten, vouchers en dagelijkse artikelen. Verdien per kilometer. Besteed wanneer jij wil.",
       },
     ],
     cta: "Aanmelden",
@@ -205,9 +205,9 @@ export const nl: Dictionary = {
           "Meld je aan voor early access. Zodra MOVRR beschikbaar is in jouw stad, nemen we contact op met alles wat je nodig hebt om te beginnen.",
       },
       {
-        question: "Hoeveel kunnen fietsers verdienen?",
+        question: "Hoeveel kan ik verdienen?",
         answer:
-          "Beloningen zijn gebaseerd op geverifieerde ritactiviteit. We delen het volledige beloningsmodel voor de lancering.",
+          "Je verdient MOVRR Points voor elke GPS-geverifieerde kilometer die je rijdt. Campagneritten van merkpartners vermenigvuldigen je verdiensten — soms aanzienlijk. Points zijn inwisselbaar via de app tegen partnerbeloningen: fietsuitrusting, eten, vouchers en dagelijkse artikelen. De exacte kilometervergoeding wordt bevestigd bij lancering.",
       },
       {
         question: "Heb ik mijn eigen fiets nodig?",
@@ -218,6 +218,11 @@ export const nl: Dictionary = {
         question: "Kan ik rijden wanneer ik wil?",
         answer:
           "Ja. MOVRR past op jouw bestaande routine — of je nu dagelijks rijdt, in het weekend, of gewoon wanneer het uitkomt.",
+      },
+      {
+        question: "Wat als een rit niet verifieert?",
+        answer:
+          "Verificatie is GPS-gebaseerd en automatisch. Als een rit niet aan de criteria voldoet, zie je in de app precies waarom — en uitzonderingen kunnen worden ingediend ter controle. Points worden alleen toegekend voor ritten die echt verifiëren. Dat is wat ze waard maakt voor iedere fietser die eerlijk verdient.",
       },
       {
         question: "Wanneer lanceert MOVRR?",
