@@ -55,7 +55,7 @@ export const nl: Dictionary = {
     titleLines: ["RIJD.", "VERDIEN.", "HOOR ERBIJ."],
     highlightedLine: "Jouw dagelijkse routes. Nu meer waard.",
     description:
-      "Rijd je bestaande routes. Verdien per geverifieerde kilometer. Geen bezorgingen, geen rooster — MOVRR loopt stil mee met de ritten die je toch al maakt.",
+      "Rijd je bestaande routes. Verdien per geverifieerde kilometer. Geen bezorgingen, geen rooster — alleen de ritten die je toch al maakt.",
     primaryCta: "Krijg early access",
     secondaryCta: "Bekijk hoe het werkt",
     backgroundAlt: "Close-up van een MOVRR-fiets met displaypaneel",
@@ -77,7 +77,7 @@ export const nl: Dictionary = {
       {
         title: "Verdien",
         description:
-          "Elke geverifieerde kilometer levert MOVRR Points op. Campagneritten van merkpartners vermenigvuldigen die — soms meerdere keren. Je verdient hoe dan ook.",
+          "Elke geverifieerde kilometer levert MOVRR Points op. Doe mee aan een campagne en vermenigvuldig ze. Je verdient hoe dan ook.",
       },
       {
         title: "Hoor erbij",
@@ -98,14 +98,14 @@ export const nl: Dictionary = {
         description: "We nemen contact op zodra jouw stad live gaat.",
       },
       {
-        title: "Ontvang je kit",
+        title: "Download de app",
         description:
-          "Bevestig het MOVRR-displaypaneel op je fiets. Kwestie van minuten.",
+          "De app is alles wat je nodig hebt om te beginnen met verdienen. Bevestig het MOVRR-displaypaneel wanneer je campagneritten wil meerijden.",
       },
       {
         title: "Rijd door de stad",
         description:
-          "Rijd je routes. Campagnes lopen stil mee. Jouw routine blijft jouw routine.",
+          "Rijd je routes. Verdien onderweg. Doe mee aan een campagne als je meer punten wil.",
       },
       {
         title: "Beloning ophalen",
@@ -151,7 +151,7 @@ export const nl: Dictionary = {
       eyebrow: "De hardware",
       title: "Het MOVRR-displaypaneel.",
     },
-    body: "Een lichtgewicht, weerbestendig paneel dat op compatibele fietsen wordt gemonteerd. Het synchroniseert met MOVRR om elke kilometer te verifiëren en campagnebeloningen te ontgrendelen terwijl je rijdt.",
+    body: "Een lichtgewicht, weerbestendig paneel dat op compatibele fietsen wordt gemonteerd. Het synchroniseert met MOVRR om elke rit te verifiëren en je beloningen bij te houden.",
     highlights: [
       "Compatibele fietsbevestiging",
       "Duurzaam en weerbestendig",
@@ -207,12 +207,12 @@ export const nl: Dictionary = {
       {
         question: "Hoeveel kan ik verdienen?",
         answer:
-          "Je verdient MOVRR Points voor elke GPS-geverifieerde kilometer die je rijdt. Campagneritten van merkpartners vermenigvuldigen je verdiensten — soms aanzienlijk. Points zijn inwisselbaar via de app tegen partnerbeloningen: fietsuitrusting, eten, vouchers en dagelijkse artikelen. De exacte kilometervergoeding wordt bevestigd bij lancering.",
+          "Je verdient MOVRR Points voor elke GPS-geverifieerde kilometer die je rijdt. Doe mee aan een campagnerit en vermenigvuldig je verdiensten. Points zijn inwisselbaar via de app tegen partnerbeloningen: fietsuitrusting, eten, vouchers en dagelijkse artikelen. De exacte tarieven worden bevestigd bij lancering.",
       },
       {
         question: "Heb ik mijn eigen fiets nodig?",
         answer:
-          "Ja. Je hebt een eigen fiets nodig om met MOVRR te rijden. Wij zorgen voor het displaypaneel dat binnen het programma wordt gebruikt.",
+          "Ja. Je hebt een eigen fiets nodig om met MOVRR te rijden. Wij zorgen voor het displaypaneel voor rijders die deelnemen aan campagneritten.",
       },
       {
         question: "Kan ik rijden wanneer ik wil?",

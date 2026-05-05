@@ -55,7 +55,7 @@ export const en: Dictionary = {
     titleLines: ["RIDE.", "EARN.", "BELONG."],
     highlightedLine: "Your everyday routes. Now worth more.",
     description:
-      "Ride your existing routes. Earn per verified kilometre. No deliveries, no schedule — MOVRR runs quietly around the rides you already take.",
+      "Ride your existing routes. Earn per verified kilometre. No deliveries, no schedule — just the routes you already take.",
     primaryCta: "Get Early Access",
     secondaryCta: "See how it works",
     backgroundAlt:
@@ -77,7 +77,7 @@ export const en: Dictionary = {
       {
         title: "Earn",
         description:
-          "Every verified kilometre earns MOVRR Points. Campaign rides run by partner brands multiply them — sometimes several times over. You earn either way.",
+          "Every verified kilometre earns MOVRR Points. Opt into a campaign and multiply them. You earn either way.",
       },
       {
         title: "Belong",
@@ -98,14 +98,14 @@ export const en: Dictionary = {
         description: "We'll be in touch when your city goes live.",
       },
       {
-        title: "Get Your Kit",
+        title: "Get the App",
         description:
-          "Attach the MOVRR display panel to your bike. Takes minutes.",
+          "The app is all you need to start earning. Attach the MOVRR display panel when you want to join campaign rides.",
       },
       {
         title: "Ride the City",
         description:
-          "Ride your routes. Campaigns run quietly alongside. Your routine stays yours.",
+          "Ride your routes. Earn as you go. Join a campaign when you want to multiply your points.",
       },
       {
         title: "Collect Rewards",
@@ -149,7 +149,7 @@ export const en: Dictionary = {
       eyebrow: "The Hardware",
       title: "The MOVRR display panel.",
     },
-    body: "A lightweight, weatherproof panel that mounts to compatible bikes. It syncs with MOVRR to verify every kilometre and unlock campaign rewards as you ride.",
+    body: "A lightweight, weatherproof panel that mounts to compatible bikes. It syncs with MOVRR to verify every ride and track your rewards as you go.",
     highlights: [
       "Compatible bike mounting",
       "Durable & weatherproof",
@@ -205,12 +205,12 @@ export const en: Dictionary = {
       {
         question: "How much can I earn?",
         answer:
-          "You earn MOVRR Points for every GPS-verified kilometre you ride. Campaign rides — run by partner brands — multiply your earnings on top, sometimes significantly. Points redeem through the app against a partner catalogue: cycling gear, food, vouchers, and everyday items. Exact per-kilometre rates are confirmed at launch.",
+          "You earn MOVRR Points for every GPS-verified kilometre you ride. Opt into a campaign ride and multiply your earnings further. Points redeem through the app against a partner catalogue: cycling gear, food, vouchers, and everyday items. Exact rates are confirmed at launch.",
       },
       {
         question: "Do I need my own bike?",
         answer:
-          "Yes. You'll need your own bike. MOVRR provides the display panel as part of the programme.",
+          "Yes. You'll need your own bike. MOVRR provides the display panel for riders who join campaign rides.",
       },
       {
         question: "Can I ride whenever I want?",
