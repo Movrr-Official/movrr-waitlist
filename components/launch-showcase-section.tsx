@@ -45,7 +45,7 @@ export function LaunchShowcaseSection({
 
   return (
     <motion.section
-      className="border-b border-movrr-text-inverse/10 bg-movrr-bg-primary py-32 text-movrr-text-inverse lg:py-44"
+      className="bg-movrr-bg-primary py-32 text-movrr-text-inverse lg:py-44"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
