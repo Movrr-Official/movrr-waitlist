@@ -25,6 +25,7 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
     email: z.string().email(copy.validation.emailInvalid),
     city: z.string().min(2, copy.validation.cityMin),
     bikeOwnership: z.enum(["own", "interested", "planning"]).optional(),
+    website: z.string().max(0).optional(),
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -285,6 +286,15 @@ export function WaitlistForm({ copy, locale }: WaitlistFormProps) {
           </button>
         </div>
       )}
+
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+        {...register("website")}
+      />
 
       {submitMessage && (
         <div

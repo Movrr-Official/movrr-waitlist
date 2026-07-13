@@ -10,13 +10,18 @@ import { DEFAULT_LOCALE, normalizeLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionary";
 import { getGeoFromHeaders } from "@/lib/geo";
 import { classifyAcquisitionChannel } from "@/lib/attribution";
+import { checkWaitlistRateLimit } from "@/lib/rateLimit";
+import { verifyTurnstileToken } from "@/lib/turnstile";
+import { headers } from "next/headers";
 
 const waitlistSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  city: z.string().min(2),
+  name: z.string().min(2).max(120),
+  email: z.string().email().max(254),
+  city: z.string().min(2).max(120),
   bikeOwnership: z.enum(["own", "interested", "planning"]).optional(),
   locale: z.string().optional(),
+  website: z.string().max(200).optional(),
+  turnstileToken: z.string().max(2048).optional(),
   // UTM — full set of standard parameters
   utm_source: z.string().max(200).optional(),
   utm_medium: z.string().max(200).optional(),
@@ -44,6 +49,32 @@ export async function submitWaitlistForm(data: WaitlistFormData) {
   }
 
   const v = parsed.data;
+
+  const headerStore = await headers();
+  const clientIp =
+    headerStore.get("cf-connecting-ip") ??
+    headerStore.get("x-real-ip") ??
+    headerStore.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    "unknown";
+
+  if (!(await checkWaitlistRateLimit(`waitlist:${clientIp}`)).allowed) {
+    return {
+      success: false,
+      message: dictionary.waitlistForm.messages.genericError,
+    };
+  }
+
+  if (v.website) {
+    return { success: true, message: dictionary.waitlistForm.messages.success };
+  }
+
+  if (!(await verifyTurnstileToken(v.turnstileToken))) {
+    return {
+      success: false,
+      message: dictionary.waitlistForm.messages.genericError,
+    };
+  }
+
   const supabase = await createSupabaseServerClient();
 
   // Geo enrichment — never throws or blocks signup
