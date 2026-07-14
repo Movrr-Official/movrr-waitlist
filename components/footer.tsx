@@ -81,6 +81,12 @@ export function Footer({
                 >
                   {copy.terms}
                 </Link>
+                <Link
+                  href={withLocalePath(locale, "/account-deletion")}
+                  className="transition-colors hover:text-movrr-text-inverse/60"
+                >
+                  {copy.accountDeletion}
+                </Link>
               </div>
             </div>
           </motion.div>

@@ -19,6 +19,11 @@ export const nl: Dictionary = {
         description:
           "Lees welke gegevens Movrr verzamelt, hoe we daarmee omgaan en welke privacyrechten je hebt.",
       },
+      accountDeletion: {
+        title: "Account verwijderen | Movrr",
+        description:
+          "Zo verwijder je je MOVRR-rijdersaccount en de persoonsgegevens die daaraan gekoppeld zijn, in de app of op verzoek.",
+      },
       terms: {
         title: "Algemene Voorwaarden | Movrr",
         description:
@@ -298,9 +303,93 @@ export const nl: Dictionary = {
     tagline: "Jouw beweging, beloond.",
     privacy: "Privacy",
     terms: "Voorwaarden",
+    accountDeletion: "Account verwijderen",
     instagram: "Instagram",
     instagramHref: "https://www.instagram.com/movrr.app/",
     copyrightSuffix: "Movrr. Alle rechten voorbehouden.",
+  },
+  accountDeletion: {
+    backToMovrr: "Terug naar Movrr",
+    title: "Account verwijderen",
+    subtitle:
+      "Zo verwijder je je MOVRR-rijdersaccount en de persoonsgegevens die daaraan gekoppeld zijn — in de app, of op verzoek als je niet meer kunt inloggen.",
+    lastUpdated: "Laatst bijgewerkt",
+    lastUpdatedDate: "14 juli 2026",
+    sections: [
+      {
+        title: "1. Voor welke app geldt dit",
+        paragraph:
+          "Op deze pagina lees je hoe je verwijdering van je account en persoonsgegevens aanvraagt voor de MOVRR-rijdersapp (Android-package nl.movrr.app en de bijbehorende iOS-app). MOVRR, gevestigd in Rotterdam, Nederland, is de verwerkingsverantwoordelijke voor deze gegevens.",
+      },
+      {
+        title: "2. Je account verwijderen in de app",
+        paragraph:
+          "De snelste manier om je account te verwijderen is rechtstreeks in de MOVRR-app. We vragen je om te bevestigen, en zodra je dat doet start de verwijdering direct.",
+        bullets: [
+          "Open de MOVRR-app en log in",
+          "Ga naar Account en vervolgens naar Gegevens & privacy",
+          "Kies Account verwijderen",
+          "Bevestig de verwijdering",
+        ],
+      },
+      {
+        title: "3. Verwijdering aanvragen per e-mail",
+        paragraph:
+          "Kun je niet meer inloggen, of laat je het liever aan ons over? Stuur dan een e-mail naar privacy@movrr.nl met als onderwerp 'Verzoek tot accountverwijdering'. Verstuur die vanaf het e-mailadres dat aan je MOVRR-account gekoppeld is, zodat we kunnen vaststellen dat het verzoek van jou komt. Zodra de verwijdering is afgerond, bevestigen we dat. Je hoeft geen reden op te geven.",
+      },
+      {
+        title: "4. Wat we verwijderen",
+        paragraph:
+          "Als je je account verwijdert, worden de volgende persoonsgegevens gewist of onomkeerbaar geanonimiseerd, zodat ze niet meer aan jou gekoppeld kunnen worden:",
+        bullets: [
+          "Je profiel: naam, e-mailadres, telefoonnummer, woonplaats en profielfoto",
+          "Alle locatie- en gps-gegevens, inclusief opgeslagen routes en ritgeschiedenis",
+          "Je rit- en campagnegegevens, inclusief je MOVRR Points-saldo en verdienhistorie",
+          "Geregistreerde apparaten en pushnotificatie-tokens",
+          "App-voorkeuren, notificatie-instellingen en merkvoorkeuren",
+          "Community-ritten die je hebt aangemaakt, inclusief geüploade afbeeldingen",
+        ],
+      },
+      {
+        title: "5. Wat we bewaren, en waarom",
+        paragraph:
+          "Een beperkt deel van de gegevens bewaren we na verwijdering, omdat de wet dat vereist of omdat het het platform beschermt tegen fraude. Deze gegevens worden waar mogelijk geanonimiseerd of gepseudonimiseerd en worden niet gebruikt om contact met je op te nemen of je profiel te reconstrueren.",
+        bullets: [
+          "Gegevens over ingewisselde beloningen en uitgegeven vouchers, waar de Nederlandse en Europese boekhoudwetgeving ons verplicht transactiegegevens te bewaren",
+          "Beveiligings- en antifraudelogs, niet langer bewaard dan nodig is om rijders en adverteerders tegen misbruik te beschermen",
+          "Geaggregeerde, anonieme statistieken die geen persoonsgegevens bevatten en niet naar jou te herleiden zijn",
+        ],
+      },
+      {
+        title: "6. Niet-ingewisselde MOVRR Points",
+        paragraph:
+          "Als je je account verwijdert, vervallen MOVRR Points die je nog niet hebt ingewisseld definitief. Points hebben geen geldwaarde, zijn niet overdraagbaar naar een ander account en worden niet uitbetaald. Heb je nog een saldo dat je wilt gebruiken? Wissel het dan in de rewards shop in voordat je je account verwijdert.",
+      },
+      {
+        title: "7. Hoelang het duurt",
+        paragraph:
+          "De verwijdering start zodra je die in de app bevestigt, of zodra we een verzoek per e-mail hebben geverifieerd. Je account is direct niet meer toegankelijk en je persoonsgegevens worden binnen 30 dagen uit onze actieve systemen verwijderd. Resterende kopieën in versleutelde back-ups worden overschreven volgens onze normale back-uprotatie, uiterlijk binnen 90 dagen.",
+      },
+      {
+        title: "8. Je andere privacyrechten",
+        paragraph:
+          "Verwijdering is een van de rechten die je onder de AVG hebt. Je kunt ook een kopie van je gegevens opvragen (de MOVRR-app biedt een data-export onder Account en dan Gegevens & privacy), ons vragen onjuiste gegevens te corrigeren, of bezwaar maken tegen bepaalde verwerkingen. Ons privacybeleid legt deze rechten volledig uit, en je hebt het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens.",
+      },
+      {
+        title: "9. Contact",
+        paragraph:
+          "Voor alles wat met het verwijderen van je account of je persoonsgegevens te maken heeft, kun je direct contact met ons opnemen:",
+        contact: {
+          emailLabel: "Privacy",
+          emailValue: "privacy@movrr.nl",
+          supportLabel: "Support",
+          supportValue: "support@movrr.nl",
+          addressLabel: "Adres",
+          addressLine1: "MOVRR",
+          addressLine2: "Rotterdam, Nederland",
+        },
+      },
+    ],
   },
   privacy: {
     backToMovrr: "Terug naar Movrr",

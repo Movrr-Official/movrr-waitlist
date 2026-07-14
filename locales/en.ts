@@ -19,6 +19,11 @@ export const en: Dictionary = {
         description:
           "Learn what data Movrr collects, how we use it, and your privacy rights.",
       },
+      accountDeletion: {
+        title: "Delete Your Account | Movrr",
+        description:
+          "How to delete your MOVRR rider account and the personal data associated with it, from inside the app or by request.",
+      },
       terms: {
         title: "Terms of Service | Movrr",
         description:
@@ -295,9 +300,93 @@ export const en: Dictionary = {
     tagline: "Your movement, rewarded.",
     privacy: "Privacy",
     terms: "Terms",
+    accountDeletion: "Delete account",
     instagram: "Instagram",
     instagramHref: "https://www.instagram.com/movrr.app/",
     copyrightSuffix: "Movrr. All rights reserved.",
+  },
+  accountDeletion: {
+    backToMovrr: "Back to Movrr",
+    title: "Delete Your Account",
+    subtitle:
+      "How to delete your MOVRR rider account and the personal data linked to it — from inside the app, or by request if you can no longer sign in.",
+    lastUpdated: "Last updated",
+    lastUpdatedDate: "July 14, 2026",
+    sections: [
+      {
+        title: "1. Which app this applies to",
+        paragraph:
+          "This page explains how to request deletion of your account and personal data for the MOVRR rider app (Android package nl.movrr.app, and the equivalent iOS app). MOVRR, based in Rotterdam, Netherlands, is the data controller for this data.",
+      },
+      {
+        title: "2. Delete your account from inside the app",
+        paragraph:
+          "The fastest way to delete your account is directly in the MOVRR app. You will be asked to confirm, and the deletion begins immediately once confirmed.",
+        bullets: [
+          "Open the MOVRR app and sign in",
+          "Go to Account, then Data & privacy",
+          "Select Delete account",
+          "Confirm the deletion when prompted",
+        ],
+      },
+      {
+        title: "3. Request deletion by email",
+        paragraph:
+          "If you can no longer sign in, or you would rather we handle it for you, send an email to privacy@movrr.nl with the subject 'Account deletion request'. Send it from the email address registered to your MOVRR account so that we can verify the request belongs to you. We will confirm once the deletion is complete. You do not need to give a reason.",
+      },
+      {
+        title: "4. What we delete",
+        paragraph:
+          "When you delete your account, the following personal data is erased or irreversibly anonymised so that it can no longer be linked to you:",
+        bullets: [
+          "Your profile: name, email address, phone number, city, and profile photo",
+          "All location and GPS data, including recorded routes and ride history",
+          "Your ride and campaign participation records, including MOVRR Points balances and earnings history",
+          "Registered devices and push notification tokens",
+          "App preferences, notification settings, and brand preferences",
+          "Community ride posts you created, including any images you uploaded",
+        ],
+      },
+      {
+        title: "5. What we keep, and why",
+        paragraph:
+          "A limited amount of data is retained after deletion, either because the law requires it or because it protects the platform against fraud. This data is anonymised or pseudonymised wherever possible and is not used to contact you or rebuild your profile.",
+        bullets: [
+          "Records of reward redemptions and issued vouchers, where Dutch and EU accounting law requires us to retain transaction records",
+          "Security and anti-fraud logs, kept only as long as necessary to protect riders and advertisers from abuse",
+          "Aggregated, anonymous statistics that contain no personal data and cannot be traced back to you",
+        ],
+      },
+      {
+        title: "6. Unredeemed MOVRR Points",
+        paragraph:
+          "Deleting your account permanently forfeits any MOVRR Points you have not yet redeemed. Points have no cash value and cannot be transferred to another account or paid out. If you have a points balance you want to use, redeem it in the rewards shop before you delete your account.",
+      },
+      {
+        title: "7. How long deletion takes",
+        paragraph:
+          "Deletion starts as soon as you confirm it in the app, or as soon as we have verified an emailed request. Your account becomes inaccessible immediately, and personal data is removed from our live systems within 30 days. Residual copies in encrypted backups are overwritten on our normal backup rotation, within 90 days at the latest.",
+      },
+      {
+        title: "8. Your other privacy rights",
+        paragraph:
+          "Deletion is one of several rights you have under the GDPR. You can also request a copy of your data (the MOVRR app offers a data export under Account, then Data & privacy), ask us to correct inaccurate data, or object to certain processing. Our Privacy Policy explains these rights in full, and you have the right to complain to the Dutch Data Protection Authority (Autoriteit Persoonsgegevens).",
+      },
+      {
+        title: "9. Contact us",
+        paragraph:
+          "For anything relating to deletion of your account or your personal data, contact us directly:",
+        contact: {
+          emailLabel: "Privacy",
+          emailValue: "privacy@movrr.nl",
+          supportLabel: "Support",
+          supportValue: "support@movrr.nl",
+          addressLabel: "Address",
+          addressLine1: "MOVRR",
+          addressLine2: "Rotterdam, Netherlands",
+        },
+      },
+    ],
   },
   privacy: {
     backToMovrr: "Back to Movrr",

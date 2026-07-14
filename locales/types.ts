@@ -32,6 +32,7 @@ export interface Dictionary {
       home: { title: string; description: string };
       privacy: { title: string; description: string };
       terms: { title: string; description: string };
+      accountDeletion: { title: string; description: string };
       unauthorized: { title: string; description: string };
     };
   };
@@ -153,11 +154,20 @@ export interface Dictionary {
     tagline: string;
     privacy: string;
     terms: string;
+    accountDeletion: string;
     instagram: string;
     instagramHref: string;
     copyrightSuffix: string;
   };
   privacy: {
+    backToMovrr: string;
+    title: string;
+    subtitle: string;
+    lastUpdated: string;
+    lastUpdatedDate: string;
+    sections: LegalSection[];
+  };
+  accountDeletion: {
     backToMovrr: string;
     title: string;
     subtitle: string;
