@@ -1,58 +1,36 @@
 import type { MetadataRoute } from "next";
-
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://movrr.nl";
+import { PAGE_PATHS, type PageKey } from "@/locales/types";
+import {
+  SEO_ROUTES,
+  SITE_LAST_MODIFIED,
+  absoluteUrl,
+  localizedUrl,
+} from "@/lib/seo/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  return (Object.entries(PAGE_PATHS) as Array<[PageKey, string]>).flatMap(
+    ([key, pathname]) => {
+      const route = SEO_ROUTES[key];
+      if (!route.indexable) return [];
 
-  return [
-    {
-      url: `${BASE_URL}/`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 1,
+      const alternates = {
+        languages: {
+          en: localizedUrl("en", pathname),
+          nl: localizedUrl("nl", pathname),
+          "x-default": localizedUrl("en", pathname),
+        },
+      };
+      const base = {
+        lastModified: new Date(SITE_LAST_MODIFIED),
+        changeFrequency: route.changeFrequency,
+        priority: route.priority,
+        alternates,
+        ...(route.image ? { images: [absoluteUrl(route.image)] } : {}),
+      };
+      return [
+        { ...base, url: localizedUrl("en", pathname) },
+        { ...base, url: localizedUrl("nl", pathname) },
+      ];
     },
-    {
-      url: `${BASE_URL}/nl`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${BASE_URL}/privacy`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${BASE_URL}/nl/privacy`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${BASE_URL}/terms`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${BASE_URL}/nl/terms`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${BASE_URL}/account-deletion`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${BASE_URL}/nl/account-deletion`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-  ];
+  );
 }

@@ -3,16 +3,30 @@ import {
   DEFAULT_LOCALE,
   LOCALE_COOKIE_NAME,
   REQUEST_LOCALE_HEADER,
+  REQUEST_PATHNAME_HEADER,
   isLocale,
   normalizeLocale,
   type Locale,
 } from "@/lib/i18n/config";
 import { detectPathLocale } from "@/lib/i18n/routing";
 
-function withLocaleHeader(request: NextRequest, locale: Locale) {
+function withRequestHeaders(
+  request: NextRequest,
+  locale: Locale,
+  pathname: string,
+) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set(REQUEST_LOCALE_HEADER, locale);
+  requestHeaders.set(REQUEST_PATHNAME_HEADER, pathname);
   return requestHeaders;
+}
+
+function setLocaleCookie(response: NextResponse, locale: Locale) {
+  response.cookies.set(LOCALE_COOKIE_NAME, locale, {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 365,
+    sameSite: "lax",
+  });
 }
 
 function isPublicAsset(pathname: string) {
@@ -35,16 +49,10 @@ export function middleware(request: NextRequest) {
   if (localeFromPath) {
     const response = NextResponse.next({
       request: {
-        headers: withLocaleHeader(request, localeFromPath),
+        headers: withRequestHeaders(request, localeFromPath, pathname),
       },
     });
-
-    response.cookies.set(LOCALE_COOKIE_NAME, localeFromPath, {
-      path: "/",
-      maxAge: 60 * 60 * 24 * 365,
-      sameSite: "lax",
-    });
-
+    setLocaleCookie(response, localeFromPath);
     return response;
   }
 
@@ -58,17 +66,13 @@ export function middleware(request: NextRequest) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = `/nl${pathname === "/" ? "" : pathname}`;
     const response = NextResponse.redirect(redirectUrl);
-    response.cookies.set(LOCALE_COOKIE_NAME, "nl", {
-      path: "/",
-      maxAge: 60 * 60 * 24 * 365,
-      sameSite: "lax",
-    });
+    setLocaleCookie(response, "nl");
     return response;
   }
 
   return NextResponse.next({
     request: {
-      headers: withLocaleHeader(request, DEFAULT_LOCALE),
+      headers: withRequestHeaders(request, DEFAULT_LOCALE, pathname),
     },
   });
 }

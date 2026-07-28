@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/lib/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
   const dictionary = await getDictionary("en");
-  return buildPageMetadata("en", dictionary, "home", "/");
+  return buildPageMetadata("en", dictionary, "home");
 }
 
 export default async function MovrrLanding() {

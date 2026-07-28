@@ -5,32 +5,40 @@ export const nl: Dictionary = {
     wordmark: "MOVRR",
   },
   metadata: {
-    siteName: "Movrr",
-    keywords:
-      "bewegingsbeloningen, stedelijk fietsen, fietsbeloningen, dagelijks fietsen, beloond bewegen, Rotterdam",
+    siteName: "MOVRR",
+    keywords: [
+      "bewegingsbeloningen",
+      "stedelijk fietsen",
+      "fietsbeloningen",
+      "dagelijks fietsen",
+      "beloond bewegen",
+      "Rotterdam",
+      "MOVRR wachtlijst",
+      "early access",
+    ],
     pages: {
       home: {
-        title: "Movrr — Dagelijkse ritten, beloond.",
+        title: "Dagelijkse ritten, beloond.",
         description:
           "Doe mee met MOVRR early access. Rijd je bestaande routes, verdien per geverifieerde kilometer, en wees een van de eerste fietsers in Rotterdam.",
       },
       privacy: {
-        title: "Privacybeleid | Movrr",
+        title: "Privacybeleid",
         description:
-          "Lees welke gegevens Movrr verzamelt, hoe we daarmee omgaan en welke privacyrechten je hebt.",
+          "Lees welke gegevens MOVRR verzamelt, hoe we daarmee omgaan en welke privacyrechten je hebt.",
       },
       accountDeletion: {
-        title: "Account verwijderen | Movrr",
+        title: "Account verwijderen",
         description:
           "Zo verwijder je je MOVRR-rijdersaccount en de persoonsgegevens die daaraan gekoppeld zijn, in de app of op verzoek.",
       },
       terms: {
-        title: "Algemene Voorwaarden | Movrr",
+        title: "Algemene Voorwaarden",
         description:
-          "Lees de voorwaarden voor deelname aan de Movrr-wachtlijst en het gebruik van deze website.",
+          "Lees de voorwaarden voor deelname aan de MOVRR-wachtlijst en het gebruik van deze website.",
       },
       unauthorized: {
-        title: "Toegang geweigerd | Movrr",
+        title: "Toegang geweigerd",
         description: "Je hebt geen toestemming om deze pagina te bekijken.",
       },
     },

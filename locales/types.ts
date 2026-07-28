@@ -27,7 +27,7 @@ export interface Dictionary {
   };
   metadata: {
     siteName: string;
-    keywords: string;
+    keywords: string[];
     pages: {
       home: { title: string; description: string };
       privacy: { title: string; description: string };
@@ -191,3 +191,13 @@ export interface Dictionary {
     tryDifferentAccount: string;
   };
 }
+
+export const PAGE_PATHS = {
+  home: "/",
+  privacy: "/privacy",
+  terms: "/terms",
+  accountDeletion: "/account-deletion",
+  unauthorized: "/unauthorized",
+} as const;
+
+export type PageKey = keyof typeof PAGE_PATHS;

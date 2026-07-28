@@ -5,12 +5,7 @@ import { buildPageMetadata } from "@/lib/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
   const dictionary = await getDictionary("en");
-  return buildPageMetadata(
-    "en",
-    dictionary,
-    "accountDeletion",
-    "/account-deletion"
-  );
+  return buildPageMetadata("en", dictionary, "accountDeletion");
 }
 
 export default async function AccountDeletionRoute() {

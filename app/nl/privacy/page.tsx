@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/lib/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
   const dictionary = await getDictionary("nl");
-  return buildPageMetadata("nl", dictionary, "privacy", "/privacy");
+  return buildPageMetadata("nl", dictionary, "privacy");
 }
 
 export default async function PrivacyPolicyPageNl() {

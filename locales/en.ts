@@ -5,32 +5,40 @@ export const en: Dictionary = {
     wordmark: "MOVRR",
   },
   metadata: {
-    siteName: "Movrr",
-    keywords:
-      "movement rewards, urban cycling, cycling rewards, everyday cycling, rewarded mobility, Rotterdam",
+    siteName: "MOVRR",
+    keywords: [
+      "movement rewards",
+      "urban cycling",
+      "cycling rewards",
+      "everyday cycling",
+      "rewarded mobility",
+      "Rotterdam",
+      "MOVRR waitlist",
+      "early access",
+    ],
     pages: {
       home: {
-        title: "Movrr — Everyday rides, rewarded.",
+        title: "Everyday rides, rewarded.",
         description:
           "Join MOVRR early access. Ride your existing routes, earn per verified kilometre, and be among the first riders in Rotterdam.",
       },
       privacy: {
-        title: "Privacy Policy | Movrr",
+        title: "Privacy Policy",
         description:
-          "Learn what data Movrr collects, how we use it, and your privacy rights.",
+          "Learn what data MOVRR collects, how we use it, and your privacy rights.",
       },
       accountDeletion: {
-        title: "Delete Your Account | Movrr",
+        title: "Delete Your Account",
         description:
           "How to delete your MOVRR rider account and the personal data associated with it, from inside the app or by request.",
       },
       terms: {
-        title: "Terms of Service | Movrr",
+        title: "Terms of Service",
         description:
-          "Read the terms for joining the Movrr waitlist and using the site.",
+          "Read the terms for joining the MOVRR waitlist and using the site.",
       },
       unauthorized: {
-        title: "Access Denied | Movrr",
+        title: "Access Denied",
         description: "You do not have permission to access this page.",
       },
     },
