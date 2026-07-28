@@ -24,6 +24,13 @@ export const metadata: Metadata = {
     template: "%s | Movrr",
     default: "Movrr — Everyday rides, rewarded.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+  },
 };
 
 export default async function RootLayout({
