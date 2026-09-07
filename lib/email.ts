@@ -1,6 +1,6 @@
 import { Resend } from "resend";
-import UserConfirmationEmail from "@/emails/user-confirmation";
-import AdminNotificationEmail from "@/emails/admin-notification";
+import UserConfirmationEmail, { userConfirmationText } from "@/emails/user-confirmation";
+import AdminNotificationEmail, { adminNotificationText } from "@/emails/admin-notification";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const WELCOME_EMAIL = process.env.WELCOME_EMAIL! || "welcome@movrr.nl";
@@ -18,10 +18,11 @@ export async function sendUserConfirmationEmail(
 ) {
   try {
     const { data, error } = await resend.emails.send({
-      from: `Movrr <${WELCOME_EMAIL}>`,
+      from: `MOVRR <${WELCOME_EMAIL}>`,
       to: [email],
-      subject: "Welcome to Movrr - Transform Your Ride! 🚴‍♂️",
+      subject: "You’re on the MOVRR waitlist",
       react: UserConfirmationEmail({ name, city, bikeOwnership }),
+      text: userConfirmationText({ name, city, bikeOwnership }),
     });
 
     if (error) {
@@ -42,14 +43,21 @@ export async function sendAdminNotificationEmail(
   city: string,
   bikeOwnership?: string
 ) {
-  const timestamp = new Date().toLocaleString();
+  const timestamp = new Date().toISOString();
 
   try {
     const { data, error } = await resend.emails.send({
-      from: `Movrr System <${SYSTEM_EMAIL}>`,
+      from: `MOVRR System <${SYSTEM_EMAIL}>`,
       to: ADMIN_EMAIL_RECIPIENTS.length ? ADMIN_EMAIL_RECIPIENTS : ["admin@movrr.nl"],
-      subject: `New Waitlist Registration - ${name} from ${city}`,
+      subject: `New waitlist registration · ${name} · ${city}`,
       react: AdminNotificationEmail({
+        name,
+        email,
+        city,
+        bikeOwnership,
+        timestamp,
+      }),
+      text: adminNotificationText({
         name,
         email,
         city,
