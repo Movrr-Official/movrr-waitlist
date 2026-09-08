@@ -1,36 +1,27 @@
 import {
   Body,
   Button,
-  Column,
   Container,
   Head,
-  Hr,
   Html,
   Img,
   Link,
   Preview,
-  Row,
   Section,
   Text,
 } from "@react-email/components";
 import type { ReactNode } from "react";
 
 const LOGO_URL =
-  "https://res.cloudinary.com/dgy9bf37b/image/upload/v1769860718/movrr_logo_icon_green_no_bg_pycuih.png";
+  "https://res.cloudinary.com/dgy9bf37b/image/upload/f_png,q_auto:good,w_420/v1769860718/movrr_logo_icon_green_no_bg_pycuih.png";
 const FONT =
-  "Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+  "Manrope,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
 const PREVIEW_PADDING = "\u200C\u00A0".repeat(90);
 
 export const colors = {
-  accent: "#3a7d52",
-  accentDark: "#2f6844",
-  canvas: "#f4f7f5",
-  card: "#ffffff",
-  panel: "#eef4ef",
-  border: "#dce6dd",
-  heading: "#1e3a2c",
-  body: "#4d6358",
-  muted: "#718078",
+  accent: "#10c259", accentDark: "#003415", canvas: "#003415",
+  card: "#ffffff", panel: "#ffffff", border: "#e5e5e4",
+  heading: "#0a3d2e", body: "#405b51", muted: "#737373",
 } as const;
 
 const EMAIL_CSS = `
@@ -38,20 +29,20 @@ const EMAIL_CSS = `
   a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }
   @media (prefers-color-scheme: dark) {
     .email-bg { background-color: #101512 !important; }
-    .email-card { background-color: #19201b !important; border-color: #344238 !important; }
-    .email-heading, .email-wordmark, .email-value { color: #f1f5f2 !important; }
+    .email-card, .email-content { background-color: #0c2d1c !important; border-color: #365142 !important; }
+    .email-heading, .email-value { color: #f5f5ef !important; }
     .email-body { color: #d1ddd4 !important; }
     .email-muted { color: #a8b6ac !important; }
-    .email-panel { background-color: #202b23 !important; border-color: #3a4a3e !important; }
+    .email-panel { background-color: transparent !important; border-color: #365142 !important; }
     .email-rule { border-color: #344238 !important; }
     .email-link { color: #8fd1a5 !important; }
   }
   @media only screen and (max-width: 600px) {
-    .email-card { width: auto !important; margin: 16px !important; }
-    .email-header { padding: 22px 22px 18px !important; }
-    .email-content { padding: 24px 22px 22px !important; }
-    .email-footer { padding: 18px 22px 22px !important; }
-    .email-title { font-size: 23px !important; line-height: 29px !important; }
+    .email-card { width: 100% !important; margin: 0 !important; }
+    .email-header { padding: 28px 24px 30px !important; }
+    .email-content { padding: 34px 24px 38px !important; }
+    .email-footer { padding: 24px !important; }
+    .email-title { font-size: 36px !important; line-height: 37px !important; }
     .email-button { display: block !important; text-align: center !important; }
   }
 `;
@@ -93,38 +84,26 @@ export function BaseEmail({
       <Body className="email-bg" style={styles.body}>
         <Container className="email-card" style={styles.card}>
           <Section className="email-header" style={styles.header}>
-            <Row>
-              <Column style={styles.logoColumn}>
-                <Img src={LOGO_URL} width="32" height="32" alt="MOVRR" style={styles.logo} />
-              </Column>
-              <Column style={styles.wordmarkColumn}>
-                <Text className="email-wordmark" style={styles.wordmark}>MOVRR</Text>
-                {contextLabel ? (
-                  <Text className="email-muted" style={styles.contextLabel}>{contextLabel}</Text>
-                ) : null}
-              </Column>
-            </Row>
+            <Link href="https://movrr.nl" style={styles.logoLink}>
+              <Img src={LOGO_URL} width="140" height="50" alt="MOVRR" style={styles.logo} />
+            </Link>
+            {contextLabel ? <Text style={styles.contextLabel}>{contextLabel}</Text> : null}
+            <Text className="email-title" style={styles.heroTitle}>{title}</Text>
+            <Text style={styles.heroIntro}>{intro}</Text>
+            {actionLabel && actionUrl ? <Section style={styles.actionSection}><Button className="email-button" href={actionUrl} style={styles.button}>{actionLabel} &nbsp;&#8594;</Button></Section> : null}
           </Section>
-          <Hr className="email-rule" style={styles.rule} />
           <Section className="email-content" style={styles.content}>
-            <Text className="email-heading email-title" style={styles.title}>{title}</Text>
-            <Text className="email-body" style={styles.intro}>{intro}</Text>
             {children}
             {actionLabel && actionUrl ? (
-              <>
-                <Section style={styles.actionSection}>
-                  <Button className="email-button" href={actionUrl} style={styles.button}>{actionLabel}</Button>
-                </Section>
                 <Text className="email-muted" style={styles.fallbackText}>
                   If the button does not work, copy and paste this link into your browser:<br />
                   <Link className="email-link" href={actionUrl} style={styles.fallbackLink}>{actionUrl}</Link>
                 </Text>
-              </>
             ) : null}
           </Section>
           <Section className="email-footer email-rule" style={styles.footer}>
             <Text className="email-muted" style={styles.footerText}>{footerNote}</Text>
-            <Text className="email-muted" style={styles.footerText}>MOVRR · Movement that earns.</Text>
+            <Text className="email-muted" style={styles.footerText}>Movement that earns.</Text>
           </Section>
         </Container>
       </Body>
@@ -161,27 +140,24 @@ export function SupportingText({ children }: { children: ReactNode }) {
 
 const styles = {
   body: { margin: "0", padding: "0", width: "100%", backgroundColor: colors.canvas, color: colors.body, fontFamily: FONT, WebkitTextSizeAdjust: "100%" as const },
-  card: { width: "100%", maxWidth: "560px", margin: "40px auto", backgroundColor: colors.card, border: `1px solid ${colors.border}`, borderRadius: "14px", overflow: "hidden" as const },
-  header: { padding: "26px 30px 22px" },
-  logoColumn: { width: "42px", verticalAlign: "middle" },
-  logo: { display: "block", width: "32px", height: "32px", border: "0", outline: "none" },
-  wordmarkColumn: { verticalAlign: "middle" },
-  wordmark: { margin: "0", color: colors.heading, fontFamily: FONT, fontSize: "16px", fontWeight: "800", lineHeight: "20px", letterSpacing: "0.08em" },
-  contextLabel: { margin: "2px 0 0", color: colors.muted, fontFamily: FONT, fontSize: "11px", fontWeight: "700", lineHeight: "16px", letterSpacing: "0.08em", textTransform: "uppercase" as const },
-  rule: { margin: "0", borderColor: colors.border },
-  content: { padding: "30px 30px 26px" },
-  title: { margin: "0 0 14px", color: colors.heading, fontFamily: FONT, fontSize: "26px", fontWeight: "700", lineHeight: "33px", letterSpacing: "-0.02em" },
-  intro: { margin: "0 0 18px", color: colors.body, fontFamily: FONT, fontSize: "15px", lineHeight: "24px" },
+  card: { width: "100%", maxWidth: "640px", margin: "24px auto", backgroundColor: colors.card, border: "0", borderRadius: "0", overflow: "hidden" as const },
+  header: { padding: "42px 48px 52px", backgroundColor: colors.accentDark },
+  logoLink: { display: "inline-block", textDecoration: "none" },
+  logo: { display: "block", width: "140px", height: "50px", border: "0", outline: "none" },
+  contextLabel: { margin: "44px 0 16px", color: colors.accent, fontFamily: FONT, fontSize: "11px", fontWeight: "700", lineHeight: "16px", letterSpacing: "0.14em", textTransform: "uppercase" as const },
+  heroTitle: { margin: "0 0 20px", color: "#fcfcfc", fontFamily: FONT, fontSize: "46px", fontWeight: "600", lineHeight: "47px", letterSpacing: "-0.045em" },
+  heroIntro: { margin: "0", color: "#8ba294", fontFamily: FONT, fontSize: "16px", lineHeight: "26px" },
+  content: { padding: "42px 48px 46px", backgroundColor: colors.card },
   paragraph: { margin: "0 0 16px", color: colors.body, fontFamily: FONT, fontSize: "15px", lineHeight: "24px" },
-  panel: { margin: "20px 0", padding: "14px 16px", backgroundColor: colors.panel, border: `1px solid ${colors.border}`, borderRadius: "10px" },
+  panel: { margin: "0 0 30px", padding: "6px 0", backgroundColor: colors.panel, borderTop: `1px solid ${colors.border}`, borderBottom: `1px solid ${colors.border}` },
   dataTable: { borderCollapse: "collapse" as const, fontFamily: FONT },
-  dataLabel: { width: "128px", padding: "6px 12px 6px 0", color: colors.muted, fontFamily: FONT, fontSize: "13px", lineHeight: "20px" },
-  dataValue: { padding: "6px 0", color: colors.heading, fontFamily: FONT, fontSize: "14px", fontWeight: "600", lineHeight: "20px", wordBreak: "break-word" as const },
-  actionSection: { margin: "26px 0 14px", textAlign: "center" as const },
-  button: { minWidth: "210px", padding: "14px 24px", backgroundColor: colors.accentDark, border: `1px solid ${colors.accentDark}`, borderRadius: "8px", color: "#ffffff", fontFamily: FONT, fontSize: "15px", fontWeight: "700", lineHeight: "18px", textAlign: "center" as const, textDecoration: "none" },
-  fallbackText: { margin: "0", color: colors.muted, fontFamily: FONT, fontSize: "12px", lineHeight: "19px" },
+  dataLabel: { width: "128px", padding: "14px 16px 14px 0", color: colors.muted, fontFamily: FONT, fontSize: "11px", lineHeight: "20px", letterSpacing: "0.08em", textTransform: "uppercase" as const },
+  dataValue: { padding: "14px 0", color: colors.heading, fontFamily: FONT, fontSize: "14px", fontWeight: "600", lineHeight: "20px", wordBreak: "break-word" as const },
+  actionSection: { margin: "32px 0 0", textAlign: "left" as const },
+  button: { minWidth: "210px", padding: "15px 26px", backgroundColor: "#fafafa", border: "1px solid #567260", borderRadius: "12px", color: colors.heading, fontFamily: FONT, fontSize: "15px", fontWeight: "700", lineHeight: "18px", textAlign: "center" as const, textDecoration: "none" },
+  fallbackText: { margin: "8px 0 0", color: colors.muted, fontFamily: FONT, fontSize: "12px", lineHeight: "19px" },
   fallbackLink: { color: colors.accentDark, textDecoration: "underline", wordBreak: "break-all" as const },
   supporting: { margin: "14px 0 0", color: colors.muted, fontFamily: FONT, fontSize: "13px", lineHeight: "20px" },
-  footer: { padding: "20px 30px 24px", borderTop: `1px solid ${colors.border}` },
-  footerText: { margin: "0 0 5px", color: colors.muted, fontFamily: FONT, fontSize: "12px", lineHeight: "18px" },
+  footer: { padding: "26px 48px 30px", borderTop: "1px solid #214a35", backgroundColor: "#072419" },
+  footerText: { margin: "0 0 5px", color: "#91a69a", fontFamily: FONT, fontSize: "12px", lineHeight: "18px" },
 };
