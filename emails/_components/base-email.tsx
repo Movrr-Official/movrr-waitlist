@@ -12,8 +12,8 @@ import {
 } from "@react-email/components";
 import type { ReactNode } from "react";
 
-const LOGO_URL =
-  "https://res.cloudinary.com/dgy9bf37b/image/upload/f_png,q_auto:good,w_420/v1769860718/movrr_logo_icon_green_no_bg_pycuih.png";
+const MOVRR_ICON_URL =
+  "https://cdn.jsdelivr.net/gh/Movrr-Official/movrr-new-@main/public/logo/icon-no-bg-white.png";
 const FONT =
   "Manrope,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
 const PREVIEW_PADDING = "\u200C\u00A0".repeat(90);
@@ -84,9 +84,28 @@ export function BaseEmail({
       <Body className="email-bg" style={styles.body}>
         <Container className="email-card" style={styles.card}>
           <Section className="email-header" style={styles.header}>
-            <Link href="https://movrr.nl" style={styles.logoLink}>
-              <Img src={LOGO_URL} width="140" height="50" alt="MOVRR" style={styles.logo} />
-            </Link>
+            <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%">
+              <tbody>
+                <tr>
+                  <td style={styles.logoWrap}>
+                    <Link href="https://movrr.nl" style={styles.logoLink}>
+                      <table role="presentation" cellPadding={0} cellSpacing={0} border={0} style={styles.logoTable}>
+                        <tbody>
+                          <tr>
+                            <td style={styles.logoIconCell}>
+                              <Img src={MOVRR_ICON_URL} width="30" height="30" alt="" style={styles.logoIcon} />
+                            </td>
+                            <td style={styles.logoWordmarkCell}>
+                              <span style={styles.logoWordmark}>MOVRR</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </Link>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             {contextLabel ? <Text style={styles.contextLabel}>{contextLabel}</Text> : null}
             <Text className="email-title" style={styles.heroTitle}>{title}</Text>
             <Text style={styles.heroIntro}>{intro}</Text>
@@ -142,9 +161,14 @@ const styles = {
   body: { margin: "0", padding: "0", width: "100%", backgroundColor: colors.canvas, color: colors.body, fontFamily: FONT, WebkitTextSizeAdjust: "100%" as const },
   card: { width: "100%", maxWidth: "640px", margin: "24px auto", backgroundColor: colors.card, border: "0", borderRadius: "0", overflow: "hidden" as const },
   header: { padding: "42px 48px 52px", backgroundColor: colors.accentDark },
+  logoWrap: { padding: "0 0 48px" },
   logoLink: { display: "inline-block", textDecoration: "none" },
-  logo: { display: "block", width: "140px", height: "50px", border: "0", outline: "none" },
-  contextLabel: { margin: "44px 0 16px", color: colors.accent, fontFamily: FONT, fontSize: "11px", fontWeight: "700", lineHeight: "16px", letterSpacing: "0.14em", textTransform: "uppercase" as const },
+  logoTable: { borderCollapse: "collapse" as const },
+  logoIconCell: { padding: "0 12px 0 0", verticalAlign: "middle" },
+  logoIcon: { display: "block", width: "30px", height: "30px", border: "0", outline: "none" },
+  logoWordmarkCell: { verticalAlign: "middle" },
+  logoWordmark: { color: "#fcfcfc", fontFamily: FONT, fontSize: "18px", fontWeight: "600", letterSpacing: "-0.025em", lineHeight: "30px" },
+  contextLabel: { margin: "0 0 16px", color: colors.accent, fontFamily: FONT, fontSize: "11px", fontWeight: "700", lineHeight: "16px", letterSpacing: "0.14em", textTransform: "uppercase" as const },
   heroTitle: { margin: "0 0 20px", color: "#fcfcfc", fontFamily: FONT, fontSize: "46px", fontWeight: "600", lineHeight: "47px", letterSpacing: "-0.045em" },
   heroIntro: { margin: "0", color: "#8ba294", fontFamily: FONT, fontSize: "16px", lineHeight: "26px" },
   content: { padding: "42px 48px 46px", backgroundColor: colors.card },
