@@ -2,7 +2,7 @@ import { PAGE_PATHS, type PageKey } from "@/locales/types";
 import type { Locale } from "@/lib/i18n/config";
 import { stripLocalePrefix, withLocalePath } from "@/lib/i18n/routing";
 
-export const SITE_URL = "https://movrr.nl";
+export const SITE_URL = "https://waitlist.movrr.nl";
 export const SITE_NAME = "MOVRR";
 export const LEGAL_NAME = "MOVRR B.V.";
 export const DEFAULT_SOCIAL_IMAGE = "/opengraph-image";
